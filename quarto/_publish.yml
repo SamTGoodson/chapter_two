@@ -1,0 +1,4 @@
+- source: chapter_two.qmd
+  quarto-pub:
+    - id: 6755b77a-c63c-4d93-afc8-63d753af450c
+      url: 'https://quartopub.com/sites/samgoodson/chapter-two-clustering-the-council'
