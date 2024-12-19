@@ -81,18 +81,18 @@ div.csl-indent {
 <div class="cell">
 
 </div>
-<p>The New York City Council, at least since 2021, has been a body with a high rate of cooperation, its members spend a lot of time supporting a wide array of other member’s bills. Additionally, there is a high rate of agenda control; bills that will not pass a floor vote do not make it to the floor, they die in committee. These aspects of the legislative process combine to make looking at the legislative clusters of members murky, so much cooperation can mask fault lines on the body. This murkiness does not, however, mean those fault lines are not there. When these two types of clustering, voting and sponsorship, are done in unison, the same clusters emerge from both, revealing a group of progressive legislators who manage to push through the relative unanimity of the body to define a distinctly progressive legislative agenda. This chapter will work through the clustering process, showing the methodological considerations and the outcomes of both the voting and sponsoring clustering process. It will then look to see how the emergent progressive cluster is also reflected in the electoral demographic data.</p>
-<section id="voting" class="level1">
-<h1>Voting</h1>
-<p>Council floor votes are heavily lopsided, most pass with only a few dissenting conservative voices. This makes isolating the Council’s conservative’s quite easy, but makes breaking the rest of the body into clusters more difficult. To attempt to do this K-Means clustering, a clustering methodology with wide application, which seeks to partition a set of observations into a pre-defined number of clusters around centroids that minimize within cluster variance, was employed <span class="citation" data-cites="lloyd1982 steinley2006">(<a href="#ref-lloyd1982" role="doc-biblioref">Lloyd 1982</a>; <a href="#ref-steinley2006" role="doc-biblioref">Steinley 2006</a>)</span>. The data used to cluster were all floor votes from 2022 and 2023, reduced to the 100 closest votes with at least 30 members voting, measured by the ratio of anti-votes and abstentions to pro votes. The votes were then one-hot coded, which makes dummy variables for each option for each bill (e.g.&nbsp;a dummy for pro bill 1, a dummy for anti bill 1, etc.). I then ran the K-Means clustering on this dataset. When running K-Means a number of clusters are defined in advance, several common tests were used to predetermine the amount of clusters as well as experimenting with the results. The best results were obtained with five clusters, but no matter how many clusters were defined the method pulls out the conservatives, who vote no or abstain as a bloc on much legislation. If more than three cluster are defined, it also pulls out a group of progressive council members including both DSA members as well as other progressive stalwarts such as Chi Ossé, Jennifer Guttierez, Sandy Nurse, and Shahana Hanif. Table 1 below shows both the Conservative and Progressive caucus.</p>
+<p>The New York City Council, at least since 2021, has been a body with a high rate of cooperation, its members often broadly support other member’s bills even across partisan and ideological boundaries. Additionally, there is a high rate of agenda control; bills that will not pass a floor vote die in committee before they make it to the floor. These aspects of the legislative process combine to make the ideological clusters of members murky, so much cooperation masks important ideological fault lines. This murkiness does not, however, mean those fault lines are nonexistent. When these two types of clustering, voting and sponsorship, are done in unison, the same clusters emerge from both, revealing a group of progressive legislators who manage to push through the relative unanimity of the body to define a distinctly progressive legislative agenda. This chapter will work through the clustering process, showing the methodological considerations and the outcomes of both the voting and sponsoring clustering process. It will then look to see how the emergent progressive cluster is also reflected in the electoral demographic data.</p>
+<section id="voting" class="level2">
+<h2 class="anchored" data-anchor-id="voting">Voting</h2>
+<p>Council floor votes are heavily lopsided, most pass with only a few dissenting conservative voices. This makes isolating the Council’s conservative’s quite easy but makes breaking the rest of the body into clusters more difficult. To attempt to do this K-Means clustering, a clustering methodology with wide application which seeks to partition a set of observations into a pre-defined number of clusters around centroids that minimize within cluster variance, was employed <span class="citation" data-cites="lloyd1982a steinley2006a">(<a href="#ref-lloyd1982a" role="doc-biblioref">Lloyd 1982</a>; <a href="#ref-steinley2006a" role="doc-biblioref">Steinley 2006</a>)</span>. The data used to cluster were all floor votes from 2022 and 2023, reduced to the 100 closest votes with at least 30 members voting, measured by the ratio of anti-votes and abstentions to pro votes. The votes were then one-hot coded, which makes dummy variables for each option for each bill (e.g.&nbsp;a dummy for pro bill 1, a dummy for anti bill 1, etc.). Once organized, K-Means clustering was run on this dataset. When running K-Means, the number of clusters is defined in advance. Several common tests were used to predetermine the number of clusters, as well as experimenting with the results, landing on best results with five clusters. No matter how many clusters were defined, the method pulls out the conservatives, who vote no or abstain as a bloc on much legislation. If more than three clusters are defined, it also pulls out a group of progressive council members including both DSA members as well as other progressive stalwarts such as Chi Ossé, Jennifer Guttierez, Sandy Nurse, and Shahana Hanif. Table 1 below shows both the Conservative and Progressive caucus.</p>
 <div class="cell-output-display">
 
-<div id="agnnntfqxc" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="adutjsvdkf" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>html {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-#agnnntfqxc .gt_table {
+#adutjsvdkf .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -117,7 +117,7 @@ div.csl-indent {
   border-left-color: #D3D3D3;
 }
 
-#agnnntfqxc .gt_heading {
+#adutjsvdkf .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -129,7 +129,7 @@ div.csl-indent {
   border-right-color: #D3D3D3;
 }
 
-#agnnntfqxc .gt_title {
+#adutjsvdkf .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -141,7 +141,7 @@ div.csl-indent {
   border-bottom-width: 0;
 }
 
-#agnnntfqxc .gt_subtitle {
+#adutjsvdkf .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -153,13 +153,13 @@ div.csl-indent {
   border-top-width: 0;
 }
 
-#agnnntfqxc .gt_bottom_border {
+#adutjsvdkf .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#agnnntfqxc .gt_col_headings {
+#adutjsvdkf .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -174,7 +174,7 @@ div.csl-indent {
   border-right-color: #D3D3D3;
 }
 
-#agnnntfqxc .gt_col_heading {
+#adutjsvdkf .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -194,7 +194,7 @@ div.csl-indent {
   overflow-x: hidden;
 }
 
-#agnnntfqxc .gt_column_spanner_outer {
+#adutjsvdkf .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -206,15 +206,15 @@ div.csl-indent {
   padding-right: 4px;
 }
 
-#agnnntfqxc .gt_column_spanner_outer:first-child {
+#adutjsvdkf .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#agnnntfqxc .gt_column_spanner_outer:last-child {
+#adutjsvdkf .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#agnnntfqxc .gt_column_spanner {
+#adutjsvdkf .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -226,7 +226,7 @@ div.csl-indent {
   width: 100%;
 }
 
-#agnnntfqxc .gt_group_heading {
+#adutjsvdkf .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -251,7 +251,7 @@ div.csl-indent {
   vertical-align: middle;
 }
 
-#agnnntfqxc .gt_empty_group_heading {
+#adutjsvdkf .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -266,15 +266,15 @@ div.csl-indent {
   vertical-align: middle;
 }
 
-#agnnntfqxc .gt_from_md > :first-child {
+#adutjsvdkf .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#agnnntfqxc .gt_from_md > :last-child {
+#adutjsvdkf .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#agnnntfqxc .gt_row {
+#adutjsvdkf .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -293,7 +293,7 @@ div.csl-indent {
   overflow-x: hidden;
 }
 
-#agnnntfqxc .gt_stub {
+#adutjsvdkf .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -306,7 +306,7 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#agnnntfqxc .gt_stub_row_group {
+#adutjsvdkf .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -320,11 +320,11 @@ div.csl-indent {
   vertical-align: top;
 }
 
-#agnnntfqxc .gt_row_group_first td {
+#adutjsvdkf .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#agnnntfqxc .gt_summary_row {
+#adutjsvdkf .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -334,16 +334,16 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#agnnntfqxc .gt_first_summary_row {
+#adutjsvdkf .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#agnnntfqxc .gt_first_summary_row.thick {
+#adutjsvdkf .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#agnnntfqxc .gt_last_summary_row {
+#adutjsvdkf .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -353,7 +353,7 @@ div.csl-indent {
   border-bottom-color: #D3D3D3;
 }
 
-#agnnntfqxc .gt_grand_summary_row {
+#adutjsvdkf .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -363,7 +363,7 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#agnnntfqxc .gt_first_grand_summary_row {
+#adutjsvdkf .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -373,11 +373,11 @@ div.csl-indent {
   border-top-color: #D3D3D3;
 }
 
-#agnnntfqxc .gt_striped {
+#adutjsvdkf .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#agnnntfqxc .gt_table_body {
+#adutjsvdkf .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -386,7 +386,7 @@ div.csl-indent {
   border-bottom-color: #D3D3D3;
 }
 
-#agnnntfqxc .gt_footnotes {
+#adutjsvdkf .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -400,7 +400,7 @@ div.csl-indent {
   border-right-color: #D3D3D3;
 }
 
-#agnnntfqxc .gt_footnote {
+#adutjsvdkf .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-left: 4px;
@@ -409,7 +409,7 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#agnnntfqxc .gt_sourcenotes {
+#adutjsvdkf .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -423,7 +423,7 @@ div.csl-indent {
   border-right-color: #D3D3D3;
 }
 
-#agnnntfqxc .gt_sourcenote {
+#adutjsvdkf .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -431,64 +431,64 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#agnnntfqxc .gt_left {
+#adutjsvdkf .gt_left {
   text-align: left;
 }
 
-#agnnntfqxc .gt_center {
+#adutjsvdkf .gt_center {
   text-align: center;
 }
 
-#agnnntfqxc .gt_right {
+#adutjsvdkf .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#agnnntfqxc .gt_font_normal {
+#adutjsvdkf .gt_font_normal {
   font-weight: normal;
 }
 
-#agnnntfqxc .gt_font_bold {
+#adutjsvdkf .gt_font_bold {
   font-weight: bold;
 }
 
-#agnnntfqxc .gt_font_italic {
+#adutjsvdkf .gt_font_italic {
   font-style: italic;
 }
 
-#agnnntfqxc .gt_super {
+#adutjsvdkf .gt_super {
   font-size: 65%;
 }
 
-#agnnntfqxc .gt_footnote_marks {
+#adutjsvdkf .gt_footnote_marks {
   font-style: italic;
   font-weight: normal;
   font-size: 75%;
   vertical-align: 0.4em;
 }
 
-#agnnntfqxc .gt_asterisk {
+#adutjsvdkf .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#agnnntfqxc .gt_indent_1 {
+#adutjsvdkf .gt_indent_1 {
   text-indent: 5px;
 }
 
-#agnnntfqxc .gt_indent_2 {
+#adutjsvdkf .gt_indent_2 {
   text-indent: 10px;
 }
 
-#agnnntfqxc .gt_indent_3 {
+#adutjsvdkf .gt_indent_3 {
   text-indent: 15px;
 }
 
-#agnnntfqxc .gt_indent_4 {
+#adutjsvdkf .gt_indent_4 {
   text-indent: 20px;
 }
 
-#agnnntfqxc .gt_indent_5 {
+#adutjsvdkf .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -496,8 +496,8 @@ div.csl-indent {
   
   <thead class="gt_col_headings">
     <tr>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col">vote_cluster</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col">proper_names</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col">Cluster</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col">Council Members</th>
     </tr>
   </thead>
   <tbody class="gt_table_body">
@@ -513,20 +513,20 @@ div.csl-indent {
 </table>
 </div>
 </div>
-<p>K-Means clustering with Sickit-Learn allows for examination of how each item on which the clustering was performed (here, votes on bills) affected the overall cluster placement. The bills that most influenced the placement of these progressive members into a cluster are no votes on budget bills and mayoral appointments (all of which nonetheless passed). No matter how many more clusters are specified no new group cluster forms; individuals from the massive non-progressive or conservative cluster start to peel off one by one. There are three voting clusters in the Council: a large majority that vote yes on most bills for which they are present, and two dissenting minorities, a conservative one who votes no quite frequently and a progressive one who votes no on key pieces of legislation, especially in cases in which to do so is antagonistic to the mayor. It is the latter that is of the most interest to this project as it is a demonstration of the vying for regime control described in Chapter 1. This portion of the council, loud and active in its opposition to Mayor Adams’s conservative policy agenda, has helped push the entire body more firmly into is role of Mayoral oversight, culminating in overridden vetoes and the Speaker referring to the body as a “co-equal” branch of government <span class="citation" data-cites="adams">(<a href="#ref-adams" role="doc-biblioref">Adams and 2022, n.d.</a>)</span>.</p>
+<p>K-Means clustering performed with the Python library Sickit-Learn allows for examination of how each item on which the clustering was performed (here, votes on bills) affected the overall cluster placement.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> The bills that most influenced the placement of these progressive members into a cluster are no votes on budget bills and mayoral appointments (all of which nonetheless passed). No matter how many more clusters are specified no new group cluster forms; individuals from the massive non-progressive or conservative cluster start to peel off one by one. There are therefore three voting clusters in the Council: a large majority that vote yes on most bills for which they are present, and two dissenting minorities, a conservative one who votes no quite frequently and a progressive one who votes no on key pieces of legislation, especially in cases in which to do so is antagonistic to the mayor. It is the latter that is of the most interest to this project as it is a demonstration of the vying for regime control described in Chapter 1. This portion of the council, loud and active in its opposition to Mayor Adams’s conservative policy agenda, has helped push the entire body more firmly into is role of Mayoral oversight, culminating in overridden vetoes and the Speaker referring to the body as a “co-equal” branch of government <span class="citation" data-cites="adams">(<a href="#ref-adams" role="doc-biblioref">Adams and 2022, n.d.</a>)</span>.</p>
 </section>
-<section id="co-sponsorship" class="level1">
-<h1>Co-Sponsorship</h1>
-<p>Though examining sponsorship bills faces similar challenges, it reveals similar groups of conservative and progressive legislators. Many bills, especially those that pass, have high numbers of sponsors. The mean number of sponsors for a bill in the dataset was 13, with the mean number for a bill that passed was 23. Additionally, there is a lot of co-sponsorship across ideological lines; every member has co-sponsored with every other member at least once, often many more times than once. This is perhaps not surprising, as Lincoln Restler pointed out to me voters prize pragmatism in their council votes and members are aware of this, so there is motivation to work across boundaries to get things done <span class="citation" data-cites="restler2024">(<a href="#ref-restler2024" role="doc-biblioref">Restler 2024</a>)</span>. This high rate of cooperation means that using traditional methods to visualize networks leads to a large bird’s nest of co-sponsorship, a version of this tangled graph is included in the appendix. Nonetheless, members do of course co-sponsor with some members much more frequently than others, so despite the significant noise caused by cooperation some patterns do emerge.</p>
-<p>To identify these patterns, I began by once again employing K-Means clustering. To prepare the data I made a matrix that described how often each member co-sponsored with another, on a scale of 0-1, removing bills that had 40 or more co-sponsors. I then ran the K-Means on this matrix. The results of this are recorded in Table 2 below. The results mirror those found in the voting patterns above, cluster 1 again features both DSA members as well as other (though not all) members from the voting clusters above. This cluster remained as long as there were more than two clusters defined.</p>
+<section id="co-sponsorship" class="level2">
+<h2 class="anchored" data-anchor-id="co-sponsorship">Co-Sponsorship</h2>
+<p>Examining the patterns in which members sponsor bills faces similar challenges, though it also reveals similar groups of conservative and progressive legislators. Many bills, especially those that pass, have high numbers of sponsors. The mean number of sponsors for a bill in the dataset was 13, with the mean number for a bill that passed at 23. Additionally, there is a lot of co-sponsorship across ideological lines; every member has co-sponsored with every other member at least once, often many more times than once. This is perhaps not surprising, as Lincoln Restler highlighted, voters prize pragmatism in their council votes and members are aware of this, so there is motivation to work across boundaries to get things done. This high rate of cooperation means that using traditional methods to visualize networks leads to a large bird’s nest of co-sponsorship, a version of this tangled graph is included in the appendix. Nonetheless, members do of course co-sponsor with some members much more frequently than others, so despite the significant noise caused by cooperation patterns do emerge.</p>
+<p>To identify these patterns, K-Means clustering was once again employed. To prepare the data, a matrix that described how often each member co-sponsored with another on a scale of 0-1 was formed. Bills that had 40 or more co-sponsors were removed to reduce noise and isolate more meaningful co-sponsorships. The K-Means was then run on this matrix. The results of this are recorded in Table 2 below. The results mirror those found in the voting patterns above, cluster 1 again features both DSA members as well as other (though not all) members from the voting clusters above. This cluster remained as long as there were more than two clusters defined.</p>
 <div class="cell-output-display">
 
-<div id="ublbjjxivr" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="bzmzufbkcu" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>html {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-#ublbjjxivr .gt_table {
+#bzmzufbkcu .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -551,7 +551,7 @@ div.csl-indent {
   border-left-color: #D3D3D3;
 }
 
-#ublbjjxivr .gt_heading {
+#bzmzufbkcu .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -563,7 +563,7 @@ div.csl-indent {
   border-right-color: #D3D3D3;
 }
 
-#ublbjjxivr .gt_title {
+#bzmzufbkcu .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -575,7 +575,7 @@ div.csl-indent {
   border-bottom-width: 0;
 }
 
-#ublbjjxivr .gt_subtitle {
+#bzmzufbkcu .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -587,13 +587,13 @@ div.csl-indent {
   border-top-width: 0;
 }
 
-#ublbjjxivr .gt_bottom_border {
+#bzmzufbkcu .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#ublbjjxivr .gt_col_headings {
+#bzmzufbkcu .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -608,7 +608,7 @@ div.csl-indent {
   border-right-color: #D3D3D3;
 }
 
-#ublbjjxivr .gt_col_heading {
+#bzmzufbkcu .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -628,7 +628,7 @@ div.csl-indent {
   overflow-x: hidden;
 }
 
-#ublbjjxivr .gt_column_spanner_outer {
+#bzmzufbkcu .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -640,15 +640,15 @@ div.csl-indent {
   padding-right: 4px;
 }
 
-#ublbjjxivr .gt_column_spanner_outer:first-child {
+#bzmzufbkcu .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#ublbjjxivr .gt_column_spanner_outer:last-child {
+#bzmzufbkcu .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#ublbjjxivr .gt_column_spanner {
+#bzmzufbkcu .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -660,7 +660,7 @@ div.csl-indent {
   width: 100%;
 }
 
-#ublbjjxivr .gt_group_heading {
+#bzmzufbkcu .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -685,7 +685,7 @@ div.csl-indent {
   vertical-align: middle;
 }
 
-#ublbjjxivr .gt_empty_group_heading {
+#bzmzufbkcu .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -700,15 +700,15 @@ div.csl-indent {
   vertical-align: middle;
 }
 
-#ublbjjxivr .gt_from_md > :first-child {
+#bzmzufbkcu .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#ublbjjxivr .gt_from_md > :last-child {
+#bzmzufbkcu .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#ublbjjxivr .gt_row {
+#bzmzufbkcu .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -727,7 +727,7 @@ div.csl-indent {
   overflow-x: hidden;
 }
 
-#ublbjjxivr .gt_stub {
+#bzmzufbkcu .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -740,7 +740,7 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#ublbjjxivr .gt_stub_row_group {
+#bzmzufbkcu .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -754,11 +754,11 @@ div.csl-indent {
   vertical-align: top;
 }
 
-#ublbjjxivr .gt_row_group_first td {
+#bzmzufbkcu .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#ublbjjxivr .gt_summary_row {
+#bzmzufbkcu .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -768,16 +768,16 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#ublbjjxivr .gt_first_summary_row {
+#bzmzufbkcu .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#ublbjjxivr .gt_first_summary_row.thick {
+#bzmzufbkcu .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#ublbjjxivr .gt_last_summary_row {
+#bzmzufbkcu .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -787,7 +787,7 @@ div.csl-indent {
   border-bottom-color: #D3D3D3;
 }
 
-#ublbjjxivr .gt_grand_summary_row {
+#bzmzufbkcu .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -797,7 +797,7 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#ublbjjxivr .gt_first_grand_summary_row {
+#bzmzufbkcu .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -807,11 +807,11 @@ div.csl-indent {
   border-top-color: #D3D3D3;
 }
 
-#ublbjjxivr .gt_striped {
+#bzmzufbkcu .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#ublbjjxivr .gt_table_body {
+#bzmzufbkcu .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -820,7 +820,7 @@ div.csl-indent {
   border-bottom-color: #D3D3D3;
 }
 
-#ublbjjxivr .gt_footnotes {
+#bzmzufbkcu .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -834,7 +834,7 @@ div.csl-indent {
   border-right-color: #D3D3D3;
 }
 
-#ublbjjxivr .gt_footnote {
+#bzmzufbkcu .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-left: 4px;
@@ -843,7 +843,7 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#ublbjjxivr .gt_sourcenotes {
+#bzmzufbkcu .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -857,7 +857,7 @@ div.csl-indent {
   border-right-color: #D3D3D3;
 }
 
-#ublbjjxivr .gt_sourcenote {
+#bzmzufbkcu .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -865,64 +865,64 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#ublbjjxivr .gt_left {
+#bzmzufbkcu .gt_left {
   text-align: left;
 }
 
-#ublbjjxivr .gt_center {
+#bzmzufbkcu .gt_center {
   text-align: center;
 }
 
-#ublbjjxivr .gt_right {
+#bzmzufbkcu .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#ublbjjxivr .gt_font_normal {
+#bzmzufbkcu .gt_font_normal {
   font-weight: normal;
 }
 
-#ublbjjxivr .gt_font_bold {
+#bzmzufbkcu .gt_font_bold {
   font-weight: bold;
 }
 
-#ublbjjxivr .gt_font_italic {
+#bzmzufbkcu .gt_font_italic {
   font-style: italic;
 }
 
-#ublbjjxivr .gt_super {
+#bzmzufbkcu .gt_super {
   font-size: 65%;
 }
 
-#ublbjjxivr .gt_footnote_marks {
+#bzmzufbkcu .gt_footnote_marks {
   font-style: italic;
   font-weight: normal;
   font-size: 75%;
   vertical-align: 0.4em;
 }
 
-#ublbjjxivr .gt_asterisk {
+#bzmzufbkcu .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#ublbjjxivr .gt_indent_1 {
+#bzmzufbkcu .gt_indent_1 {
   text-indent: 5px;
 }
 
-#ublbjjxivr .gt_indent_2 {
+#bzmzufbkcu .gt_indent_2 {
   text-indent: 10px;
 }
 
-#ublbjjxivr .gt_indent_3 {
+#bzmzufbkcu .gt_indent_3 {
   text-indent: 15px;
 }
 
-#ublbjjxivr .gt_indent_4 {
+#bzmzufbkcu .gt_indent_4 {
   text-indent: 20px;
 }
 
-#ublbjjxivr .gt_indent_5 {
+#bzmzufbkcu .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -930,8 +930,8 @@ div.csl-indent {
   
   <thead class="gt_col_headings">
     <tr>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col">k_spon</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col">proper_names</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col">Cluster</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col">Council Members</th>
     </tr>
   </thead>
   <tbody class="gt_table_body">
@@ -953,20 +953,20 @@ div.csl-indent {
 </table>
 </div>
 </div>
-<p>The Louvain method of community detection was used to check the robustness of the K-Means results. This algorithm takes data that has already been structured for network mapping (different than the matrix used for the K-Means) and detects communities based on the weights of the edges. Here clusters are not predefined, the algorithm arrives at a number on its own. This method of community detection has seen increasing application in Political Science research, including a similar task of detecting small and nuanced communities in co-sponsorship of bills in the UN General Assembly <span class="citation" data-cites="meyer2021">(<a href="#ref-meyer2021" role="doc-biblioref">Meyer and Hammerschmidt 2021</a>)</span>. The results are displayed in Table 3 below, where the the Louvain method picks up a similar group of progressives, though with many more additions than the method above.</p>
+<p>The Louvain method of community detection was used to check the robustness of the K-Means results. This algorithm takes data that has already been structured for network mapping (a different form than the matrix used for the K-Means) and detects communities based on the weights of the edges (connections) in this network. Here clusters are not predefined, the algorithm arrives at a number on its own. This method of community detection has seen increasing application in Political Science research, including a similar task of detecting small and nuanced communities in co-sponsorship of bills in the UN General Assembly <span class="citation" data-cites="meyer2021">(<a href="#ref-meyer2021" role="doc-biblioref">Meyer and Hammerschmidt 2021</a>)</span>. The results are displayed in Table 3 below, where the the Louvain method picks up a similar group of progressives, though with additions to the group formed by the K-Means.</p>
 <div class="cell-output-display">
 
-<div class="tabwid"><style>.cl-85e4859c{}.cl-85d61692{font-family:'Arial';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-85dc1ace{margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-85dc1ad8{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-85dc45ee{width:0.565in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-85dc45f8{width:24.536in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-85dc45f9{width:0.565in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-85dc45fa{width:24.536in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-85dc4602{width:0.565in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-85dc4603{width:24.536in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style><table data-quarto-disable-processing="true" class="cl-85e4859c"><thead><tr style="overflow-wrap:break-word;"><th class="cl-85dc45ee"><p class="cl-85dc1ace"><span class="cl-85d61692">louv</span></p></th><th class="cl-85dc45f8"><p class="cl-85dc1ad8"><span class="cl-85d61692">proper_names</span></p></th></tr></thead><tbody><tr style="overflow-wrap:break-word;"><td class="cl-85dc45f9"><p class="cl-85dc1ace"><span class="cl-85d61692">0</span></p></td><td class="cl-85dc45fa"><p class="cl-85dc1ad8"><span class="cl-85d61692">Rita C. Joseph, Kristin Richardson Jordan, Christopher Marte, Carmen N. De La Rosa, Carlina Rivera, Shekar Krishnan, Chi A. Ossé, Tiffany Cabán, Julie Won, Gale A. Brewer, Sandy Nurse, Crystal Hudson, Shaun Abreu, Amanda Farías, Alexa Avilés, Jennifer Gutiérrez, Adrienne E. Adams, Shahana K. Hanif, Lincoln Restler</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-85dc45f9"><p class="cl-85dc1ace"><span class="cl-85d61692">1</span></p></td><td class="cl-85dc45fa"><p class="cl-85dc1ad8"><span class="cl-85d61692">Julie Menin, Eric Dinowitz, Justin L. Brannan, Selvena N. Brooks-Powers, Althea V.  Stevens, James F. Gennaro, Oswald Feliz, Rafael Salamanca, Jr., Keith Powers, Kamillah Hanks, Ari Kagan, Charles Barron, Francisco P. Moya, Farah N. Louis, David M. Carr, Inna Vernikov, Joann Ariola, Joseph C. Borelli, Vickie Paladino, Kalman Yeger, Robert F. Holden</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-85dc4602"><p class="cl-85dc1ace"><span class="cl-85d61692">2</span></p></td><td class="cl-85dc4603"><p class="cl-85dc1ad8"><span class="cl-85d61692">Sandra Ung, Diana I. Ayala, Nantasha M. Williams, Mercedes Narcisse, Marjorie Velázquez, Lynn C. Schulman, Pierina Ana Sanchez, Linda Lee, Darlene Mealy, Erik D. Bottcher, Kevin C. Riley</span></p></td></tr></tbody></table></div>
+<div class="tabwid"><style>.cl-a3af7cf4{}.cl-a3a2d0d0{font-family:'Arial';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-a3a7af60{margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-a3a7af6a{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-a3a7dde6{width:0.565in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-a3a7ddf0{width:24.536in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-a3a7ddfa{width:0.565in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-a3a7ddfb{width:24.536in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-a3a7de04{width:0.565in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-a3a7de05{width:24.536in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style><table data-quarto-disable-processing="true" class="cl-a3af7cf4"><thead><tr style="overflow-wrap:break-word;"><th class="cl-a3a7dde6"><p class="cl-a3a7af60"><span class="cl-a3a2d0d0">louv</span></p></th><th class="cl-a3a7ddf0"><p class="cl-a3a7af6a"><span class="cl-a3a2d0d0">proper_names</span></p></th></tr></thead><tbody><tr style="overflow-wrap:break-word;"><td class="cl-a3a7ddfa"><p class="cl-a3a7af60"><span class="cl-a3a2d0d0">0</span></p></td><td class="cl-a3a7ddfb"><p class="cl-a3a7af6a"><span class="cl-a3a2d0d0">Rita C. Joseph, Kristin Richardson Jordan, Christopher Marte, Carmen N. De La Rosa, Carlina Rivera, Shekar Krishnan, Chi A. Ossé, Tiffany Cabán, Julie Won, Gale A. Brewer, Sandy Nurse, Crystal Hudson, Shaun Abreu, Amanda Farías, Alexa Avilés, Jennifer Gutiérrez, Adrienne E. Adams, Shahana K. Hanif, Lincoln Restler</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-a3a7ddfa"><p class="cl-a3a7af60"><span class="cl-a3a2d0d0">1</span></p></td><td class="cl-a3a7ddfb"><p class="cl-a3a7af6a"><span class="cl-a3a2d0d0">Julie Menin, Eric Dinowitz, Justin L. Brannan, Selvena N. Brooks-Powers, Althea V.  Stevens, James F. Gennaro, Oswald Feliz, Rafael Salamanca, Jr., Keith Powers, Kamillah Hanks, Ari Kagan, Charles Barron, Francisco P. Moya, Farah N. Louis, David M. Carr, Inna Vernikov, Joann Ariola, Joseph C. Borelli, Vickie Paladino, Kalman Yeger, Robert F. Holden</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-a3a7de04"><p class="cl-a3a7af60"><span class="cl-a3a2d0d0">2</span></p></td><td class="cl-a3a7de05"><p class="cl-a3a7af6a"><span class="cl-a3a2d0d0">Sandra Ung, Diana I. Ayala, Nantasha M. Williams, Mercedes Narcisse, Marjorie Velázquez, Lynn C. Schulman, Pierina Ana Sanchez, Linda Lee, Darlene Mealy, Erik D. Bottcher, Kevin C. Riley</span></p></td></tr></tbody></table></div>
 </div>
 <p>Despite some variation in its specific makeup, both methods agree that there is a progressive bloc sponsoring together and voting in protest together. To try and make sense of these similar but slightly different clustering blocs, two different methods of meta-clustering the three types of clusters already done were employed. One was a repeat of the K-Means after again one-hot encoding the data. The other was K-Mode, which, as the name suggests, is a similar method of clustering that takes the mode rather than the mean to handle categorical data. While the two methods diverged on some members, they agreed exactly on the progressive group. Table 4 shows this group.</p>
 <div class="cell-output-display">
 
-<div id="xunccqklcl" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="vemtvktfix" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>html {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-#xunccqklcl .gt_table {
+#vemtvktfix .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -991,7 +991,7 @@ div.csl-indent {
   border-left-color: #D3D3D3;
 }
 
-#xunccqklcl .gt_heading {
+#vemtvktfix .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1003,7 +1003,7 @@ div.csl-indent {
   border-right-color: #D3D3D3;
 }
 
-#xunccqklcl .gt_title {
+#vemtvktfix .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1015,7 +1015,7 @@ div.csl-indent {
   border-bottom-width: 0;
 }
 
-#xunccqklcl .gt_subtitle {
+#vemtvktfix .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1027,13 +1027,13 @@ div.csl-indent {
   border-top-width: 0;
 }
 
-#xunccqklcl .gt_bottom_border {
+#vemtvktfix .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#xunccqklcl .gt_col_headings {
+#vemtvktfix .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1048,7 +1048,7 @@ div.csl-indent {
   border-right-color: #D3D3D3;
 }
 
-#xunccqklcl .gt_col_heading {
+#vemtvktfix .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1068,7 +1068,7 @@ div.csl-indent {
   overflow-x: hidden;
 }
 
-#xunccqklcl .gt_column_spanner_outer {
+#vemtvktfix .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1080,15 +1080,15 @@ div.csl-indent {
   padding-right: 4px;
 }
 
-#xunccqklcl .gt_column_spanner_outer:first-child {
+#vemtvktfix .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#xunccqklcl .gt_column_spanner_outer:last-child {
+#vemtvktfix .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#xunccqklcl .gt_column_spanner {
+#vemtvktfix .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1100,7 +1100,7 @@ div.csl-indent {
   width: 100%;
 }
 
-#xunccqklcl .gt_group_heading {
+#vemtvktfix .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1125,7 +1125,7 @@ div.csl-indent {
   vertical-align: middle;
 }
 
-#xunccqklcl .gt_empty_group_heading {
+#vemtvktfix .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1140,15 +1140,15 @@ div.csl-indent {
   vertical-align: middle;
 }
 
-#xunccqklcl .gt_from_md > :first-child {
+#vemtvktfix .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#xunccqklcl .gt_from_md > :last-child {
+#vemtvktfix .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#xunccqklcl .gt_row {
+#vemtvktfix .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1167,7 +1167,7 @@ div.csl-indent {
   overflow-x: hidden;
 }
 
-#xunccqklcl .gt_stub {
+#vemtvktfix .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1180,7 +1180,7 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#xunccqklcl .gt_stub_row_group {
+#vemtvktfix .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1194,11 +1194,11 @@ div.csl-indent {
   vertical-align: top;
 }
 
-#xunccqklcl .gt_row_group_first td {
+#vemtvktfix .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#xunccqklcl .gt_summary_row {
+#vemtvktfix .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1208,16 +1208,16 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#xunccqklcl .gt_first_summary_row {
+#vemtvktfix .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#xunccqklcl .gt_first_summary_row.thick {
+#vemtvktfix .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#xunccqklcl .gt_last_summary_row {
+#vemtvktfix .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1227,7 +1227,7 @@ div.csl-indent {
   border-bottom-color: #D3D3D3;
 }
 
-#xunccqklcl .gt_grand_summary_row {
+#vemtvktfix .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1237,7 +1237,7 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#xunccqklcl .gt_first_grand_summary_row {
+#vemtvktfix .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1247,11 +1247,11 @@ div.csl-indent {
   border-top-color: #D3D3D3;
 }
 
-#xunccqklcl .gt_striped {
+#vemtvktfix .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#xunccqklcl .gt_table_body {
+#vemtvktfix .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1260,7 +1260,7 @@ div.csl-indent {
   border-bottom-color: #D3D3D3;
 }
 
-#xunccqklcl .gt_footnotes {
+#vemtvktfix .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1274,7 +1274,7 @@ div.csl-indent {
   border-right-color: #D3D3D3;
 }
 
-#xunccqklcl .gt_footnote {
+#vemtvktfix .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-left: 4px;
@@ -1283,7 +1283,7 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#xunccqklcl .gt_sourcenotes {
+#vemtvktfix .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1297,7 +1297,7 @@ div.csl-indent {
   border-right-color: #D3D3D3;
 }
 
-#xunccqklcl .gt_sourcenote {
+#vemtvktfix .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1305,64 +1305,64 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#xunccqklcl .gt_left {
+#vemtvktfix .gt_left {
   text-align: left;
 }
 
-#xunccqklcl .gt_center {
+#vemtvktfix .gt_center {
   text-align: center;
 }
 
-#xunccqklcl .gt_right {
+#vemtvktfix .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#xunccqklcl .gt_font_normal {
+#vemtvktfix .gt_font_normal {
   font-weight: normal;
 }
 
-#xunccqklcl .gt_font_bold {
+#vemtvktfix .gt_font_bold {
   font-weight: bold;
 }
 
-#xunccqklcl .gt_font_italic {
+#vemtvktfix .gt_font_italic {
   font-style: italic;
 }
 
-#xunccqklcl .gt_super {
+#vemtvktfix .gt_super {
   font-size: 65%;
 }
 
-#xunccqklcl .gt_footnote_marks {
+#vemtvktfix .gt_footnote_marks {
   font-style: italic;
   font-weight: normal;
   font-size: 75%;
   vertical-align: 0.4em;
 }
 
-#xunccqklcl .gt_asterisk {
+#vemtvktfix .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#xunccqklcl .gt_indent_1 {
+#vemtvktfix .gt_indent_1 {
   text-indent: 5px;
 }
 
-#xunccqklcl .gt_indent_2 {
+#vemtvktfix .gt_indent_2 {
   text-indent: 10px;
 }
 
-#xunccqklcl .gt_indent_3 {
+#vemtvktfix .gt_indent_3 {
   text-indent: 15px;
 }
 
-#xunccqklcl .gt_indent_4 {
+#vemtvktfix .gt_indent_4 {
   text-indent: 20px;
 }
 
-#xunccqklcl .gt_indent_5 {
+#vemtvktfix .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -1370,8 +1370,8 @@ div.csl-indent {
   
   <thead class="gt_col_headings">
     <tr>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col">kmode_cluster</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col">proper_names</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col">Cluster</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col">Council Members</th>
     </tr>
   </thead>
   <tbody class="gt_table_body">
@@ -1384,17 +1384,17 @@ div.csl-indent {
 </div>
 </div>
 </section>
-<section id="sponsored-bills" class="level1">
-<h1>Sponsored Bills</h1>
+<section id="sponsored-bills" class="level2">
+<h2 class="anchored" data-anchor-id="sponsored-bills">Sponsored Bills</h2>
 <p>The bills these progressives co-sponsor fall into two general categories, bills that attract a high-rate of fellow progressives and have a low chance of passing, and bills that are primarily sponsored by progressives but attract a wider level of support and therefore have a higher chance of passing. Both groups of bills track closely with the egalitarian urban order defined by Weaver and discussed in Chapter 1. Table 5 shows the bills which have the highest percentage of sponsors from the progressive cluster. They concern worker protections, oversight of the NYPD, tenant advocacy, environmental concerns, college counseling for low-income New Yorkers and protections for cyclists. Not a single bill with more than 60% of its sponsors from this cluster was enacted, so while these progressive-heavy bills may be pushing the rhetoric of the council left they have not, as of yet, translated into legislation.</p>
 <div class="cell-output-display">
 
-<div id="xpfkqstmpa" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="futmhrwvmf" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>html {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-#xpfkqstmpa .gt_table {
+#futmhrwvmf .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -1419,7 +1419,7 @@ div.csl-indent {
   border-left-color: #D3D3D3;
 }
 
-#xpfkqstmpa .gt_heading {
+#futmhrwvmf .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1431,7 +1431,7 @@ div.csl-indent {
   border-right-color: #D3D3D3;
 }
 
-#xpfkqstmpa .gt_title {
+#futmhrwvmf .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1443,7 +1443,7 @@ div.csl-indent {
   border-bottom-width: 0;
 }
 
-#xpfkqstmpa .gt_subtitle {
+#futmhrwvmf .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1455,13 +1455,13 @@ div.csl-indent {
   border-top-width: 0;
 }
 
-#xpfkqstmpa .gt_bottom_border {
+#futmhrwvmf .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#xpfkqstmpa .gt_col_headings {
+#futmhrwvmf .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1476,7 +1476,7 @@ div.csl-indent {
   border-right-color: #D3D3D3;
 }
 
-#xpfkqstmpa .gt_col_heading {
+#futmhrwvmf .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1496,7 +1496,7 @@ div.csl-indent {
   overflow-x: hidden;
 }
 
-#xpfkqstmpa .gt_column_spanner_outer {
+#futmhrwvmf .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1508,15 +1508,15 @@ div.csl-indent {
   padding-right: 4px;
 }
 
-#xpfkqstmpa .gt_column_spanner_outer:first-child {
+#futmhrwvmf .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#xpfkqstmpa .gt_column_spanner_outer:last-child {
+#futmhrwvmf .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#xpfkqstmpa .gt_column_spanner {
+#futmhrwvmf .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1528,7 +1528,7 @@ div.csl-indent {
   width: 100%;
 }
 
-#xpfkqstmpa .gt_group_heading {
+#futmhrwvmf .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1553,7 +1553,7 @@ div.csl-indent {
   vertical-align: middle;
 }
 
-#xpfkqstmpa .gt_empty_group_heading {
+#futmhrwvmf .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1568,15 +1568,15 @@ div.csl-indent {
   vertical-align: middle;
 }
 
-#xpfkqstmpa .gt_from_md > :first-child {
+#futmhrwvmf .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#xpfkqstmpa .gt_from_md > :last-child {
+#futmhrwvmf .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#xpfkqstmpa .gt_row {
+#futmhrwvmf .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1595,7 +1595,7 @@ div.csl-indent {
   overflow-x: hidden;
 }
 
-#xpfkqstmpa .gt_stub {
+#futmhrwvmf .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1608,7 +1608,7 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#xpfkqstmpa .gt_stub_row_group {
+#futmhrwvmf .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1622,11 +1622,11 @@ div.csl-indent {
   vertical-align: top;
 }
 
-#xpfkqstmpa .gt_row_group_first td {
+#futmhrwvmf .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#xpfkqstmpa .gt_summary_row {
+#futmhrwvmf .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1636,16 +1636,16 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#xpfkqstmpa .gt_first_summary_row {
+#futmhrwvmf .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#xpfkqstmpa .gt_first_summary_row.thick {
+#futmhrwvmf .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#xpfkqstmpa .gt_last_summary_row {
+#futmhrwvmf .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1655,7 +1655,7 @@ div.csl-indent {
   border-bottom-color: #D3D3D3;
 }
 
-#xpfkqstmpa .gt_grand_summary_row {
+#futmhrwvmf .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1665,7 +1665,7 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#xpfkqstmpa .gt_first_grand_summary_row {
+#futmhrwvmf .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1675,11 +1675,11 @@ div.csl-indent {
   border-top-color: #D3D3D3;
 }
 
-#xpfkqstmpa .gt_striped {
+#futmhrwvmf .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#xpfkqstmpa .gt_table_body {
+#futmhrwvmf .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1688,7 +1688,7 @@ div.csl-indent {
   border-bottom-color: #D3D3D3;
 }
 
-#xpfkqstmpa .gt_footnotes {
+#futmhrwvmf .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1702,7 +1702,7 @@ div.csl-indent {
   border-right-color: #D3D3D3;
 }
 
-#xpfkqstmpa .gt_footnote {
+#futmhrwvmf .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-left: 4px;
@@ -1711,7 +1711,7 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#xpfkqstmpa .gt_sourcenotes {
+#futmhrwvmf .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1725,7 +1725,7 @@ div.csl-indent {
   border-right-color: #D3D3D3;
 }
 
-#xpfkqstmpa .gt_sourcenote {
+#futmhrwvmf .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1733,64 +1733,64 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#xpfkqstmpa .gt_left {
+#futmhrwvmf .gt_left {
   text-align: left;
 }
 
-#xpfkqstmpa .gt_center {
+#futmhrwvmf .gt_center {
   text-align: center;
 }
 
-#xpfkqstmpa .gt_right {
+#futmhrwvmf .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#xpfkqstmpa .gt_font_normal {
+#futmhrwvmf .gt_font_normal {
   font-weight: normal;
 }
 
-#xpfkqstmpa .gt_font_bold {
+#futmhrwvmf .gt_font_bold {
   font-weight: bold;
 }
 
-#xpfkqstmpa .gt_font_italic {
+#futmhrwvmf .gt_font_italic {
   font-style: italic;
 }
 
-#xpfkqstmpa .gt_super {
+#futmhrwvmf .gt_super {
   font-size: 65%;
 }
 
-#xpfkqstmpa .gt_footnote_marks {
+#futmhrwvmf .gt_footnote_marks {
   font-style: italic;
   font-weight: normal;
   font-size: 75%;
   vertical-align: 0.4em;
 }
 
-#xpfkqstmpa .gt_asterisk {
+#futmhrwvmf .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#xpfkqstmpa .gt_indent_1 {
+#futmhrwvmf .gt_indent_1 {
   text-indent: 5px;
 }
 
-#xpfkqstmpa .gt_indent_2 {
+#futmhrwvmf .gt_indent_2 {
   text-indent: 10px;
 }
 
-#xpfkqstmpa .gt_indent_3 {
+#futmhrwvmf .gt_indent_3 {
   text-indent: 15px;
 }
 
-#xpfkqstmpa .gt_indent_4 {
+#futmhrwvmf .gt_indent_4 {
   text-indent: 20px;
 }
 
-#xpfkqstmpa .gt_indent_5 {
+#futmhrwvmf .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -1798,8 +1798,8 @@ div.csl-indent {
   
   <thead class="gt_col_headings">
     <tr>
-      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col">EventItemMatterName</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col">percent_cluster_3</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col">Bill Summary</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col">% of Sponsors from Cluster 3</th>
     </tr>
   </thead>
   <tbody class="gt_table_body">
@@ -1829,15 +1829,15 @@ div.csl-indent {
 </table>
 </div>
 </div>
-<p>This does not mean, however, that the group is ineffective. Dozens of bills sponsored by members of this progressive cluster have been enacted on topics that are slightly different but similarly progressive. Table 6 below shows the enacted cluster 3 bills with the highest rate of co-sponsorship, a full list of bills they have passed are available in the appendix. These bills have to do again with worker protections, migrant rights, the distribution of free menstrual products, the protections of LGBTQ New Yorkers, the protection of reproduction rights, protections for the homeless, and a “Marshall Plan for Moms” to help support working mothers. These members have clearly set a progressive agenda both in practice and in rhetoric. To compare these bills to those sponsored by other clusters, Table 7 shows a Term Frequency – Inverse Document Frequency (TF-IDF) of the text descriptions of the bills sponsored by each group. What this in effect shows are the words that occur most frequently in each groups legislation but less in others.</p>
+<p>This does not mean, however, that the group is ineffective. Dozens of bills sponsored by members of this progressive cluster have been enacted on topics that are slightly different but similarly progressive. Table 6 below shows the enacted cluster 3 bills with the highest rate of co-sponsorship, a full list of bills they have sponsored and passed are available in the appendix. These bills have to do with worker protections, migrant rights, the distribution of free menstrual products, the protections of LGBTQ New Yorkers, the protection of reproduction rights, protections for the homeless, and a “Marshall Plan for Moms” to help support working mothers. These members have clearly set a progressive agenda both in practice and in rhetoric. To compare these bills to those sponsored by other clusters table 7 shows a Term Frequency – Inverse Document Frequency (TF-IDF) of the text descriptions of the bills sponsored by each group. What this in effect shows are the words that occur most frequently in each group’s legislation but less in others.</p>
 <div class="cell-output-display">
 
-<div id="pplzqnqkgk" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="olcsajehko" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>html {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-#pplzqnqkgk .gt_table {
+#olcsajehko .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -1862,7 +1862,7 @@ div.csl-indent {
   border-left-color: #D3D3D3;
 }
 
-#pplzqnqkgk .gt_heading {
+#olcsajehko .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1874,7 +1874,7 @@ div.csl-indent {
   border-right-color: #D3D3D3;
 }
 
-#pplzqnqkgk .gt_title {
+#olcsajehko .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1886,7 +1886,7 @@ div.csl-indent {
   border-bottom-width: 0;
 }
 
-#pplzqnqkgk .gt_subtitle {
+#olcsajehko .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1898,13 +1898,13 @@ div.csl-indent {
   border-top-width: 0;
 }
 
-#pplzqnqkgk .gt_bottom_border {
+#olcsajehko .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#pplzqnqkgk .gt_col_headings {
+#olcsajehko .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1919,7 +1919,7 @@ div.csl-indent {
   border-right-color: #D3D3D3;
 }
 
-#pplzqnqkgk .gt_col_heading {
+#olcsajehko .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1939,7 +1939,7 @@ div.csl-indent {
   overflow-x: hidden;
 }
 
-#pplzqnqkgk .gt_column_spanner_outer {
+#olcsajehko .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1951,15 +1951,15 @@ div.csl-indent {
   padding-right: 4px;
 }
 
-#pplzqnqkgk .gt_column_spanner_outer:first-child {
+#olcsajehko .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#pplzqnqkgk .gt_column_spanner_outer:last-child {
+#olcsajehko .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#pplzqnqkgk .gt_column_spanner {
+#olcsajehko .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1971,7 +1971,7 @@ div.csl-indent {
   width: 100%;
 }
 
-#pplzqnqkgk .gt_group_heading {
+#olcsajehko .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1996,7 +1996,7 @@ div.csl-indent {
   vertical-align: middle;
 }
 
-#pplzqnqkgk .gt_empty_group_heading {
+#olcsajehko .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -2011,15 +2011,15 @@ div.csl-indent {
   vertical-align: middle;
 }
 
-#pplzqnqkgk .gt_from_md > :first-child {
+#olcsajehko .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#pplzqnqkgk .gt_from_md > :last-child {
+#olcsajehko .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#pplzqnqkgk .gt_row {
+#olcsajehko .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2038,7 +2038,7 @@ div.csl-indent {
   overflow-x: hidden;
 }
 
-#pplzqnqkgk .gt_stub {
+#olcsajehko .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2051,7 +2051,7 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#pplzqnqkgk .gt_stub_row_group {
+#olcsajehko .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2065,11 +2065,11 @@ div.csl-indent {
   vertical-align: top;
 }
 
-#pplzqnqkgk .gt_row_group_first td {
+#olcsajehko .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#pplzqnqkgk .gt_summary_row {
+#olcsajehko .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2079,16 +2079,16 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#pplzqnqkgk .gt_first_summary_row {
+#olcsajehko .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#pplzqnqkgk .gt_first_summary_row.thick {
+#olcsajehko .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#pplzqnqkgk .gt_last_summary_row {
+#olcsajehko .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2098,7 +2098,7 @@ div.csl-indent {
   border-bottom-color: #D3D3D3;
 }
 
-#pplzqnqkgk .gt_grand_summary_row {
+#olcsajehko .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2108,7 +2108,7 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#pplzqnqkgk .gt_first_grand_summary_row {
+#olcsajehko .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2118,11 +2118,11 @@ div.csl-indent {
   border-top-color: #D3D3D3;
 }
 
-#pplzqnqkgk .gt_striped {
+#olcsajehko .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#pplzqnqkgk .gt_table_body {
+#olcsajehko .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2131,7 +2131,7 @@ div.csl-indent {
   border-bottom-color: #D3D3D3;
 }
 
-#pplzqnqkgk .gt_footnotes {
+#olcsajehko .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2145,7 +2145,7 @@ div.csl-indent {
   border-right-color: #D3D3D3;
 }
 
-#pplzqnqkgk .gt_footnote {
+#olcsajehko .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-left: 4px;
@@ -2154,7 +2154,7 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#pplzqnqkgk .gt_sourcenotes {
+#olcsajehko .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2168,7 +2168,7 @@ div.csl-indent {
   border-right-color: #D3D3D3;
 }
 
-#pplzqnqkgk .gt_sourcenote {
+#olcsajehko .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -2176,64 +2176,64 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#pplzqnqkgk .gt_left {
+#olcsajehko .gt_left {
   text-align: left;
 }
 
-#pplzqnqkgk .gt_center {
+#olcsajehko .gt_center {
   text-align: center;
 }
 
-#pplzqnqkgk .gt_right {
+#olcsajehko .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#pplzqnqkgk .gt_font_normal {
+#olcsajehko .gt_font_normal {
   font-weight: normal;
 }
 
-#pplzqnqkgk .gt_font_bold {
+#olcsajehko .gt_font_bold {
   font-weight: bold;
 }
 
-#pplzqnqkgk .gt_font_italic {
+#olcsajehko .gt_font_italic {
   font-style: italic;
 }
 
-#pplzqnqkgk .gt_super {
+#olcsajehko .gt_super {
   font-size: 65%;
 }
 
-#pplzqnqkgk .gt_footnote_marks {
+#olcsajehko .gt_footnote_marks {
   font-style: italic;
   font-weight: normal;
   font-size: 75%;
   vertical-align: 0.4em;
 }
 
-#pplzqnqkgk .gt_asterisk {
+#olcsajehko .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#pplzqnqkgk .gt_indent_1 {
+#olcsajehko .gt_indent_1 {
   text-indent: 5px;
 }
 
-#pplzqnqkgk .gt_indent_2 {
+#olcsajehko .gt_indent_2 {
   text-indent: 10px;
 }
 
-#pplzqnqkgk .gt_indent_3 {
+#olcsajehko .gt_indent_3 {
   text-indent: 15px;
 }
 
-#pplzqnqkgk .gt_indent_4 {
+#olcsajehko .gt_indent_4 {
   text-indent: 20px;
 }
 
-#pplzqnqkgk .gt_indent_5 {
+#olcsajehko .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -2241,8 +2241,8 @@ div.csl-indent {
   
   <thead class="gt_col_headings">
     <tr>
-      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col">EventItemMatterName</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col">percent_cluster_3</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col">Bill Summary</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col">% of Sponsors from Cluster 3</th>
     </tr>
   </thead>
   <tbody class="gt_table_body">
@@ -2275,21 +2275,21 @@ div.csl-indent {
 <p><br></p>
 <div class="cell-output-display">
 
-<div class="tabwid"><style>.cl-865ec85c{}.cl-8650fd8a{font-family:'Arial';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-8656256c{margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-86562576{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-86565348{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-8656535c{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-8656535d{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-86565366{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-86565367{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-86565370{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style><table data-quarto-disable-processing="true" class="cl-865ec85c"><thead><tr style="overflow-wrap:break-word;"><th class="cl-86565348"><p class="cl-8656256c"><span class="cl-8650fd8a">Cluster</span></p></th><th class="cl-8656535c"><p class="cl-86562576"><span class="cl-8650fd8a">Word 1</span></p></th><th class="cl-8656535c"><p class="cl-86562576"><span class="cl-8650fd8a">Word 2</span></p></th><th class="cl-8656535c"><p class="cl-86562576"><span class="cl-8650fd8a">Word 3</span></p></th><th class="cl-8656535c"><p class="cl-86562576"><span class="cl-8650fd8a">Word 4</span></p></th><th class="cl-8656535c"><p class="cl-86562576"><span class="cl-8650fd8a">Word 5</span></p></th><th class="cl-8656535c"><p class="cl-86562576"><span class="cl-8650fd8a">Word 6</span></p></th><th class="cl-8656535c"><p class="cl-86562576"><span class="cl-8650fd8a">Word 7</span></p></th><th class="cl-8656535c"><p class="cl-86562576"><span class="cl-8650fd8a">Word 8</span></p></th><th class="cl-8656535c"><p class="cl-86562576"><span class="cl-8650fd8a">Word 9</span></p></th><th class="cl-8656535c"><p class="cl-86562576"><span class="cl-8650fd8a">Word 10</span></p></th><th class="cl-8656535c"><p class="cl-86562576"><span class="cl-8650fd8a">Word 11</span></p></th></tr></thead><tbody><tr style="overflow-wrap:break-word;"><td class="cl-8656535d"><p class="cl-8656256c"><span class="cl-8650fd8a">0</span></p></td><td class="cl-86565366"><p class="cl-86562576"><span class="cl-8650fd8a">housing</span></p></td><td class="cl-86565366"><p class="cl-86562576"><span class="cl-8650fd8a">health</span></p></td><td class="cl-86565366"><p class="cl-86562576"><span class="cl-8650fd8a">establishment</span></p></td><td class="cl-86565366"><p class="cl-86562576"><span class="cl-8650fd8a">creating</span></p></td><td class="cl-86565366"><p class="cl-86562576"><span class="cl-8650fd8a">education</span></p></td><td class="cl-86565366"><p class="cl-86562576"><span class="cl-8650fd8a">provide</span></p></td><td class="cl-86565366"><p class="cl-86562576"><span class="cl-8650fd8a">buildings</span></p></td><td class="cl-86565366"><p class="cl-86562576"><span class="cl-8650fd8a">mental</span></p></td><td class="cl-86565366"><p class="cl-86562576"><span class="cl-8650fd8a">campaign</span></p></td><td class="cl-86565366"><p class="cl-86562576"><span class="cl-8650fd8a">correction</span></p></td><td class="cl-86565366"><p class="cl-86562576"><span class="cl-8650fd8a">package</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-8656535d"><p class="cl-8656256c"><span class="cl-8650fd8a">1</span></p></td><td class="cl-86565366"><p class="cl-86562576"><span class="cl-8650fd8a">parking</span></p></td><td class="cl-86565366"><p class="cl-86562576"><span class="cl-8650fd8a">service</span></p></td><td class="cl-86565366"><p class="cl-86562576"><span class="cl-8650fd8a">vehicles</span></p></td><td class="cl-86565366"><p class="cl-86562576"><span class="cl-8650fd8a">street</span></p></td><td class="cl-86565366"><p class="cl-86562576"><span class="cl-8650fd8a">veteran</span></p></td><td class="cl-86565366"><p class="cl-86562576"><span class="cl-8650fd8a">notification</span></p></td><td class="cl-86565366"><p class="cl-86562576"><span class="cl-8650fd8a">electric</span></p></td><td class="cl-86565366"><p class="cl-86562576"><span class="cl-8650fd8a">fire</span></p></td><td class="cl-86565366"><p class="cl-86562576"><span class="cl-8650fd8a">requests</span></p></td><td class="cl-86565366"><p class="cl-86562576"><span class="cl-8650fd8a">force</span></p></td><td class="cl-86565366"><p class="cl-86562576"><span class="cl-8650fd8a">violations</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-8656535d"><p class="cl-8656256c"><span class="cl-8650fd8a">2</span></p></td><td class="cl-86565366"><p class="cl-86562576"><span class="cl-8650fd8a">health</span></p></td><td class="cl-86565366"><p class="cl-86562576"><span class="cl-8650fd8a">mental</span></p></td><td class="cl-86565366"><p class="cl-86562576"><span class="cl-8650fd8a">food</span></p></td><td class="cl-86565366"><p class="cl-86562576"><span class="cl-8650fd8a">business</span></p></td><td class="cl-86565366"><p class="cl-86562576"><span class="cl-8650fd8a">education</span></p></td><td class="cl-86565366"><p class="cl-86562576"><span class="cl-8650fd8a">hygiene</span></p></td><td class="cl-86565366"><p class="cl-86562576"><span class="cl-8650fd8a">children</span></p></td><td class="cl-86565366"><p class="cl-86562576"><span class="cl-8650fd8a">service</span></p></td><td class="cl-86565366"><p class="cl-86562576"><span class="cl-8650fd8a">provide</span></p></td><td class="cl-86565366"><p class="cl-86562576"><span class="cl-8650fd8a">housing</span></p></td><td class="cl-86565366"><p class="cl-86562576"><span class="cl-8650fd8a">improvement</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-8656535d"><p class="cl-8656256c"><span class="cl-8650fd8a">3</span></p></td><td class="cl-86565366"><p class="cl-86562576"><span class="cl-8650fd8a">housing</span></p></td><td class="cl-86565366"><p class="cl-86562576"><span class="cl-8650fd8a">outreach</span></p></td><td class="cl-86565366"><p class="cl-86562576"><span class="cl-8650fd8a">library</span></p></td><td class="cl-86565366"><p class="cl-86562576"><span class="cl-8650fd8a">emergency</span></p></td><td class="cl-86565366"><p class="cl-86562576"><span class="cl-8650fd8a">waste</span></p></td><td class="cl-86565366"><p class="cl-86562576"><span class="cl-8650fd8a">residential</span></p></td><td class="cl-86565366"><p class="cl-86562576"><span class="cl-8650fd8a">health</span></p></td><td class="cl-86565366"><p class="cl-86562576"><span class="cl-8650fd8a">biometric</span></p></td><td class="cl-86565366"><p class="cl-86562576"><span class="cl-8650fd8a">assistance</span></p></td><td class="cl-86565366"><p class="cl-86562576"><span class="cl-8650fd8a">rental</span></p></td><td class="cl-86565366"><p class="cl-86562576"><span class="cl-8650fd8a">provide</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-86565367"><p class="cl-8656256c"><span class="cl-8650fd8a">4</span></p></td><td class="cl-86565370"><p class="cl-86562576"><span class="cl-8650fd8a">education</span></p></td><td class="cl-86565370"><p class="cl-86562576"><span class="cl-8650fd8a">police</span></p></td><td class="cl-86565370"><p class="cl-86562576"><span class="cl-8650fd8a">schools</span></p></td><td class="cl-86565370"><p class="cl-86562576"><span class="cl-8650fd8a">health</span></p></td><td class="cl-86565370"><p class="cl-86562576"><span class="cl-8650fd8a">inspections</span></p></td><td class="cl-86565370"><p class="cl-86562576"><span class="cl-8650fd8a">buildings</span></p></td><td class="cl-86565370"><p class="cl-86562576"><span class="cl-8650fd8a">indoor</span></p></td><td class="cl-86565370"><p class="cl-86562576"><span class="cl-8650fd8a">mental</span></p></td><td class="cl-86565370"><p class="cl-86562576"><span class="cl-8650fd8a">vehicles</span></p></td><td class="cl-86565370"><p class="cl-86562576"><span class="cl-8650fd8a">housing</span></p></td><td class="cl-86565370"><p class="cl-86562576"><span class="cl-8650fd8a">powered</span></p></td></tr></tbody></table></div>
+<div class="tabwid"><style>.cl-a417d880{}.cl-a40af4f8{font-family:'Arial';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-a40ff7e6{margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-a40ff7f0{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-a410236a{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-a410236b{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-a4102374{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-a4102375{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-a410237e{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-a410237f{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style><table data-quarto-disable-processing="true" class="cl-a417d880"><thead><tr style="overflow-wrap:break-word;"><th class="cl-a410236a"><p class="cl-a40ff7e6"><span class="cl-a40af4f8">Cluster</span></p></th><th class="cl-a410236b"><p class="cl-a40ff7f0"><span class="cl-a40af4f8">Word 1</span></p></th><th class="cl-a410236b"><p class="cl-a40ff7f0"><span class="cl-a40af4f8">Word 2</span></p></th><th class="cl-a410236b"><p class="cl-a40ff7f0"><span class="cl-a40af4f8">Word 3</span></p></th><th class="cl-a410236b"><p class="cl-a40ff7f0"><span class="cl-a40af4f8">Word 4</span></p></th><th class="cl-a410236b"><p class="cl-a40ff7f0"><span class="cl-a40af4f8">Word 5</span></p></th><th class="cl-a410236b"><p class="cl-a40ff7f0"><span class="cl-a40af4f8">Word 6</span></p></th><th class="cl-a410236b"><p class="cl-a40ff7f0"><span class="cl-a40af4f8">Word 7</span></p></th><th class="cl-a410236b"><p class="cl-a40ff7f0"><span class="cl-a40af4f8">Word 8</span></p></th><th class="cl-a410236b"><p class="cl-a40ff7f0"><span class="cl-a40af4f8">Word 9</span></p></th><th class="cl-a410236b"><p class="cl-a40ff7f0"><span class="cl-a40af4f8">Word 10</span></p></th><th class="cl-a410236b"><p class="cl-a40ff7f0"><span class="cl-a40af4f8">Word 11</span></p></th></tr></thead><tbody><tr style="overflow-wrap:break-word;"><td class="cl-a4102374"><p class="cl-a40ff7e6"><span class="cl-a40af4f8">0</span></p></td><td class="cl-a4102375"><p class="cl-a40ff7f0"><span class="cl-a40af4f8">housing</span></p></td><td class="cl-a4102375"><p class="cl-a40ff7f0"><span class="cl-a40af4f8">health</span></p></td><td class="cl-a4102375"><p class="cl-a40ff7f0"><span class="cl-a40af4f8">establishment</span></p></td><td class="cl-a4102375"><p class="cl-a40ff7f0"><span class="cl-a40af4f8">creating</span></p></td><td class="cl-a4102375"><p class="cl-a40ff7f0"><span class="cl-a40af4f8">education</span></p></td><td class="cl-a4102375"><p class="cl-a40ff7f0"><span class="cl-a40af4f8">provide</span></p></td><td class="cl-a4102375"><p class="cl-a40ff7f0"><span class="cl-a40af4f8">buildings</span></p></td><td class="cl-a4102375"><p class="cl-a40ff7f0"><span class="cl-a40af4f8">mental</span></p></td><td class="cl-a4102375"><p class="cl-a40ff7f0"><span class="cl-a40af4f8">campaign</span></p></td><td class="cl-a4102375"><p class="cl-a40ff7f0"><span class="cl-a40af4f8">correction</span></p></td><td class="cl-a4102375"><p class="cl-a40ff7f0"><span class="cl-a40af4f8">package</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-a4102374"><p class="cl-a40ff7e6"><span class="cl-a40af4f8">1</span></p></td><td class="cl-a4102375"><p class="cl-a40ff7f0"><span class="cl-a40af4f8">parking</span></p></td><td class="cl-a4102375"><p class="cl-a40ff7f0"><span class="cl-a40af4f8">service</span></p></td><td class="cl-a4102375"><p class="cl-a40ff7f0"><span class="cl-a40af4f8">vehicles</span></p></td><td class="cl-a4102375"><p class="cl-a40ff7f0"><span class="cl-a40af4f8">street</span></p></td><td class="cl-a4102375"><p class="cl-a40ff7f0"><span class="cl-a40af4f8">veteran</span></p></td><td class="cl-a4102375"><p class="cl-a40ff7f0"><span class="cl-a40af4f8">notification</span></p></td><td class="cl-a4102375"><p class="cl-a40ff7f0"><span class="cl-a40af4f8">electric</span></p></td><td class="cl-a4102375"><p class="cl-a40ff7f0"><span class="cl-a40af4f8">fire</span></p></td><td class="cl-a4102375"><p class="cl-a40ff7f0"><span class="cl-a40af4f8">requests</span></p></td><td class="cl-a4102375"><p class="cl-a40ff7f0"><span class="cl-a40af4f8">force</span></p></td><td class="cl-a4102375"><p class="cl-a40ff7f0"><span class="cl-a40af4f8">violations</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-a4102374"><p class="cl-a40ff7e6"><span class="cl-a40af4f8">2</span></p></td><td class="cl-a4102375"><p class="cl-a40ff7f0"><span class="cl-a40af4f8">health</span></p></td><td class="cl-a4102375"><p class="cl-a40ff7f0"><span class="cl-a40af4f8">mental</span></p></td><td class="cl-a4102375"><p class="cl-a40ff7f0"><span class="cl-a40af4f8">food</span></p></td><td class="cl-a4102375"><p class="cl-a40ff7f0"><span class="cl-a40af4f8">business</span></p></td><td class="cl-a4102375"><p class="cl-a40ff7f0"><span class="cl-a40af4f8">education</span></p></td><td class="cl-a4102375"><p class="cl-a40ff7f0"><span class="cl-a40af4f8">hygiene</span></p></td><td class="cl-a4102375"><p class="cl-a40ff7f0"><span class="cl-a40af4f8">children</span></p></td><td class="cl-a4102375"><p class="cl-a40ff7f0"><span class="cl-a40af4f8">service</span></p></td><td class="cl-a4102375"><p class="cl-a40ff7f0"><span class="cl-a40af4f8">provide</span></p></td><td class="cl-a4102375"><p class="cl-a40ff7f0"><span class="cl-a40af4f8">housing</span></p></td><td class="cl-a4102375"><p class="cl-a40ff7f0"><span class="cl-a40af4f8">improvement</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-a4102374"><p class="cl-a40ff7e6"><span class="cl-a40af4f8">3</span></p></td><td class="cl-a4102375"><p class="cl-a40ff7f0"><span class="cl-a40af4f8">housing</span></p></td><td class="cl-a4102375"><p class="cl-a40ff7f0"><span class="cl-a40af4f8">outreach</span></p></td><td class="cl-a4102375"><p class="cl-a40ff7f0"><span class="cl-a40af4f8">library</span></p></td><td class="cl-a4102375"><p class="cl-a40ff7f0"><span class="cl-a40af4f8">emergency</span></p></td><td class="cl-a4102375"><p class="cl-a40ff7f0"><span class="cl-a40af4f8">waste</span></p></td><td class="cl-a4102375"><p class="cl-a40ff7f0"><span class="cl-a40af4f8">residential</span></p></td><td class="cl-a4102375"><p class="cl-a40ff7f0"><span class="cl-a40af4f8">health</span></p></td><td class="cl-a4102375"><p class="cl-a40ff7f0"><span class="cl-a40af4f8">biometric</span></p></td><td class="cl-a4102375"><p class="cl-a40ff7f0"><span class="cl-a40af4f8">assistance</span></p></td><td class="cl-a4102375"><p class="cl-a40ff7f0"><span class="cl-a40af4f8">rental</span></p></td><td class="cl-a4102375"><p class="cl-a40ff7f0"><span class="cl-a40af4f8">provide</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-a410237e"><p class="cl-a40ff7e6"><span class="cl-a40af4f8">4</span></p></td><td class="cl-a410237f"><p class="cl-a40ff7f0"><span class="cl-a40af4f8">education</span></p></td><td class="cl-a410237f"><p class="cl-a40ff7f0"><span class="cl-a40af4f8">police</span></p></td><td class="cl-a410237f"><p class="cl-a40ff7f0"><span class="cl-a40af4f8">schools</span></p></td><td class="cl-a410237f"><p class="cl-a40ff7f0"><span class="cl-a40af4f8">health</span></p></td><td class="cl-a410237f"><p class="cl-a40ff7f0"><span class="cl-a40af4f8">inspections</span></p></td><td class="cl-a410237f"><p class="cl-a40ff7f0"><span class="cl-a40af4f8">buildings</span></p></td><td class="cl-a410237f"><p class="cl-a40ff7f0"><span class="cl-a40af4f8">indoor</span></p></td><td class="cl-a410237f"><p class="cl-a40ff7f0"><span class="cl-a40af4f8">mental</span></p></td><td class="cl-a410237f"><p class="cl-a40ff7f0"><span class="cl-a40af4f8">vehicles</span></p></td><td class="cl-a410237f"><p class="cl-a40ff7f0"><span class="cl-a40af4f8">housing</span></p></td><td class="cl-a410237f"><p class="cl-a40ff7f0"><span class="cl-a40af4f8">powered</span></p></td></tr></tbody></table></div>
 </div>
-<p>While both the voting data and sponsorship is somewhat difficult to parse due to the rate of cooperation and lopsided voting, certain trends do emerge from each that compliment the other. In the voting data a group of progressive council members emerges as a group of protest voters, seeking to check or register objection to Mayor Adams’s more conservative impulses. This same group of protest votes sponsor bills together, and these sponsorships fall into two categories; 1) bills with high rates of progressive co-sponsorship that often deal with progressive wish lists and 2) bills with progressive members as the prime sponsors that gain higher rates of other cluster sponsors and have a much higher rate of passing. The next section will examine if these trends in voting and sponsorship are also mirrored in electoral patterns.</p>
+<p>While both the voting data and sponsorship is somewhat difficult to parse due to the rate of cooperation and lopsided voting, trends do emerge from each that complement the other. In the voting data, a group of progressive council members emerge as a group of protest voters, seeking to check or register objection to Mayor Adams’s more conservative impulses. This same group of protest votes sponsor bills together, and these sponsorships fall into two categories 1) bills with high rates of progressive co-sponsorship that often deal with progressive wish lists and 2) bills with progressive members as the prime sponsors that gain higher rates of other cluster sponsors and have a much higher rate of passing. All of this activity fits the model of a progressive core seeking to counter a conservative mayor’s agenda and establish a progressive regime. The next section will examine if these trends in voting and sponsorship are also mirrored in electoral patterns.</p>
 </section>
-<section id="electoral-patterns" class="level1">
-<h1>Electoral Patterns</h1>
-<p>This section will first look at what distinguishes the districts won by the progressive cluster from other districts, then turn to look at their performance by electoral districts to see what demographic patterns predicted their success. Subsequent chapters will then examine how these demographic trends hold race by race. Table 8 offers some descriptive statistics on the districts won by members of the progressive cluster, here cluster 3. They are the second whitest cluster, with the highest rate of white transplants, non-Hispanic whites born outside of New York State. They have high education levels and low home ownership levels. Figure 1 maps all the clusters, including only districts that had a contested Democratic primary in 2021.</p>
+<section id="electoral-patterns" class="level2">
+<h2 class="anchored" data-anchor-id="electoral-patterns">Electoral Patterns</h2>
+<p>This section will first look at what distinguishes the council districts won by the progressive cluster from other districts, then turn to look at their performance by electoral districts to see what, if any, demographic patterns predicted their success. Subsequent chapters will then examine how these demographic trends hold race by race. Table 8 offers some descriptive statistics on the council districts won by members of the progressive cluster, cluster 3. They are the second whitest cluster, with the highest rate of white transplants, non-Hispanic whites born outside of New York State. They have high education levels and low home ownership levels. Figure 1 maps all the clusters, including only districts that had a contested Democratic primary in 2021.</p>
 <div class="cell-output-display">
 
-<div id="klafrwppqq" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="ifzerarfud" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>html {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-#klafrwppqq .gt_table {
+#ifzerarfud .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -2314,7 +2314,7 @@ div.csl-indent {
   border-left-color: #D3D3D3;
 }
 
-#klafrwppqq .gt_heading {
+#ifzerarfud .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -2326,7 +2326,7 @@ div.csl-indent {
   border-right-color: #D3D3D3;
 }
 
-#klafrwppqq .gt_title {
+#ifzerarfud .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -2338,7 +2338,7 @@ div.csl-indent {
   border-bottom-width: 0;
 }
 
-#klafrwppqq .gt_subtitle {
+#ifzerarfud .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -2350,13 +2350,13 @@ div.csl-indent {
   border-top-width: 0;
 }
 
-#klafrwppqq .gt_bottom_border {
+#ifzerarfud .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#klafrwppqq .gt_col_headings {
+#ifzerarfud .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2371,7 +2371,7 @@ div.csl-indent {
   border-right-color: #D3D3D3;
 }
 
-#klafrwppqq .gt_col_heading {
+#ifzerarfud .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2391,7 +2391,7 @@ div.csl-indent {
   overflow-x: hidden;
 }
 
-#klafrwppqq .gt_column_spanner_outer {
+#ifzerarfud .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2403,15 +2403,15 @@ div.csl-indent {
   padding-right: 4px;
 }
 
-#klafrwppqq .gt_column_spanner_outer:first-child {
+#ifzerarfud .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#klafrwppqq .gt_column_spanner_outer:last-child {
+#ifzerarfud .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#klafrwppqq .gt_column_spanner {
+#ifzerarfud .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -2423,7 +2423,7 @@ div.csl-indent {
   width: 100%;
 }
 
-#klafrwppqq .gt_group_heading {
+#ifzerarfud .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2448,7 +2448,7 @@ div.csl-indent {
   vertical-align: middle;
 }
 
-#klafrwppqq .gt_empty_group_heading {
+#ifzerarfud .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -2463,15 +2463,15 @@ div.csl-indent {
   vertical-align: middle;
 }
 
-#klafrwppqq .gt_from_md > :first-child {
+#ifzerarfud .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#klafrwppqq .gt_from_md > :last-child {
+#ifzerarfud .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#klafrwppqq .gt_row {
+#ifzerarfud .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2490,7 +2490,7 @@ div.csl-indent {
   overflow-x: hidden;
 }
 
-#klafrwppqq .gt_stub {
+#ifzerarfud .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2503,7 +2503,7 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#klafrwppqq .gt_stub_row_group {
+#ifzerarfud .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2517,11 +2517,11 @@ div.csl-indent {
   vertical-align: top;
 }
 
-#klafrwppqq .gt_row_group_first td {
+#ifzerarfud .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#klafrwppqq .gt_summary_row {
+#ifzerarfud .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2531,16 +2531,16 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#klafrwppqq .gt_first_summary_row {
+#ifzerarfud .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#klafrwppqq .gt_first_summary_row.thick {
+#ifzerarfud .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#klafrwppqq .gt_last_summary_row {
+#ifzerarfud .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2550,7 +2550,7 @@ div.csl-indent {
   border-bottom-color: #D3D3D3;
 }
 
-#klafrwppqq .gt_grand_summary_row {
+#ifzerarfud .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2560,7 +2560,7 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#klafrwppqq .gt_first_grand_summary_row {
+#ifzerarfud .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2570,11 +2570,11 @@ div.csl-indent {
   border-top-color: #D3D3D3;
 }
 
-#klafrwppqq .gt_striped {
+#ifzerarfud .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#klafrwppqq .gt_table_body {
+#ifzerarfud .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2583,7 +2583,7 @@ div.csl-indent {
   border-bottom-color: #D3D3D3;
 }
 
-#klafrwppqq .gt_footnotes {
+#ifzerarfud .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2597,7 +2597,7 @@ div.csl-indent {
   border-right-color: #D3D3D3;
 }
 
-#klafrwppqq .gt_footnote {
+#ifzerarfud .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-left: 4px;
@@ -2606,7 +2606,7 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#klafrwppqq .gt_sourcenotes {
+#ifzerarfud .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2620,7 +2620,7 @@ div.csl-indent {
   border-right-color: #D3D3D3;
 }
 
-#klafrwppqq .gt_sourcenote {
+#ifzerarfud .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -2628,64 +2628,64 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#klafrwppqq .gt_left {
+#ifzerarfud .gt_left {
   text-align: left;
 }
 
-#klafrwppqq .gt_center {
+#ifzerarfud .gt_center {
   text-align: center;
 }
 
-#klafrwppqq .gt_right {
+#ifzerarfud .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#klafrwppqq .gt_font_normal {
+#ifzerarfud .gt_font_normal {
   font-weight: normal;
 }
 
-#klafrwppqq .gt_font_bold {
+#ifzerarfud .gt_font_bold {
   font-weight: bold;
 }
 
-#klafrwppqq .gt_font_italic {
+#ifzerarfud .gt_font_italic {
   font-style: italic;
 }
 
-#klafrwppqq .gt_super {
+#ifzerarfud .gt_super {
   font-size: 65%;
 }
 
-#klafrwppqq .gt_footnote_marks {
+#ifzerarfud .gt_footnote_marks {
   font-style: italic;
   font-weight: normal;
   font-size: 75%;
   vertical-align: 0.4em;
 }
 
-#klafrwppqq .gt_asterisk {
+#ifzerarfud .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#klafrwppqq .gt_indent_1 {
+#ifzerarfud .gt_indent_1 {
   text-indent: 5px;
 }
 
-#klafrwppqq .gt_indent_2 {
+#ifzerarfud .gt_indent_2 {
   text-indent: 10px;
 }
 
-#klafrwppqq .gt_indent_3 {
+#ifzerarfud .gt_indent_3 {
   text-indent: 15px;
 }
 
-#klafrwppqq .gt_indent_4 {
+#ifzerarfud .gt_indent_4 {
   text-indent: 20px;
 }
 
-#klafrwppqq .gt_indent_5 {
+#ifzerarfud .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -2693,12 +2693,12 @@ div.csl-indent {
   
   <thead class="gt_col_headings">
     <tr>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col">district_cluster</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col">perc_white</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col">perc_black</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col">degree</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col">homeowners</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col">wh_tr</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col">Cluster</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col">NH White Share</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col">NH Black Share</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col">% BA or Higher</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col">% Homeowners</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col">% White Transplants</th>
     </tr>
   </thead>
   <tbody class="gt_table_body">
@@ -2748,16 +2748,16 @@ div.csl-indent {
 <p><img src="chapter_two_files/figure-html/figure%201-1.png" class="img-fluid" width="2400"></p>
 </div>
 </div>
-<p>Cluster 3’s homebase is central Brooklyn, with other districts in Harlem and in northern Queens. A DSA member narrowly lost a race in Brooklyn’s 35th district, which would have added to this progressive weight in central Brooklyn. This location, combined with the demographic descriptives included above, suggests that the truism of progressive politics appealing to white, well-educated, economically downwardly mobile, newcomers may be true, though of course this data is not granular enough to conclude this. It at least suggests a geographic base of progressive politics in a diverse and rapidly changing corner of the city and a broad idea of its demographic characteristics. To dig further, this section will now turn to the ED level results for the districts in cluster 3, looking only at the first choice of the RCV.</p>
-<p>To further investigate these demographic variables an OLS model was run on the 919 election districts in which a member of cluster 3 ran, using vote share for those candidate as its dependent variable. The independent variables come from two sources, the tract-level ACS 5-Year file and NYC Open Data, which allows access to datasets from various city agencies. The variables are the log of the median household income, the Black and Hispanic share of an ED, the share of non-Hispanic whites born outside New York State, the share possessing a BA or more, the share of homeowners, and two variables to register noise complaints. One noise variables is the average 311 noise complaints per month the other is the number of noise complaints made during the summer of 2020 when there was a large spike in many areas of the city. The two variables are negatively correlated, implying perhaps summer complaint spikes happened in areas with low average numbers of complaints, so they were both included. Multicollinearity is a concern with these closely related demographic variables, but no variable is correlated at a level higher than .7 or has a VIF higher than 3. The mean and median of all the IVs are listed below.</p>
+<p>Cluster 3’s homebase is central Brooklyn, with other districts in Harlem and in northern Queens. A DSA member narrowly lost a race in Brooklyn’s 35th district, which would have added to this progressive weight in central Brooklyn. This location, combined with the demographic descriptives included above, suggests that the truism of progressive politics appealing to white, well-educated, economically downwardly mobile, newcomers may be true, though of course this data is not granular enough to conclude this. It at least suggests a geographic base of progressive politics in a diverse and rapidly changing corner of the city and a broad idea of its demographic characteristics. To dig further, this section will now turn to the ED level results for the districts in cluster 3, looking only at the first choice of the Ranked Choice Voting.</p>
+<p>To further investigate these demographic variables an OLS model was run on the 919 election districts in which a member of cluster 3 ran, using vote share for those candidates as its dependent variable. The independent variables come from two sources, the tract-level ACS 5-Year file and NYC Open Data, which allows access to datasets from various city agencies. The variables are the log of the median household income, the Black and Hispanic share of an ED, the share of non-Hispanic whites born outside New York State, the share possessing a BA or more, the share of homeowners, and two variables to register noise complaints. One noise variable is the average number of 311 noise complaints per month, the other is the combined number of noise complaints made during the summer of 2020 when there was a large spike in complaints in many areas of the city. The two variables are negatively correlated, implying perhaps summer complaint spikes happened in areas with low average numbers of complaints, so they were both included. Multicollinearity is a concern with these closely related demographic variables, but no variables are correlated at a level higher than .7 and no variable has a VIF higher than 3. The mean and median of all the IVs are listed below.</p>
 <div class="cell-output-display">
 
-<div id="xgsltnxpey" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="uhkxekwuvw" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>html {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-#xgsltnxpey .gt_table {
+#uhkxekwuvw .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -2782,7 +2782,7 @@ div.csl-indent {
   border-left-color: #D3D3D3;
 }
 
-#xgsltnxpey .gt_heading {
+#uhkxekwuvw .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -2794,7 +2794,7 @@ div.csl-indent {
   border-right-color: #D3D3D3;
 }
 
-#xgsltnxpey .gt_title {
+#uhkxekwuvw .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -2806,7 +2806,7 @@ div.csl-indent {
   border-bottom-width: 0;
 }
 
-#xgsltnxpey .gt_subtitle {
+#uhkxekwuvw .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -2818,13 +2818,13 @@ div.csl-indent {
   border-top-width: 0;
 }
 
-#xgsltnxpey .gt_bottom_border {
+#uhkxekwuvw .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#xgsltnxpey .gt_col_headings {
+#uhkxekwuvw .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2839,7 +2839,7 @@ div.csl-indent {
   border-right-color: #D3D3D3;
 }
 
-#xgsltnxpey .gt_col_heading {
+#uhkxekwuvw .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2859,7 +2859,7 @@ div.csl-indent {
   overflow-x: hidden;
 }
 
-#xgsltnxpey .gt_column_spanner_outer {
+#uhkxekwuvw .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2871,15 +2871,15 @@ div.csl-indent {
   padding-right: 4px;
 }
 
-#xgsltnxpey .gt_column_spanner_outer:first-child {
+#uhkxekwuvw .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#xgsltnxpey .gt_column_spanner_outer:last-child {
+#uhkxekwuvw .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#xgsltnxpey .gt_column_spanner {
+#uhkxekwuvw .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -2891,7 +2891,7 @@ div.csl-indent {
   width: 100%;
 }
 
-#xgsltnxpey .gt_group_heading {
+#uhkxekwuvw .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2916,7 +2916,7 @@ div.csl-indent {
   vertical-align: middle;
 }
 
-#xgsltnxpey .gt_empty_group_heading {
+#uhkxekwuvw .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -2931,15 +2931,15 @@ div.csl-indent {
   vertical-align: middle;
 }
 
-#xgsltnxpey .gt_from_md > :first-child {
+#uhkxekwuvw .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#xgsltnxpey .gt_from_md > :last-child {
+#uhkxekwuvw .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#xgsltnxpey .gt_row {
+#uhkxekwuvw .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2958,7 +2958,7 @@ div.csl-indent {
   overflow-x: hidden;
 }
 
-#xgsltnxpey .gt_stub {
+#uhkxekwuvw .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2971,7 +2971,7 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#xgsltnxpey .gt_stub_row_group {
+#uhkxekwuvw .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2985,11 +2985,11 @@ div.csl-indent {
   vertical-align: top;
 }
 
-#xgsltnxpey .gt_row_group_first td {
+#uhkxekwuvw .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#xgsltnxpey .gt_summary_row {
+#uhkxekwuvw .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2999,16 +2999,16 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#xgsltnxpey .gt_first_summary_row {
+#uhkxekwuvw .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#xgsltnxpey .gt_first_summary_row.thick {
+#uhkxekwuvw .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#xgsltnxpey .gt_last_summary_row {
+#uhkxekwuvw .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3018,7 +3018,7 @@ div.csl-indent {
   border-bottom-color: #D3D3D3;
 }
 
-#xgsltnxpey .gt_grand_summary_row {
+#uhkxekwuvw .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -3028,7 +3028,7 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#xgsltnxpey .gt_first_grand_summary_row {
+#uhkxekwuvw .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3038,11 +3038,11 @@ div.csl-indent {
   border-top-color: #D3D3D3;
 }
 
-#xgsltnxpey .gt_striped {
+#uhkxekwuvw .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#xgsltnxpey .gt_table_body {
+#uhkxekwuvw .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -3051,7 +3051,7 @@ div.csl-indent {
   border-bottom-color: #D3D3D3;
 }
 
-#xgsltnxpey .gt_footnotes {
+#uhkxekwuvw .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -3065,7 +3065,7 @@ div.csl-indent {
   border-right-color: #D3D3D3;
 }
 
-#xgsltnxpey .gt_footnote {
+#uhkxekwuvw .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-left: 4px;
@@ -3074,7 +3074,7 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#xgsltnxpey .gt_sourcenotes {
+#uhkxekwuvw .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -3088,7 +3088,7 @@ div.csl-indent {
   border-right-color: #D3D3D3;
 }
 
-#xgsltnxpey .gt_sourcenote {
+#uhkxekwuvw .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -3096,64 +3096,64 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#xgsltnxpey .gt_left {
+#uhkxekwuvw .gt_left {
   text-align: left;
 }
 
-#xgsltnxpey .gt_center {
+#uhkxekwuvw .gt_center {
   text-align: center;
 }
 
-#xgsltnxpey .gt_right {
+#uhkxekwuvw .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#xgsltnxpey .gt_font_normal {
+#uhkxekwuvw .gt_font_normal {
   font-weight: normal;
 }
 
-#xgsltnxpey .gt_font_bold {
+#uhkxekwuvw .gt_font_bold {
   font-weight: bold;
 }
 
-#xgsltnxpey .gt_font_italic {
+#uhkxekwuvw .gt_font_italic {
   font-style: italic;
 }
 
-#xgsltnxpey .gt_super {
+#uhkxekwuvw .gt_super {
   font-size: 65%;
 }
 
-#xgsltnxpey .gt_footnote_marks {
+#uhkxekwuvw .gt_footnote_marks {
   font-style: italic;
   font-weight: normal;
   font-size: 75%;
   vertical-align: 0.4em;
 }
 
-#xgsltnxpey .gt_asterisk {
+#uhkxekwuvw .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#xgsltnxpey .gt_indent_1 {
+#uhkxekwuvw .gt_indent_1 {
   text-indent: 5px;
 }
 
-#xgsltnxpey .gt_indent_2 {
+#uhkxekwuvw .gt_indent_2 {
   text-indent: 10px;
 }
 
-#xgsltnxpey .gt_indent_3 {
+#uhkxekwuvw .gt_indent_3 {
   text-indent: 15px;
 }
 
-#xgsltnxpey .gt_indent_4 {
+#uhkxekwuvw .gt_indent_4 {
   text-indent: 20px;
 }
 
-#xgsltnxpey .gt_indent_5 {
+#uhkxekwuvw .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -3206,7 +3206,7 @@ div.csl-indent {
 </table>
 </div>
 </div>
-<p>All variables in the models below have been scaled and standardized to easily compare effect. While there are some large and significant effects, the first item of note is that the R squared is quite low. Additionally, while several of the coefficients point to an electorate of white, educated, culturally employed, liberal, newcomers, others, such as education and retail employment did not. Those could be genuine, the white transplant voting pool could be less educated than imagined or the EDs these candidates did well in could just be heterogenous (though the racial variables dispute this).</p>
+<p>All variables in the models below have been scaled and standardized to easily compare their effects. While there are some large and significant coefficients, the first item of note is that the R squared is quite low. Additionally, while several of the coefficients point to an electorate of white, educated, culturally employed, liberal, newcomers, others, such as education and retail employment do not. Those could be genuine, the white transplant voting pool could be less educated than imagined or the EDs these candidates did well in could just be heterogenous (though the racial variables dispute this), but this nonetheless poses a puzzle.</p>
 
 <table style="text-align:center">
 <tbody><tr>
@@ -3258,7 +3258,7 @@ vote_share
 </tr>
 <tr>
 <td style="text-align:left">
-log(mhhi21)
+Log MHHI
 </td>
 <td>
 -1.714<sup>***</sup>
@@ -3311,7 +3311,7 @@ log(mhhi21)
 </tr>
 <tr>
 <td style="text-align:left">
-nhb21p
+NH Black Share
 </td>
 <td>
 -0.371<sup>***</sup>
@@ -3364,7 +3364,7 @@ nhb21p
 </tr>
 <tr>
 <td style="text-align:left">
-h21p
+Hispanic Share
 </td>
 <td>
 </td>
@@ -3415,7 +3415,7 @@ h21p
 </tr>
 <tr>
 <td style="text-align:left">
-white_transplant_ratio
+White Transplant Share
 </td>
 <td>
 </td>
@@ -3464,7 +3464,7 @@ white_transplant_ratio
 </tr>
 <tr>
 <td style="text-align:left">
-cvap21bapp
+% BA or more
 </td>
 <td>
 </td>
@@ -3511,7 +3511,7 @@ cvap21bapp
 </tr>
 <tr>
 <td style="text-align:left">
-hh21op
+Homeowner Share
 </td>
 <td>
 </td>
@@ -3558,7 +3558,7 @@ hh21op
 </tr>
 <tr>
 <td style="text-align:left">
-summer_noise_complaints
+Summer 2020 Noise
 </td>
 <td>
 </td>
@@ -3605,7 +3605,7 @@ summer_noise_complaints
 </tr>
 <tr>
 <td style="text-align:left">
-mean_noise
+Avg. Noise
 </td>
 <td>
 </td>
@@ -3652,7 +3652,7 @@ mean_noise
 </tr>
 <tr>
 <td style="text-align:left">
-perc_retail
+% Retail Employees
 </td>
 <td>
 </td>
@@ -3813,46 +3813,6 @@ Adjusted R<sup>2</sup>
 </td>
 </tr>
 <tr>
-<td style="text-align:left">
-Residual Std. Error
-</td>
-<td>
-20.042 (df = 916)
-</td>
-<td>
-19.774 (df = 915)
-</td>
-<td>
-19.448 (df = 914)
-</td>
-<td>
-18.429 (df = 910)
-</td>
-<td>
-18.272 (df = 909)
-</td>
-</tr>
-<tr>
-<td style="text-align:left">
-F Statistic
-</td>
-<td>
-80.248<sup>***</sup> (df = 2; 916)
-</td>
-<td>
-63.609<sup>***</sup> (df = 3; 915)
-</td>
-<td>
-57.324<sup>***</sup> (df = 4; 914)
-</td>
-<td>
-45.389<sup>***</sup> (df = 8; 910)
-</td>
-<td>
-42.905<sup>***</sup> (df = 9; 909)
-</td>
-</tr>
-<tr>
 <td colspan="6" style="border-bottom: 1px solid black">
 </td>
 </tr>
@@ -3866,15 +3826,15 @@ F Statistic
 </tr>
 
 </tbody></table>
-<p>A better explanation seemed to be that one explanation wouldn’t fit every district. To test this a fixed effects model was run using council districts. R’s ‘fixest’ package was used, which includes robust standard errors and estimates the effects of district indirectly to avoid multicollinearity. The results are reported in Table 11 below. Now only income reaches significance at the 95% confidence level and home ownership at 90%. Additionally, the within R2 is very low, only rounding up to 1%, while the overall R2 has risen to 56, suggesting 55% of variance is attributable to variance between districts that these models don’t explain. It appears that these candidates resist a one size fits all explanation of electoral success.</p>
+<p>A better explanation might be that one explanation won’t fit every district, or put differently that there are large and unmeasured district level effects.. To test this a fixed effects model was run using council districts. R’s ‘fixest’ package was used, which includes robust standard errors and estimates the effects of district indirectly to avoid multicollinearity.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> The results are reported in Table 11 below. Now only income reaches significance at the 95% confidence level and home ownership at 90%. Additionally, the within R2 is very low, only rounding up to 1, while the overall R2 has risen to 56, suggesting 55% of variance is attributable to variance between districts that these models don’t explain. It appears that these elections resist a one size fits all explanation of electoral success.</p>
 <div class="cell-output-display">
 
 <!-- preamble start -->
 
     <script>
 
-      function styleCell_co1l00t1v34e19t9lj6c(i, j, css_id) {
-          var table = document.getElementById("tinytable_co1l00t1v34e19t9lj6c");
+      function styleCell_i81wlski6ikug1cflwih(i, j, css_id) {
+          var table = document.getElementById("tinytable_i81wlski6ikug1cflwih");
           var cell = table.rows[i]?.cells[j];  // Safe navigation to avoid errors
           if (cell) {
               console.log(`Styling cell at (${i}, ${j}) with class ${css_id}`);
@@ -3884,7 +3844,7 @@ F Statistic
           }
       }
       function insertSpanRow(i, colspan, content) {
-        var table = document.getElementById('tinytable_co1l00t1v34e19t9lj6c');
+        var table = document.getElementById('tinytable_i81wlski6ikug1cflwih');
         var newRow = table.insertRow(i);
         var newCell = newRow.insertCell(0);
         newCell.setAttribute("colspan", colspan);
@@ -3892,8 +3852,8 @@ F Statistic
         // this may be unsafe, but innerText does not interpret <br>
         newCell.innerHTML = content;
       }
-      function spanCell_co1l00t1v34e19t9lj6c(i, j, rowspan, colspan) {
-        var table = document.getElementById("tinytable_co1l00t1v34e19t9lj6c");
+      function spanCell_i81wlski6ikug1cflwih(i, j, rowspan, colspan) {
+        var table = document.getElementById("tinytable_i81wlski6ikug1cflwih");
         const targetRow = table.rows[i];
         const targetCell = targetRow.cells[j];
         for (let r = 0; r < rowspan; r++) {
@@ -3923,20 +3883,20 @@ F Statistic
       window.addEventListener('load', function () {
           var cellsToStyle = [
             // tinytable style arrays after
-          { positions: [ { i: 22, j: 0 },  ], css_id: 'tinytable_css_xnn4vaofge0ezzo1r7jn',}, 
-          { positions: [ { i: 22, j: 4 }, { i: 22, j: 1 }, { i: 22, j: 2 }, { i: 22, j: 3 }, { i: 22, j: 5 },  ], css_id: 'tinytable_css_xhdg029q7pqscufx2j4f',}, 
-          { positions: [ { i: 18, j: 1 }, { i: 18, j: 3 }, { i: 18, j: 5 }, { i: 18, j: 2 }, { i: 18, j: 4 },  ], css_id: 'tinytable_css_vonpjzh0995nlaqokaq8',}, 
-          { positions: [ { i: 0, j: 1 }, { i: 0, j: 3 }, { i: 0, j: 4 }, { i: 0, j: 5 }, { i: 0, j: 2 },  ], css_id: 'tinytable_css_twjx1d2k9ppfa87w2tsf',}, 
-          { positions: [ { i: 1, j: 1 }, { i: 5, j: 1 }, { i: 7, j: 1 }, { i: 4, j: 1 }, { i: 9, j: 1 }, { i: 2, j: 1 }, { i: 11, j: 1 }, { i: 8, j: 1 }, { i: 13, j: 1 }, { i: 14, j: 1 }, { i: 15, j: 1 }, { i: 3, j: 1 }, { i: 17, j: 1 }, { i: 12, j: 3 }, { i: 19, j: 1 }, { i: 20, j: 1 }, { i: 21, j: 1 }, { i: 16, j: 3 }, { i: 10, j: 1 }, { i: 1, j: 2 }, { i: 2, j: 2 }, { i: 3, j: 2 }, { i: 4, j: 2 }, { i: 5, j: 2 }, { i: 16, j: 1 }, { i: 7, j: 2 }, { i: 8, j: 2 }, { i: 9, j: 2 }, { i: 10, j: 2 }, { i: 11, j: 2 }, { i: 12, j: 2 }, { i: 13, j: 2 }, { i: 14, j: 2 }, { i: 15, j: 2 }, { i: 16, j: 2 }, { i: 17, j: 2 }, { i: 12, j: 4 }, { i: 19, j: 2 }, { i: 20, j: 2 }, { i: 21, j: 2 }, { i: 16, j: 4 }, { i: 6, j: 1 }, { i: 1, j: 3 }, { i: 2, j: 3 }, { i: 3, j: 3 }, { i: 4, j: 3 }, { i: 5, j: 3 }, { i: 12, j: 1 }, { i: 7, j: 3 }, { i: 8, j: 3 }, { i: 9, j: 3 }, { i: 10, j: 3 }, { i: 11, j: 3 }, { i: 6, j: 5 }, { i: 13, j: 3 }, { i: 14, j: 3 }, { i: 15, j: 3 }, { i: 10, j: 5 }, { i: 17, j: 3 }, { i: 12, j: 5 }, { i: 19, j: 3 }, { i: 20, j: 3 }, { i: 21, j: 3 }, { i: 16, j: 5 }, { i: 6, j: 2 }, { i: 1, j: 4 }, { i: 2, j: 4 }, { i: 3, j: 4 }, { i: 4, j: 4 }, { i: 5, j: 4 }, { i: 6, j: 4 }, { i: 7, j: 4 }, { i: 8, j: 4 }, { i: 9, j: 4 }, { i: 10, j: 4 }, { i: 11, j: 4 }, { i: 2, j: 5 }, { i: 13, j: 4 }, { i: 14, j: 4 }, { i: 15, j: 4 }, { i: 19, j: 5 }, { i: 17, j: 4 }, { i: 8, j: 5 }, { i: 19, j: 4 }, { i: 20, j: 4 }, { i: 21, j: 4 }, { i: 3, j: 5 }, { i: 6, j: 3 }, { i: 1, j: 5 }, { i: 15, j: 5 }, { i: 7, j: 5 }, { i: 4, j: 5 }, { i: 5, j: 5 }, { i: 14, j: 5 }, { i: 11, j: 5 }, { i: 21, j: 5 }, { i: 9, j: 5 }, { i: 20, j: 5 }, { i: 13, j: 5 }, { i: 17, j: 5 },  ], css_id: 'tinytable_css_q8c410lj7y83d6dycgun',}, 
-          { positions: [ { i: 0, j: 0 },  ], css_id: 'tinytable_css_ntl4uuuigseu7gwbgilf',}, 
-          { positions: [ { i: 1, j: 0 }, { i: 2, j: 0 }, { i: 3, j: 0 }, { i: 4, j: 0 }, { i: 5, j: 0 }, { i: 6, j: 0 }, { i: 7, j: 0 }, { i: 8, j: 0 }, { i: 9, j: 0 }, { i: 10, j: 0 }, { i: 11, j: 0 }, { i: 12, j: 0 }, { i: 13, j: 0 }, { i: 14, j: 0 }, { i: 15, j: 0 }, { i: 16, j: 0 }, { i: 17, j: 0 }, { i: 19, j: 0 }, { i: 20, j: 0 }, { i: 21, j: 0 },  ], css_id: 'tinytable_css_a699idntxe9teu2hxjid',}, 
-          { positions: [ { i: 18, j: 0 },  ], css_id: 'tinytable_css_9v065yh2s60a8t5j3ue4',}, 
+          { positions: [ { i: 18, j: 0 },  ], css_id: 'tinytable_css_sa8jr0yu8bd13symbva7',}, 
+          { positions: [ { i: 1, j: 0 }, { i: 2, j: 0 }, { i: 3, j: 0 }, { i: 4, j: 0 }, { i: 5, j: 0 }, { i: 6, j: 0 }, { i: 7, j: 0 }, { i: 8, j: 0 }, { i: 9, j: 0 }, { i: 10, j: 0 }, { i: 11, j: 0 }, { i: 12, j: 0 }, { i: 13, j: 0 }, { i: 14, j: 0 }, { i: 15, j: 0 }, { i: 16, j: 0 }, { i: 17, j: 0 }, { i: 19, j: 0 }, { i: 20, j: 0 }, { i: 21, j: 0 },  ], css_id: 'tinytable_css_pbc03itkmofr8384qema',}, 
+          { positions: [ { i: 1, j: 1 }, { i: 5, j: 1 }, { i: 7, j: 1 }, { i: 4, j: 1 }, { i: 9, j: 1 }, { i: 2, j: 1 }, { i: 11, j: 1 }, { i: 8, j: 1 }, { i: 13, j: 1 }, { i: 14, j: 1 }, { i: 15, j: 1 }, { i: 3, j: 1 }, { i: 17, j: 1 }, { i: 12, j: 3 }, { i: 19, j: 1 }, { i: 20, j: 1 }, { i: 21, j: 1 }, { i: 16, j: 3 }, { i: 10, j: 1 }, { i: 1, j: 2 }, { i: 2, j: 2 }, { i: 3, j: 2 }, { i: 4, j: 2 }, { i: 5, j: 2 }, { i: 16, j: 1 }, { i: 7, j: 2 }, { i: 8, j: 2 }, { i: 9, j: 2 }, { i: 10, j: 2 }, { i: 11, j: 2 }, { i: 12, j: 2 }, { i: 13, j: 2 }, { i: 14, j: 2 }, { i: 15, j: 2 }, { i: 16, j: 2 }, { i: 17, j: 2 }, { i: 12, j: 4 }, { i: 19, j: 2 }, { i: 20, j: 2 }, { i: 21, j: 2 }, { i: 16, j: 4 }, { i: 6, j: 1 }, { i: 1, j: 3 }, { i: 2, j: 3 }, { i: 3, j: 3 }, { i: 4, j: 3 }, { i: 5, j: 3 }, { i: 12, j: 1 }, { i: 7, j: 3 }, { i: 8, j: 3 }, { i: 9, j: 3 }, { i: 10, j: 3 }, { i: 11, j: 3 }, { i: 6, j: 5 }, { i: 13, j: 3 }, { i: 14, j: 3 }, { i: 15, j: 3 }, { i: 10, j: 5 }, { i: 17, j: 3 }, { i: 12, j: 5 }, { i: 19, j: 3 }, { i: 20, j: 3 }, { i: 21, j: 3 }, { i: 16, j: 5 }, { i: 6, j: 2 }, { i: 1, j: 4 }, { i: 2, j: 4 }, { i: 3, j: 4 }, { i: 4, j: 4 }, { i: 5, j: 4 }, { i: 6, j: 4 }, { i: 7, j: 4 }, { i: 8, j: 4 }, { i: 9, j: 4 }, { i: 10, j: 4 }, { i: 11, j: 4 }, { i: 2, j: 5 }, { i: 13, j: 4 }, { i: 14, j: 4 }, { i: 15, j: 4 }, { i: 19, j: 5 }, { i: 17, j: 4 }, { i: 8, j: 5 }, { i: 19, j: 4 }, { i: 20, j: 4 }, { i: 21, j: 4 }, { i: 3, j: 5 }, { i: 6, j: 3 }, { i: 1, j: 5 }, { i: 15, j: 5 }, { i: 7, j: 5 }, { i: 4, j: 5 }, { i: 5, j: 5 }, { i: 14, j: 5 }, { i: 11, j: 5 }, { i: 21, j: 5 }, { i: 9, j: 5 }, { i: 20, j: 5 }, { i: 13, j: 5 }, { i: 17, j: 5 },  ], css_id: 'tinytable_css_ieom5sbo2luf6epzku0k',}, 
+          { positions: [ { i: 0, j: 0 },  ], css_id: 'tinytable_css_82xwoo6hgygv6g5ou0go',}, 
+          { positions: [ { i: 0, j: 1 }, { i: 0, j: 3 }, { i: 0, j: 4 }, { i: 0, j: 5 }, { i: 0, j: 2 },  ], css_id: 'tinytable_css_6vajeob8y6ckddw6kru0',}, 
+          { positions: [ { i: 22, j: 0 },  ], css_id: 'tinytable_css_41xwn1snnn67rqmbx9r8',}, 
+          { positions: [ { i: 18, j: 1 }, { i: 18, j: 3 }, { i: 18, j: 5 }, { i: 18, j: 2 }, { i: 18, j: 4 },  ], css_id: 'tinytable_css_2iu8cezyfh331opccy1f',}, 
+          { positions: [ { i: 22, j: 4 }, { i: 22, j: 1 }, { i: 22, j: 2 }, { i: 22, j: 3 }, { i: 22, j: 5 },  ], css_id: 'tinytable_css_0ufqd8n68ozu1wvw1jp4',}, 
           ];
 
           // Loop over the arrays to style the cells
           cellsToStyle.forEach(function (group) {
               group.positions.forEach(function (cell) {
-                  styleCell_co1l00t1v34e19t9lj6c(cell.i, cell.j, group.css_id);
+                  styleCell_i81wlski6ikug1cflwih(cell.i, cell.j, group.css_id);
               });
           });
       });
@@ -3944,17 +3904,17 @@ F Statistic
 
     <style>
       /* tinytable css entries after */
-      .table td.tinytable_css_xnn4vaofge0ezzo1r7jn, .table th.tinytable_css_xnn4vaofge0ezzo1r7jn { text-align: left; border-bottom: solid #d3d8dc 0.1em; }
-      .table td.tinytable_css_xhdg029q7pqscufx2j4f, .table th.tinytable_css_xhdg029q7pqscufx2j4f { text-align: center; border-bottom: solid #d3d8dc 0.1em; }
-      .table td.tinytable_css_vonpjzh0995nlaqokaq8, .table th.tinytable_css_vonpjzh0995nlaqokaq8 { text-align: center; border-bottom: solid black 0.05em; }
-      .table td.tinytable_css_twjx1d2k9ppfa87w2tsf, .table th.tinytable_css_twjx1d2k9ppfa87w2tsf { text-align: center; border-top: solid #d3d8dc 0.1em; border-bottom: solid #d3d8dc 0.05em; }
-      .table td.tinytable_css_q8c410lj7y83d6dycgun, .table th.tinytable_css_q8c410lj7y83d6dycgun { text-align: center; }
-      .table td.tinytable_css_ntl4uuuigseu7gwbgilf, .table th.tinytable_css_ntl4uuuigseu7gwbgilf { text-align: left; border-top: solid #d3d8dc 0.1em; border-bottom: solid #d3d8dc 0.05em; }
-      .table td.tinytable_css_a699idntxe9teu2hxjid, .table th.tinytable_css_a699idntxe9teu2hxjid { text-align: left; }
-      .table td.tinytable_css_9v065yh2s60a8t5j3ue4, .table th.tinytable_css_9v065yh2s60a8t5j3ue4 { text-align: left; border-bottom: solid black 0.05em; }
+      .table td.tinytable_css_sa8jr0yu8bd13symbva7, .table th.tinytable_css_sa8jr0yu8bd13symbva7 { text-align: left; border-bottom: solid black 0.05em; }
+      .table td.tinytable_css_pbc03itkmofr8384qema, .table th.tinytable_css_pbc03itkmofr8384qema { text-align: left; }
+      .table td.tinytable_css_ieom5sbo2luf6epzku0k, .table th.tinytable_css_ieom5sbo2luf6epzku0k { text-align: center; }
+      .table td.tinytable_css_82xwoo6hgygv6g5ou0go, .table th.tinytable_css_82xwoo6hgygv6g5ou0go { text-align: left; border-top: solid #d3d8dc 0.1em; border-bottom: solid #d3d8dc 0.05em; }
+      .table td.tinytable_css_6vajeob8y6ckddw6kru0, .table th.tinytable_css_6vajeob8y6ckddw6kru0 { text-align: center; border-top: solid #d3d8dc 0.1em; border-bottom: solid #d3d8dc 0.05em; }
+      .table td.tinytable_css_41xwn1snnn67rqmbx9r8, .table th.tinytable_css_41xwn1snnn67rqmbx9r8 { text-align: left; border-bottom: solid #d3d8dc 0.1em; }
+      .table td.tinytable_css_2iu8cezyfh331opccy1f, .table th.tinytable_css_2iu8cezyfh331opccy1f { text-align: center; border-bottom: solid black 0.05em; }
+      .table td.tinytable_css_0ufqd8n68ozu1wvw1jp4, .table th.tinytable_css_0ufqd8n68ozu1wvw1jp4 { text-align: center; border-bottom: solid #d3d8dc 0.1em; }
     </style>
     <div class="container">
-      <table class="table table-borderless" id="tinytable_co1l00t1v34e19t9lj6c" style="width: auto; margin-left: auto; margin-right: auto;" data-quarto-disable-processing="true">
+      <table class="table table-borderless" id="tinytable_i81wlski6ikug1cflwih" style="width: auto; margin-left: auto; margin-right: auto;" data-quarto-disable-processing="true">
         <thead>
         
               <tr>
@@ -3969,7 +3929,7 @@ F Statistic
         <tfoot><tr><td colspan="6">+ p &lt; 0.1, * p &lt; 0.05, ** p &lt; 0.01, *** p &lt; 0.001</td></tr></tfoot>
         <tbody>
                 <tr>
-                  <td>scale(log_income)             </td>
+                  <td>Log MHHI              </td>
                   <td>−2.165 </td>
                   <td>−2.674*</td>
                   <td>−2.475*</td>
@@ -3977,7 +3937,7 @@ F Statistic
                   <td>−2.319*</td>
                 </tr>
                 <tr>
-                  <td>                              </td>
+                  <td>                      </td>
                   <td>(2.022)</td>
                   <td>(0.905)</td>
                   <td>(0.844)</td>
@@ -3985,7 +3945,7 @@ F Statistic
                   <td>(0.810)</td>
                 </tr>
                 <tr>
-                  <td>scale(nhb21p)                 </td>
+                  <td>NH Black Share        </td>
                   <td>−3.505+</td>
                   <td>−3.426 </td>
                   <td>−3.610 </td>
@@ -3993,7 +3953,7 @@ F Statistic
                   <td>−3.090 </td>
                 </tr>
                 <tr>
-                  <td>                              </td>
+                  <td>                      </td>
                   <td>(1.628)</td>
                   <td>(4.880)</td>
                   <td>(4.708)</td>
@@ -4001,7 +3961,7 @@ F Statistic
                   <td>(4.288)</td>
                 </tr>
                 <tr>
-                  <td>scale(h21p)                   </td>
+                  <td>Hispanic Share        </td>
                   <td>       </td>
                   <td>−1.248 </td>
                   <td>−2.184 </td>
@@ -4009,7 +3969,7 @@ F Statistic
                   <td>−2.410 </td>
                 </tr>
                 <tr>
-                  <td>                              </td>
+                  <td>                      </td>
                   <td>       </td>
                   <td>(5.069)</td>
                   <td>(5.579)</td>
@@ -4017,7 +3977,7 @@ F Statistic
                   <td>(5.340)</td>
                 </tr>
                 <tr>
-                  <td>scale(white_transplant_ratio) </td>
+                  <td>White Transplant Share</td>
                   <td>       </td>
                   <td>1.650  </td>
                   <td>0.987  </td>
@@ -4025,7 +3985,7 @@ F Statistic
                   <td>1.610  </td>
                 </tr>
                 <tr>
-                  <td>                              </td>
+                  <td>                      </td>
                   <td>       </td>
                   <td>(6.140)</td>
                   <td>(3.759)</td>
@@ -4033,7 +3993,7 @@ F Statistic
                   <td>(3.795)</td>
                 </tr>
                 <tr>
-                  <td>scale(cvap21bapp)             </td>
+                  <td>% BA or more          </td>
                   <td>       </td>
                   <td>       </td>
                   <td>0.893  </td>
@@ -4041,7 +4001,7 @@ F Statistic
                   <td>3.873  </td>
                 </tr>
                 <tr>
-                  <td>                              </td>
+                  <td>                      </td>
                   <td>       </td>
                   <td>       </td>
                   <td>(4.374)</td>
@@ -4049,7 +4009,7 @@ F Statistic
                   <td>(3.394)</td>
                 </tr>
                 <tr>
-                  <td>scale(hh21op)                 </td>
+                  <td>Homeowner Share       </td>
                   <td>       </td>
                   <td>       </td>
                   <td>−3.642+</td>
@@ -4057,7 +4017,7 @@ F Statistic
                   <td>−3.214+</td>
                 </tr>
                 <tr>
-                  <td>                              </td>
+                  <td>                      </td>
                   <td>       </td>
                   <td>       </td>
                   <td>(1.673)</td>
@@ -4065,7 +4025,7 @@ F Statistic
                   <td>(1.613)</td>
                 </tr>
                 <tr>
-                  <td>scale(summer_noise_complaints)</td>
+                  <td>Summer 2020 Noise     </td>
                   <td>       </td>
                   <td>       </td>
                   <td>       </td>
@@ -4073,7 +4033,7 @@ F Statistic
                   <td>−0.545 </td>
                 </tr>
                 <tr>
-                  <td>                              </td>
+                  <td>                      </td>
                   <td>       </td>
                   <td>       </td>
                   <td>       </td>
@@ -4081,7 +4041,7 @@ F Statistic
                   <td>(1.110)</td>
                 </tr>
                 <tr>
-                  <td>scale(perc_retail)            </td>
+                  <td>% Retail Employees    </td>
                   <td>       </td>
                   <td>       </td>
                   <td>       </td>
@@ -4089,7 +4049,7 @@ F Statistic
                   <td>4.269  </td>
                 </tr>
                 <tr>
-                  <td>                              </td>
+                  <td>                      </td>
                   <td>       </td>
                   <td>       </td>
                   <td>       </td>
@@ -4097,7 +4057,7 @@ F Statistic
                   <td>(3.078)</td>
                 </tr>
                 <tr>
-                  <td>scale(mean_noise)             </td>
+                  <td>Avg. Noise            </td>
                   <td>       </td>
                   <td>       </td>
                   <td>       </td>
@@ -4105,7 +4065,7 @@ F Statistic
                   <td>1.650  </td>
                 </tr>
                 <tr>
-                  <td>                              </td>
+                  <td>                      </td>
                   <td>       </td>
                   <td>       </td>
                   <td>       </td>
@@ -4113,7 +4073,7 @@ F Statistic
                   <td>(1.234)</td>
                 </tr>
                 <tr>
-                  <td>Num.Obs.                      </td>
+                  <td>Num.Obs.              </td>
                   <td>919    </td>
                   <td>919    </td>
                   <td>919    </td>
@@ -4121,7 +4081,7 @@ F Statistic
                   <td>919    </td>
                 </tr>
                 <tr>
-                  <td>R2                            </td>
+                  <td>R2                    </td>
                   <td>0.545  </td>
                   <td>0.551  </td>
                   <td>0.568  </td>
@@ -4129,7 +4089,7 @@ F Statistic
                   <td>0.576  </td>
                 </tr>
                 <tr>
-                  <td>R2 Adj.                       </td>
+                  <td>R2 Adj.               </td>
                   <td>0.541  </td>
                   <td>0.546  </td>
                   <td>0.562  </td>
@@ -4137,7 +4097,7 @@ F Statistic
                   <td>0.569  </td>
                 </tr>
                 <tr>
-                  <td>R2 Within                     </td>
+                  <td>R2 Within             </td>
                   <td>0.032  </td>
                   <td>0.045  </td>
                   <td>0.081  </td>
@@ -4150,18 +4110,18 @@ F Statistic
 <!-- hack to avoid NA insertion in last line -->
 </div>
 </section>
-<section id="demographic-clustering" class="level1">
-<h1>Demographic Clustering</h1>
-<p>Another approach to understanding the electoral dynamics of this progressive group is to once again turn to clustering. Since this progressive group clearly win different groups in different districts, clustering the council districts and seeing which clusters tend to elect the progressive bloc can help to tease out electoral patterns. The same process as above was followed on the same set of demographic predictors used above, plus some additional categories of ethnicity as well as NYPD arrest data and primary mode of transportation. All tests used to determine the proper number of predetermined clusters pointed clearly to five. Table 12 shows the results for the progressive cluster, cluster 3. Four of the five demographic clusters are represented by the progressives. Table 13, directly below, shows the variables that were the most influential in defining the clusters.</p>
+<section id="demographic-clustering" class="level2">
+<h2 class="anchored" data-anchor-id="demographic-clustering">Demographic Clustering</h2>
+<p>Another approach to understanding the electoral dynamics of this progressive group is to once again turn to clustering. Since this progressive group seems to wins different groups in different districts, clustering the council districts and seeing which clusters tend to elect the progressive bloc can help to tease out electoral patterns. The same clustering process used on the voting data was followed on the same set of demographic predictors used in the regression models, plus some additional categories of ethnicity as well as NYPD arrest data and primary mode of transportation in commuting. All tests used to determine the proper number of predetermined clusters pointed clearly to five. Table 12 shows the results for the progressive cluster, cluster 3. Four of the five demographic clusters are represented by the progressives. Table 13, directly below, shows the variables that were the most influential in defining the clusters.</p>
 <p><br></p>
 <div class="cell-output-display">
 
-<div id="hkjvuxqhdy" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="tognuzqpjk" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>html {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-#hkjvuxqhdy .gt_table {
+#tognuzqpjk .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -4186,7 +4146,7 @@ F Statistic
   border-left-color: #D3D3D3;
 }
 
-#hkjvuxqhdy .gt_heading {
+#tognuzqpjk .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -4198,7 +4158,7 @@ F Statistic
   border-right-color: #D3D3D3;
 }
 
-#hkjvuxqhdy .gt_title {
+#tognuzqpjk .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -4210,7 +4170,7 @@ F Statistic
   border-bottom-width: 0;
 }
 
-#hkjvuxqhdy .gt_subtitle {
+#tognuzqpjk .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -4222,13 +4182,13 @@ F Statistic
   border-top-width: 0;
 }
 
-#hkjvuxqhdy .gt_bottom_border {
+#tognuzqpjk .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#hkjvuxqhdy .gt_col_headings {
+#tognuzqpjk .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -4243,7 +4203,7 @@ F Statistic
   border-right-color: #D3D3D3;
 }
 
-#hkjvuxqhdy .gt_col_heading {
+#tognuzqpjk .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4263,7 +4223,7 @@ F Statistic
   overflow-x: hidden;
 }
 
-#hkjvuxqhdy .gt_column_spanner_outer {
+#tognuzqpjk .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4275,15 +4235,15 @@ F Statistic
   padding-right: 4px;
 }
 
-#hkjvuxqhdy .gt_column_spanner_outer:first-child {
+#tognuzqpjk .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#hkjvuxqhdy .gt_column_spanner_outer:last-child {
+#tognuzqpjk .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#hkjvuxqhdy .gt_column_spanner {
+#tognuzqpjk .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -4295,7 +4255,7 @@ F Statistic
   width: 100%;
 }
 
-#hkjvuxqhdy .gt_group_heading {
+#tognuzqpjk .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4320,7 +4280,7 @@ F Statistic
   vertical-align: middle;
 }
 
-#hkjvuxqhdy .gt_empty_group_heading {
+#tognuzqpjk .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -4335,15 +4295,15 @@ F Statistic
   vertical-align: middle;
 }
 
-#hkjvuxqhdy .gt_from_md > :first-child {
+#tognuzqpjk .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#hkjvuxqhdy .gt_from_md > :last-child {
+#tognuzqpjk .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#hkjvuxqhdy .gt_row {
+#tognuzqpjk .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4362,7 +4322,7 @@ F Statistic
   overflow-x: hidden;
 }
 
-#hkjvuxqhdy .gt_stub {
+#tognuzqpjk .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4375,7 +4335,7 @@ F Statistic
   padding-right: 5px;
 }
 
-#hkjvuxqhdy .gt_stub_row_group {
+#tognuzqpjk .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4389,11 +4349,11 @@ F Statistic
   vertical-align: top;
 }
 
-#hkjvuxqhdy .gt_row_group_first td {
+#tognuzqpjk .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#hkjvuxqhdy .gt_summary_row {
+#tognuzqpjk .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -4403,16 +4363,16 @@ F Statistic
   padding-right: 5px;
 }
 
-#hkjvuxqhdy .gt_first_summary_row {
+#tognuzqpjk .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#hkjvuxqhdy .gt_first_summary_row.thick {
+#tognuzqpjk .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#hkjvuxqhdy .gt_last_summary_row {
+#tognuzqpjk .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4422,7 +4382,7 @@ F Statistic
   border-bottom-color: #D3D3D3;
 }
 
-#hkjvuxqhdy .gt_grand_summary_row {
+#tognuzqpjk .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -4432,7 +4392,7 @@ F Statistic
   padding-right: 5px;
 }
 
-#hkjvuxqhdy .gt_first_grand_summary_row {
+#tognuzqpjk .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4442,11 +4402,11 @@ F Statistic
   border-top-color: #D3D3D3;
 }
 
-#hkjvuxqhdy .gt_striped {
+#tognuzqpjk .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#hkjvuxqhdy .gt_table_body {
+#tognuzqpjk .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -4455,7 +4415,7 @@ F Statistic
   border-bottom-color: #D3D3D3;
 }
 
-#hkjvuxqhdy .gt_footnotes {
+#tognuzqpjk .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -4469,7 +4429,7 @@ F Statistic
   border-right-color: #D3D3D3;
 }
 
-#hkjvuxqhdy .gt_footnote {
+#tognuzqpjk .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-left: 4px;
@@ -4478,7 +4438,7 @@ F Statistic
   padding-right: 5px;
 }
 
-#hkjvuxqhdy .gt_sourcenotes {
+#tognuzqpjk .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -4492,7 +4452,7 @@ F Statistic
   border-right-color: #D3D3D3;
 }
 
-#hkjvuxqhdy .gt_sourcenote {
+#tognuzqpjk .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -4500,64 +4460,64 @@ F Statistic
   padding-right: 5px;
 }
 
-#hkjvuxqhdy .gt_left {
+#tognuzqpjk .gt_left {
   text-align: left;
 }
 
-#hkjvuxqhdy .gt_center {
+#tognuzqpjk .gt_center {
   text-align: center;
 }
 
-#hkjvuxqhdy .gt_right {
+#tognuzqpjk .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#hkjvuxqhdy .gt_font_normal {
+#tognuzqpjk .gt_font_normal {
   font-weight: normal;
 }
 
-#hkjvuxqhdy .gt_font_bold {
+#tognuzqpjk .gt_font_bold {
   font-weight: bold;
 }
 
-#hkjvuxqhdy .gt_font_italic {
+#tognuzqpjk .gt_font_italic {
   font-style: italic;
 }
 
-#hkjvuxqhdy .gt_super {
+#tognuzqpjk .gt_super {
   font-size: 65%;
 }
 
-#hkjvuxqhdy .gt_footnote_marks {
+#tognuzqpjk .gt_footnote_marks {
   font-style: italic;
   font-weight: normal;
   font-size: 75%;
   vertical-align: 0.4em;
 }
 
-#hkjvuxqhdy .gt_asterisk {
+#tognuzqpjk .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#hkjvuxqhdy .gt_indent_1 {
+#tognuzqpjk .gt_indent_1 {
   text-indent: 5px;
 }
 
-#hkjvuxqhdy .gt_indent_2 {
+#tognuzqpjk .gt_indent_2 {
   text-indent: 10px;
 }
 
-#hkjvuxqhdy .gt_indent_3 {
+#tognuzqpjk .gt_indent_3 {
   text-indent: 15px;
 }
 
-#hkjvuxqhdy .gt_indent_4 {
+#tognuzqpjk .gt_indent_4 {
   text-indent: 20px;
 }
 
-#hkjvuxqhdy .gt_indent_5 {
+#tognuzqpjk .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -4565,8 +4525,8 @@ F Statistic
   
   <thead class="gt_col_headings">
     <tr>
-      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col">matched_name</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col">demo_cluster</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col">Council Member</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col">Cluster</th>
     </tr>
   </thead>
   <tbody class="gt_table_body">
@@ -4595,12 +4555,12 @@ F Statistic
 <p><br></p>
 <div class="cell-output-display">
 
-<div id="cyxlwbupkd" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="apiwroxpkp" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>html {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-#cyxlwbupkd .gt_table {
+#apiwroxpkp .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -4625,7 +4585,7 @@ F Statistic
   border-left-color: #D3D3D3;
 }
 
-#cyxlwbupkd .gt_heading {
+#apiwroxpkp .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -4637,7 +4597,7 @@ F Statistic
   border-right-color: #D3D3D3;
 }
 
-#cyxlwbupkd .gt_title {
+#apiwroxpkp .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -4649,7 +4609,7 @@ F Statistic
   border-bottom-width: 0;
 }
 
-#cyxlwbupkd .gt_subtitle {
+#apiwroxpkp .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -4661,13 +4621,13 @@ F Statistic
   border-top-width: 0;
 }
 
-#cyxlwbupkd .gt_bottom_border {
+#apiwroxpkp .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#cyxlwbupkd .gt_col_headings {
+#apiwroxpkp .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -4682,7 +4642,7 @@ F Statistic
   border-right-color: #D3D3D3;
 }
 
-#cyxlwbupkd .gt_col_heading {
+#apiwroxpkp .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4702,7 +4662,7 @@ F Statistic
   overflow-x: hidden;
 }
 
-#cyxlwbupkd .gt_column_spanner_outer {
+#apiwroxpkp .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4714,15 +4674,15 @@ F Statistic
   padding-right: 4px;
 }
 
-#cyxlwbupkd .gt_column_spanner_outer:first-child {
+#apiwroxpkp .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#cyxlwbupkd .gt_column_spanner_outer:last-child {
+#apiwroxpkp .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#cyxlwbupkd .gt_column_spanner {
+#apiwroxpkp .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -4734,7 +4694,7 @@ F Statistic
   width: 100%;
 }
 
-#cyxlwbupkd .gt_group_heading {
+#apiwroxpkp .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4759,7 +4719,7 @@ F Statistic
   vertical-align: middle;
 }
 
-#cyxlwbupkd .gt_empty_group_heading {
+#apiwroxpkp .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -4774,15 +4734,15 @@ F Statistic
   vertical-align: middle;
 }
 
-#cyxlwbupkd .gt_from_md > :first-child {
+#apiwroxpkp .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#cyxlwbupkd .gt_from_md > :last-child {
+#apiwroxpkp .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#cyxlwbupkd .gt_row {
+#apiwroxpkp .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4801,7 +4761,7 @@ F Statistic
   overflow-x: hidden;
 }
 
-#cyxlwbupkd .gt_stub {
+#apiwroxpkp .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4814,7 +4774,7 @@ F Statistic
   padding-right: 5px;
 }
 
-#cyxlwbupkd .gt_stub_row_group {
+#apiwroxpkp .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4828,11 +4788,11 @@ F Statistic
   vertical-align: top;
 }
 
-#cyxlwbupkd .gt_row_group_first td {
+#apiwroxpkp .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#cyxlwbupkd .gt_summary_row {
+#apiwroxpkp .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -4842,16 +4802,16 @@ F Statistic
   padding-right: 5px;
 }
 
-#cyxlwbupkd .gt_first_summary_row {
+#apiwroxpkp .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#cyxlwbupkd .gt_first_summary_row.thick {
+#apiwroxpkp .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#cyxlwbupkd .gt_last_summary_row {
+#apiwroxpkp .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4861,7 +4821,7 @@ F Statistic
   border-bottom-color: #D3D3D3;
 }
 
-#cyxlwbupkd .gt_grand_summary_row {
+#apiwroxpkp .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -4871,7 +4831,7 @@ F Statistic
   padding-right: 5px;
 }
 
-#cyxlwbupkd .gt_first_grand_summary_row {
+#apiwroxpkp .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4881,11 +4841,11 @@ F Statistic
   border-top-color: #D3D3D3;
 }
 
-#cyxlwbupkd .gt_striped {
+#apiwroxpkp .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#cyxlwbupkd .gt_table_body {
+#apiwroxpkp .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -4894,7 +4854,7 @@ F Statistic
   border-bottom-color: #D3D3D3;
 }
 
-#cyxlwbupkd .gt_footnotes {
+#apiwroxpkp .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -4908,7 +4868,7 @@ F Statistic
   border-right-color: #D3D3D3;
 }
 
-#cyxlwbupkd .gt_footnote {
+#apiwroxpkp .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-left: 4px;
@@ -4917,7 +4877,7 @@ F Statistic
   padding-right: 5px;
 }
 
-#cyxlwbupkd .gt_sourcenotes {
+#apiwroxpkp .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -4931,7 +4891,7 @@ F Statistic
   border-right-color: #D3D3D3;
 }
 
-#cyxlwbupkd .gt_sourcenote {
+#apiwroxpkp .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -4939,64 +4899,64 @@ F Statistic
   padding-right: 5px;
 }
 
-#cyxlwbupkd .gt_left {
+#apiwroxpkp .gt_left {
   text-align: left;
 }
 
-#cyxlwbupkd .gt_center {
+#apiwroxpkp .gt_center {
   text-align: center;
 }
 
-#cyxlwbupkd .gt_right {
+#apiwroxpkp .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#cyxlwbupkd .gt_font_normal {
+#apiwroxpkp .gt_font_normal {
   font-weight: normal;
 }
 
-#cyxlwbupkd .gt_font_bold {
+#apiwroxpkp .gt_font_bold {
   font-weight: bold;
 }
 
-#cyxlwbupkd .gt_font_italic {
+#apiwroxpkp .gt_font_italic {
   font-style: italic;
 }
 
-#cyxlwbupkd .gt_super {
+#apiwroxpkp .gt_super {
   font-size: 65%;
 }
 
-#cyxlwbupkd .gt_footnote_marks {
+#apiwroxpkp .gt_footnote_marks {
   font-style: italic;
   font-weight: normal;
   font-size: 75%;
   vertical-align: 0.4em;
 }
 
-#cyxlwbupkd .gt_asterisk {
+#apiwroxpkp .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#cyxlwbupkd .gt_indent_1 {
+#apiwroxpkp .gt_indent_1 {
   text-indent: 5px;
 }
 
-#cyxlwbupkd .gt_indent_2 {
+#apiwroxpkp .gt_indent_2 {
   text-indent: 10px;
 }
 
-#cyxlwbupkd .gt_indent_3 {
+#apiwroxpkp .gt_indent_3 {
   text-indent: 15px;
 }
 
-#cyxlwbupkd .gt_indent_4 {
+#apiwroxpkp .gt_indent_4 {
   text-indent: 20px;
 }
 
-#cyxlwbupkd .gt_indent_5 {
+#apiwroxpkp .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -5076,8 +5036,8 @@ F Statistic
 </div>
 </div>
 <p><br></p>
-<p>The demographic heterogeneity of the districts sheds light on why the models above had low explanatory power. Income and broad racial categories are the only variables that all districts have in common. In the next several chapters each district and candidate will be explored in more detail, but for the time being Table 14 below shows models fit on each cluster. Model one corresponds to cluster one, etc. The R squared values have risen significantly, and different variables evidently effect the outcome of progressive candidates differently. In the whiter and wealthier cluster 1 it is indeed the poorer districts that votes for the progressive. In the poorer and more Black and Hispanic cluster 4 (where both DSA candidates won) income has less of an effect but white transplants clearly do.<br>
-<br></p>
+<p>The demographic heterogeneity of the districts sheds light on why the models above had low explanatory power. Income and broad racial categories are the only variables that all districts have in common. In the next several chapters each district and candidate will be explored in more detail, but for the time being Table 14 below shows models fit on each cluster. Model one corresponds to cluster one, etc. The R squared values have risen significantly, and different variables evidently affect the outcome of progressive candidates differently. In the whiter and wealthier cluster 1 it is indeed the poorer districts that voted for the progressive. In the poorer and more Black and Hispanic cluster 4 (where both DSA candidates won) income has less of an effect but white transplants clearly do.</p>
+<p><br></p>
 
 <table style="text-align:center">
 <tbody><tr>
@@ -5101,7 +5061,7 @@ F Statistic
 <td style="text-align:left">
 </td>
 <td colspan="4">
-Cluster 1
+vote_share
 </td>
 </tr>
 <tr>
@@ -5126,7 +5086,7 @@ Cluster 1
 </tr>
 <tr>
 <td style="text-align:left">
-log_income
+Log MHHI
 </td>
 <td>
 -2.828<sup>***</sup>
@@ -5171,7 +5131,7 @@ log_income
 </tr>
 <tr>
 <td style="text-align:left">
-nhb21p
+NH Black Share
 </td>
 <td>
 -5.865<sup>*</sup>
@@ -5216,7 +5176,7 @@ nhb21p
 </tr>
 <tr>
 <td style="text-align:left">
-h21p
+Hispanic Share
 </td>
 <td>
 -13.840<sup>***</sup>
@@ -5261,7 +5221,7 @@ h21p
 </tr>
 <tr>
 <td style="text-align:left">
-white_transplant_ratio
+White Transplant Share
 </td>
 <td>
 -3.292
@@ -5306,7 +5266,7 @@ white_transplant_ratio
 </tr>
 <tr>
 <td style="text-align:left">
-cvap21bapp
+% BA or more
 </td>
 <td>
 -7.266<sup>**</sup>
@@ -5351,7 +5311,7 @@ cvap21bapp
 </tr>
 <tr>
 <td style="text-align:left">
-hh21op
+Homeowner Share
 </td>
 <td>
 -6.831<sup>***</sup>
@@ -5396,7 +5356,7 @@ hh21op
 </tr>
 <tr>
 <td style="text-align:left">
-summer_noise_complaints
+Summer 2020 Noise
 </td>
 <td>
 -1.700
@@ -5441,7 +5401,7 @@ summer_noise_complaints
 </tr>
 <tr>
 <td style="text-align:left">
-mean_noise
+Avg. Noise
 </td>
 <td>
 -1.505
@@ -5486,7 +5446,7 @@ mean_noise
 </tr>
 <tr>
 <td style="text-align:left">
-perc_retail
+% Retail Employees
 </td>
 <td>
 -4.164<sup>*</sup>
@@ -5630,40 +5590,6 @@ Adjusted R<sup>2</sup>
 </td>
 </tr>
 <tr>
-<td style="text-align:left">
-Residual Std. Error
-</td>
-<td>
-14.628 (df = 247)
-</td>
-<td>
-13.903 (df = 227)
-</td>
-<td>
-9.557 (df = 105)
-</td>
-<td>
-12.733 (df = 300)
-</td>
-</tr>
-<tr>
-<td style="text-align:left">
-F Statistic
-</td>
-<td>
-23.920<sup>***</sup> (df = 9; 247)
-</td>
-<td>
-24.955<sup>***</sup> (df = 9; 227)
-</td>
-<td>
-14.863<sup>***</sup> (df = 9; 105)
-</td>
-<td>
-69.788<sup>***</sup> (df = 9; 300)
-</td>
-</tr>
-<tr>
 <td colspan="5" style="border-bottom: 1px solid black">
 </td>
 </tr>
@@ -5677,26 +5603,34 @@ F Statistic
 </tr>
 
 </tbody></table>
+</section>
+<section id="conclusion" class="level2">
+<h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
+<p>This chapter has explored clustering the NYC City Council by the way they vote, the way the co-sponsor legislation, and the areas of the city that elect them. Voting and co-sponsorship pointed to clearly defined group of members that vote in protest against mayoral budgets and mayoral appointments and frequently co-sponsor bills that protect workers, migrants, women, children, and LGBTQ New Yorkers. This legislative activity fits well with the idea of an egalitarian urban order defined by Weaver and discussed in Chapter 1. This legislative activity does not map well onto electoral demographics. The members won in four of the five types of districts clustered by their demographic makeup, they have found a winning formula in a variety of electoral circumstances. The coming chapters will look in more detail at the way these races were won, as well as a couple of narrow DSA loses in Central Brooklyn and Western Queens.</p>
 
 </section>
+
 
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
 <div id="ref-adams" class="csl-entry" role="doc-biblioentry">
 Adams, Adrienne, and 2022. n.d. <span>“Speaker Adrienne Adams and Rules Committee Announce Council Leadership and Committee Chairs.”</span> <a href="https://council.nyc.gov/press/2022/01/20/2126/">https://council.nyc.gov/press/2022/01/20/2126/</a>.
 </div>
-<div id="ref-lloyd1982" class="csl-entry" role="doc-biblioentry">
+<div id="ref-lloyd1982a" class="csl-entry" role="doc-biblioentry">
 Lloyd, S. 1982. <span>“Least Squares Quantization in PCM.”</span> <em>IEEE Transactions on Information Theory</em> 28 (2): 129–37. <a href="https://doi.org/10.1109/TIT.1982.1056489">https://doi.org/10.1109/TIT.1982.1056489</a>.
 </div>
 <div id="ref-meyer2021" class="csl-entry" role="doc-biblioentry">
 Meyer, Cosima, and Dennis Hammerschmidt. 2021. <span>“A Pledged Community? Using Community Detection to Analyze Autocratic Cooperation in UN Co-Sponsorship Networks.”</span> In, edited by Rosa M. Benito, Chantal Cherifi, Hocine Cherifi, Esteban Moro, Luis Mateus Rocha, and Marta Sales-Pardo, 177–88. Cham: Springer International Publishing. <a href="https://doi.org/10.1007/978-3-030-65347-7_15">https://doi.org/10.1007/978-3-030-65347-7_15</a>.
 </div>
-<div id="ref-restler2024" class="csl-entry" role="doc-biblioentry">
-Restler, Lincoln. 2024. <span>“Interview with CM Restler,”</span> November.
-</div>
-<div id="ref-steinley2006" class="csl-entry" role="doc-biblioentry">
+<div id="ref-steinley2006a" class="csl-entry" role="doc-biblioentry">
 Steinley, Douglas. 2006. <span>“K-Means Clustering: A Half-Century Synthesis.”</span> <em>British Journal of Mathematical and Statistical Psychology</em> 59 (1): 1–34. <a href="https://doi.org/10.1348/000711005X48266">https://doi.org/10.1348/000711005X48266</a>.
 </div>
-</div></section></div></main>
+</div></section><section class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1" role="doc-endnote"><p>“Scikit-learn: Machine Learning in Python,” Pedregosa et al., JMLR 12, pp.&nbsp;2825-2830, 2011.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2" role="doc-endnote"><p>Bergé L (2018). “Efficient estimation of maximum likelihood models with multiple fixed-effects: the R package FENmlm.” CREA Discussion Papers.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main>
 <!-- /main column -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
