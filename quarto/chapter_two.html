@@ -84,15 +84,15 @@ div.csl-indent {
 <p>The New York City Council, at least since 2021, has been a body with a high rate of cooperation, its members often broadly support other member’s bills even across partisan and ideological boundaries. Additionally, there is a high rate of agenda control; bills that will not pass a floor vote die in committee before they make it to the floor. These aspects of the legislative process combine to make the ideological clusters of members murky, so much cooperation masks important ideological fault lines. This murkiness does not, however, mean those fault lines are nonexistent. When these two types of clustering, voting and sponsorship, are done in unison, the same clusters emerge from both, revealing a group of progressive legislators who manage to push through the relative unanimity of the body to define a distinctly progressive legislative agenda. This chapter will work through the clustering process, showing the methodological considerations and the outcomes of both the voting and sponsoring clustering process. It will then look to see how the emergent progressive cluster is also reflected in the electoral demographic data.</p>
 <section id="voting" class="level2">
 <h2 class="anchored" data-anchor-id="voting">Voting</h2>
-<p>Council floor votes are heavily lopsided, most pass with only a few dissenting conservative voices. This makes isolating the Council’s conservative’s quite easy but makes breaking the rest of the body into clusters more difficult. To attempt to do this K-Means clustering, a clustering methodology with wide application which seeks to partition a set of observations into a pre-defined number of clusters around centroids that minimize within cluster variance, was employed <span class="citation" data-cites="lloyd1982a steinley2006a">(<a href="#ref-lloyd1982a" role="doc-biblioref">Lloyd 1982</a>; <a href="#ref-steinley2006a" role="doc-biblioref">Steinley 2006</a>)</span>. The data used to cluster were all floor votes from 2022 and 2023, reduced to the 100 closest votes with at least 30 members voting, measured by the ratio of anti-votes and abstentions to pro votes. The votes were then one-hot coded, which makes dummy variables for each option for each bill (e.g.&nbsp;a dummy for pro bill 1, a dummy for anti bill 1, etc.). Once organized, K-Means clustering was run on this dataset. When running K-Means, the number of clusters is defined in advance. Several common tests were used to predetermine the number of clusters, as well as experimenting with the results, landing on best results with five clusters. No matter how many clusters were defined, the method pulls out the conservatives, who vote no or abstain as a bloc on much legislation. If more than three clusters are defined, it also pulls out a group of progressive council members including both DSA members as well as other progressive stalwarts such as Chi Ossé, Jennifer Guttierez, Sandy Nurse, and Shahana Hanif. Table 1 below shows both the Conservative and Progressive caucus.</p>
+<p>Council floor votes are heavily lopsided, most pass with only a few dissenting conservative voices. This makes isolating the Council’s conservatives quite easy but makes breaking the rest of the body into clusters more difficult. To attempt to do this K-Means clustering, a clustering methodology with wide application which seeks to partition a set of observations into a pre-defined number of clusters around centroids that minimize within cluster variance, was employed <span class="citation" data-cites="lloyd1982a steinley2006a">(<a href="#ref-lloyd1982a" role="doc-biblioref">Lloyd 1982</a>; <a href="#ref-steinley2006a" role="doc-biblioref">Steinley 2006</a>)</span>. The data used to cluster were all floor votes from 2022 and 2023, reduced to the 100 closest votes with at least 30 members voting, measured by the ratio of anti-votes and abstentions to pro votes. The votes were then one-hot coded, which makes dummy variables for each option for each bill (e.g.&nbsp;a dummy for pro bill 1, a dummy for anti bill 1, etc.). Once organized, K-Means clustering was run on this dataset. When running K-Means, the number of clusters is defined in advance. Several common tests were used to predetermine the number of clusters, as well as experimenting with the results, landing on best results with three clusters. No matter how many clusters were defined, the method pulls out the conservatives, who vote no or abstain as a bloc on much legislation. If more than three clusters are defined, it also pulls out a group of progressive council members including both DSA members as well as other progressive stalwarts such as Chi Ossé, Jennifer Guttierez, Sandy Nurse, and Shahana Hanif. Table 1 below shows both the Conservative and Progressive caucus.</p>
 <div class="cell-output-display">
 
-<div id="adutjsvdkf" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="blnlticbly" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>html {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-#adutjsvdkf .gt_table {
+#blnlticbly .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -117,7 +117,7 @@ div.csl-indent {
   border-left-color: #D3D3D3;
 }
 
-#adutjsvdkf .gt_heading {
+#blnlticbly .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -129,7 +129,7 @@ div.csl-indent {
   border-right-color: #D3D3D3;
 }
 
-#adutjsvdkf .gt_title {
+#blnlticbly .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -141,7 +141,7 @@ div.csl-indent {
   border-bottom-width: 0;
 }
 
-#adutjsvdkf .gt_subtitle {
+#blnlticbly .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -153,13 +153,13 @@ div.csl-indent {
   border-top-width: 0;
 }
 
-#adutjsvdkf .gt_bottom_border {
+#blnlticbly .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#adutjsvdkf .gt_col_headings {
+#blnlticbly .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -174,7 +174,7 @@ div.csl-indent {
   border-right-color: #D3D3D3;
 }
 
-#adutjsvdkf .gt_col_heading {
+#blnlticbly .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -194,7 +194,7 @@ div.csl-indent {
   overflow-x: hidden;
 }
 
-#adutjsvdkf .gt_column_spanner_outer {
+#blnlticbly .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -206,15 +206,15 @@ div.csl-indent {
   padding-right: 4px;
 }
 
-#adutjsvdkf .gt_column_spanner_outer:first-child {
+#blnlticbly .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#adutjsvdkf .gt_column_spanner_outer:last-child {
+#blnlticbly .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#adutjsvdkf .gt_column_spanner {
+#blnlticbly .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -226,7 +226,7 @@ div.csl-indent {
   width: 100%;
 }
 
-#adutjsvdkf .gt_group_heading {
+#blnlticbly .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -251,7 +251,7 @@ div.csl-indent {
   vertical-align: middle;
 }
 
-#adutjsvdkf .gt_empty_group_heading {
+#blnlticbly .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -266,15 +266,15 @@ div.csl-indent {
   vertical-align: middle;
 }
 
-#adutjsvdkf .gt_from_md > :first-child {
+#blnlticbly .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#adutjsvdkf .gt_from_md > :last-child {
+#blnlticbly .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#adutjsvdkf .gt_row {
+#blnlticbly .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -293,7 +293,7 @@ div.csl-indent {
   overflow-x: hidden;
 }
 
-#adutjsvdkf .gt_stub {
+#blnlticbly .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -306,7 +306,7 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#adutjsvdkf .gt_stub_row_group {
+#blnlticbly .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -320,11 +320,11 @@ div.csl-indent {
   vertical-align: top;
 }
 
-#adutjsvdkf .gt_row_group_first td {
+#blnlticbly .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#adutjsvdkf .gt_summary_row {
+#blnlticbly .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -334,16 +334,16 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#adutjsvdkf .gt_first_summary_row {
+#blnlticbly .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#adutjsvdkf .gt_first_summary_row.thick {
+#blnlticbly .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#adutjsvdkf .gt_last_summary_row {
+#blnlticbly .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -353,7 +353,7 @@ div.csl-indent {
   border-bottom-color: #D3D3D3;
 }
 
-#adutjsvdkf .gt_grand_summary_row {
+#blnlticbly .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -363,7 +363,7 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#adutjsvdkf .gt_first_grand_summary_row {
+#blnlticbly .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -373,11 +373,11 @@ div.csl-indent {
   border-top-color: #D3D3D3;
 }
 
-#adutjsvdkf .gt_striped {
+#blnlticbly .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#adutjsvdkf .gt_table_body {
+#blnlticbly .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -386,7 +386,7 @@ div.csl-indent {
   border-bottom-color: #D3D3D3;
 }
 
-#adutjsvdkf .gt_footnotes {
+#blnlticbly .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -400,7 +400,7 @@ div.csl-indent {
   border-right-color: #D3D3D3;
 }
 
-#adutjsvdkf .gt_footnote {
+#blnlticbly .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-left: 4px;
@@ -409,7 +409,7 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#adutjsvdkf .gt_sourcenotes {
+#blnlticbly .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -423,7 +423,7 @@ div.csl-indent {
   border-right-color: #D3D3D3;
 }
 
-#adutjsvdkf .gt_sourcenote {
+#blnlticbly .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -431,64 +431,64 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#adutjsvdkf .gt_left {
+#blnlticbly .gt_left {
   text-align: left;
 }
 
-#adutjsvdkf .gt_center {
+#blnlticbly .gt_center {
   text-align: center;
 }
 
-#adutjsvdkf .gt_right {
+#blnlticbly .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#adutjsvdkf .gt_font_normal {
+#blnlticbly .gt_font_normal {
   font-weight: normal;
 }
 
-#adutjsvdkf .gt_font_bold {
+#blnlticbly .gt_font_bold {
   font-weight: bold;
 }
 
-#adutjsvdkf .gt_font_italic {
+#blnlticbly .gt_font_italic {
   font-style: italic;
 }
 
-#adutjsvdkf .gt_super {
+#blnlticbly .gt_super {
   font-size: 65%;
 }
 
-#adutjsvdkf .gt_footnote_marks {
+#blnlticbly .gt_footnote_marks {
   font-style: italic;
   font-weight: normal;
   font-size: 75%;
   vertical-align: 0.4em;
 }
 
-#adutjsvdkf .gt_asterisk {
+#blnlticbly .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#adutjsvdkf .gt_indent_1 {
+#blnlticbly .gt_indent_1 {
   text-indent: 5px;
 }
 
-#adutjsvdkf .gt_indent_2 {
+#blnlticbly .gt_indent_2 {
   text-indent: 10px;
 }
 
-#adutjsvdkf .gt_indent_3 {
+#blnlticbly .gt_indent_3 {
   text-indent: 15px;
 }
 
-#adutjsvdkf .gt_indent_4 {
+#blnlticbly .gt_indent_4 {
   text-indent: 20px;
 }
 
-#adutjsvdkf .gt_indent_5 {
+#blnlticbly .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -513,20 +513,20 @@ div.csl-indent {
 </table>
 </div>
 </div>
-<p>K-Means clustering performed with the Python library Sickit-Learn allows for examination of how each item on which the clustering was performed (here, votes on bills) affected the overall cluster placement.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> The bills that most influenced the placement of these progressive members into a cluster are no votes on budget bills and mayoral appointments (all of which nonetheless passed). No matter how many more clusters are specified no new group cluster forms; individuals from the massive non-progressive or conservative cluster start to peel off one by one. There are therefore three voting clusters in the Council: a large majority that vote yes on most bills for which they are present, and two dissenting minorities, a conservative one who votes no quite frequently and a progressive one who votes no on key pieces of legislation, especially in cases in which to do so is antagonistic to the mayor. It is the latter that is of the most interest to this project as it is a demonstration of the vying for regime control described in Chapter 1. This portion of the council, loud and active in its opposition to Mayor Adams’s conservative policy agenda, has helped push the entire body more firmly into is role of Mayoral oversight, culminating in overridden vetoes and the Speaker referring to the body as a “co-equal” branch of government <span class="citation" data-cites="adams">(<a href="#ref-adams" role="doc-biblioref">Adams and 2022, n.d.</a>)</span>.</p>
+<p>K-Means clustering performed with the Python library Sickit-Learn allows for examination of how each item on which the clustering was performed (here, votes on bills) affected the overall cluster placement.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> The bills that most influenced the placement of these progressive members into a cluster are no votes on budget bills and mayoral appointments (all of which nonetheless passed). No matter how many more clusters are specified no new group cluster forms; individuals from the massive non-progressive or conservative cluster start to peel off one by one. There are therefore three voting clusters in the Council: a large majority that vote yes on most bills for which they are present, and two dissenting minorities, a conservative one who votes no quite frequently and a progressive one who votes no on key pieces of legislation, especially in cases in which to do so is antagonistic to the mayor. It is the latter that is of the most interest to this project as it is a demonstration of the vying for regime control described in Chapter 1. This portion of the council, loud and active in its opposition to Mayor Adams’s conservative policy agenda, has helped push the entire body more firmly into its role of Mayoral oversight, culminating in overridden vetoes and the Speaker referring to the body as a “co-equal” branch of government <span class="citation" data-cites="adams">(<a href="#ref-adams" role="doc-biblioref">Adams and 2022, n.d.</a>)</span>.</p>
 </section>
 <section id="co-sponsorship" class="level2">
 <h2 class="anchored" data-anchor-id="co-sponsorship">Co-Sponsorship</h2>
-<p>Examining the patterns in which members sponsor bills faces similar challenges, though it also reveals similar groups of conservative and progressive legislators. Many bills, especially those that pass, have high numbers of sponsors. The mean number of sponsors for a bill in the dataset was 13, with the mean number for a bill that passed at 23. Additionally, there is a lot of co-sponsorship across ideological lines; every member has co-sponsored with every other member at least once, often many more times than once. This is perhaps not surprising, as Lincoln Restler highlighted, voters prize pragmatism in their council votes and members are aware of this, so there is motivation to work across boundaries to get things done. This high rate of cooperation means that using traditional methods to visualize networks leads to a large bird’s nest of co-sponsorship, a version of this tangled graph is included in the appendix. Nonetheless, members do of course co-sponsor with some members much more frequently than others, so despite the significant noise caused by cooperation patterns do emerge.</p>
+<p>Examining the patterns in which members sponsor bills faces similar challenges, though it also reveals similar groups of conservative and progressive legislators. Many bills, especially those that pass, have high numbers of sponsors. The mean number of sponsors for a bill in the dataset was 13, with the mean number for a bill that passed at 23. Additionally, there is a lot of co-sponsorship across ideological lines; every member has co-sponsored with every other member at least once, often many more times than once. This is perhaps not surprising, as Lincoln Restler highlighted, voters prize pragmatism in their council votes and members are aware of this, so there is motivation to work across boundaries to get things done <span class="citation" data-cites="restler2024a">(<a href="#ref-restler2024a" role="doc-biblioref">Restler 2024</a>)</span>. This high rate of cooperation means that using traditional methods to visualize networks leads to a large bird’s nest of co-sponsorship, a version of this tangled graph is included in the appendix. Nonetheless, members do of course co-sponsor with some members much more frequently than others, so despite the significant noise caused by cooperation patterns do emerge.</p>
 <p>To identify these patterns, K-Means clustering was once again employed. To prepare the data, a matrix that described how often each member co-sponsored with another on a scale of 0-1 was formed. Bills that had 40 or more co-sponsors were removed to reduce noise and isolate more meaningful co-sponsorships. The K-Means was then run on this matrix. The results of this are recorded in Table 2 below. The results mirror those found in the voting patterns above, cluster 1 again features both DSA members as well as other (though not all) members from the voting clusters above. This cluster remained as long as there were more than two clusters defined.</p>
 <div class="cell-output-display">
 
-<div id="bzmzufbkcu" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="znmofsutni" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>html {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-#bzmzufbkcu .gt_table {
+#znmofsutni .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -551,7 +551,7 @@ div.csl-indent {
   border-left-color: #D3D3D3;
 }
 
-#bzmzufbkcu .gt_heading {
+#znmofsutni .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -563,7 +563,7 @@ div.csl-indent {
   border-right-color: #D3D3D3;
 }
 
-#bzmzufbkcu .gt_title {
+#znmofsutni .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -575,7 +575,7 @@ div.csl-indent {
   border-bottom-width: 0;
 }
 
-#bzmzufbkcu .gt_subtitle {
+#znmofsutni .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -587,13 +587,13 @@ div.csl-indent {
   border-top-width: 0;
 }
 
-#bzmzufbkcu .gt_bottom_border {
+#znmofsutni .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#bzmzufbkcu .gt_col_headings {
+#znmofsutni .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -608,7 +608,7 @@ div.csl-indent {
   border-right-color: #D3D3D3;
 }
 
-#bzmzufbkcu .gt_col_heading {
+#znmofsutni .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -628,7 +628,7 @@ div.csl-indent {
   overflow-x: hidden;
 }
 
-#bzmzufbkcu .gt_column_spanner_outer {
+#znmofsutni .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -640,15 +640,15 @@ div.csl-indent {
   padding-right: 4px;
 }
 
-#bzmzufbkcu .gt_column_spanner_outer:first-child {
+#znmofsutni .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#bzmzufbkcu .gt_column_spanner_outer:last-child {
+#znmofsutni .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#bzmzufbkcu .gt_column_spanner {
+#znmofsutni .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -660,7 +660,7 @@ div.csl-indent {
   width: 100%;
 }
 
-#bzmzufbkcu .gt_group_heading {
+#znmofsutni .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -685,7 +685,7 @@ div.csl-indent {
   vertical-align: middle;
 }
 
-#bzmzufbkcu .gt_empty_group_heading {
+#znmofsutni .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -700,15 +700,15 @@ div.csl-indent {
   vertical-align: middle;
 }
 
-#bzmzufbkcu .gt_from_md > :first-child {
+#znmofsutni .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#bzmzufbkcu .gt_from_md > :last-child {
+#znmofsutni .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#bzmzufbkcu .gt_row {
+#znmofsutni .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -727,7 +727,7 @@ div.csl-indent {
   overflow-x: hidden;
 }
 
-#bzmzufbkcu .gt_stub {
+#znmofsutni .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -740,7 +740,7 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#bzmzufbkcu .gt_stub_row_group {
+#znmofsutni .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -754,11 +754,11 @@ div.csl-indent {
   vertical-align: top;
 }
 
-#bzmzufbkcu .gt_row_group_first td {
+#znmofsutni .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#bzmzufbkcu .gt_summary_row {
+#znmofsutni .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -768,16 +768,16 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#bzmzufbkcu .gt_first_summary_row {
+#znmofsutni .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#bzmzufbkcu .gt_first_summary_row.thick {
+#znmofsutni .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#bzmzufbkcu .gt_last_summary_row {
+#znmofsutni .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -787,7 +787,7 @@ div.csl-indent {
   border-bottom-color: #D3D3D3;
 }
 
-#bzmzufbkcu .gt_grand_summary_row {
+#znmofsutni .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -797,7 +797,7 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#bzmzufbkcu .gt_first_grand_summary_row {
+#znmofsutni .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -807,11 +807,11 @@ div.csl-indent {
   border-top-color: #D3D3D3;
 }
 
-#bzmzufbkcu .gt_striped {
+#znmofsutni .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#bzmzufbkcu .gt_table_body {
+#znmofsutni .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -820,7 +820,7 @@ div.csl-indent {
   border-bottom-color: #D3D3D3;
 }
 
-#bzmzufbkcu .gt_footnotes {
+#znmofsutni .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -834,7 +834,7 @@ div.csl-indent {
   border-right-color: #D3D3D3;
 }
 
-#bzmzufbkcu .gt_footnote {
+#znmofsutni .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-left: 4px;
@@ -843,7 +843,7 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#bzmzufbkcu .gt_sourcenotes {
+#znmofsutni .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -857,7 +857,7 @@ div.csl-indent {
   border-right-color: #D3D3D3;
 }
 
-#bzmzufbkcu .gt_sourcenote {
+#znmofsutni .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -865,64 +865,64 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#bzmzufbkcu .gt_left {
+#znmofsutni .gt_left {
   text-align: left;
 }
 
-#bzmzufbkcu .gt_center {
+#znmofsutni .gt_center {
   text-align: center;
 }
 
-#bzmzufbkcu .gt_right {
+#znmofsutni .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#bzmzufbkcu .gt_font_normal {
+#znmofsutni .gt_font_normal {
   font-weight: normal;
 }
 
-#bzmzufbkcu .gt_font_bold {
+#znmofsutni .gt_font_bold {
   font-weight: bold;
 }
 
-#bzmzufbkcu .gt_font_italic {
+#znmofsutni .gt_font_italic {
   font-style: italic;
 }
 
-#bzmzufbkcu .gt_super {
+#znmofsutni .gt_super {
   font-size: 65%;
 }
 
-#bzmzufbkcu .gt_footnote_marks {
+#znmofsutni .gt_footnote_marks {
   font-style: italic;
   font-weight: normal;
   font-size: 75%;
   vertical-align: 0.4em;
 }
 
-#bzmzufbkcu .gt_asterisk {
+#znmofsutni .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#bzmzufbkcu .gt_indent_1 {
+#znmofsutni .gt_indent_1 {
   text-indent: 5px;
 }
 
-#bzmzufbkcu .gt_indent_2 {
+#znmofsutni .gt_indent_2 {
   text-indent: 10px;
 }
 
-#bzmzufbkcu .gt_indent_3 {
+#znmofsutni .gt_indent_3 {
   text-indent: 15px;
 }
 
-#bzmzufbkcu .gt_indent_4 {
+#znmofsutni .gt_indent_4 {
   text-indent: 20px;
 }
 
-#bzmzufbkcu .gt_indent_5 {
+#znmofsutni .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -956,17 +956,17 @@ div.csl-indent {
 <p>The Louvain method of community detection was used to check the robustness of the K-Means results. This algorithm takes data that has already been structured for network mapping (a different form than the matrix used for the K-Means) and detects communities based on the weights of the edges (connections) in this network. Here clusters are not predefined, the algorithm arrives at a number on its own. This method of community detection has seen increasing application in Political Science research, including a similar task of detecting small and nuanced communities in co-sponsorship of bills in the UN General Assembly <span class="citation" data-cites="meyer2021">(<a href="#ref-meyer2021" role="doc-biblioref">Meyer and Hammerschmidt 2021</a>)</span>. The results are displayed in Table 3 below, where the the Louvain method picks up a similar group of progressives, though with additions to the group formed by the K-Means.</p>
 <div class="cell-output-display">
 
-<div class="tabwid"><style>.cl-a3af7cf4{}.cl-a3a2d0d0{font-family:'Arial';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-a3a7af60{margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-a3a7af6a{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-a3a7dde6{width:0.565in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-a3a7ddf0{width:24.536in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-a3a7ddfa{width:0.565in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-a3a7ddfb{width:24.536in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-a3a7de04{width:0.565in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-a3a7de05{width:24.536in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style><table data-quarto-disable-processing="true" class="cl-a3af7cf4"><thead><tr style="overflow-wrap:break-word;"><th class="cl-a3a7dde6"><p class="cl-a3a7af60"><span class="cl-a3a2d0d0">louv</span></p></th><th class="cl-a3a7ddf0"><p class="cl-a3a7af6a"><span class="cl-a3a2d0d0">proper_names</span></p></th></tr></thead><tbody><tr style="overflow-wrap:break-word;"><td class="cl-a3a7ddfa"><p class="cl-a3a7af60"><span class="cl-a3a2d0d0">0</span></p></td><td class="cl-a3a7ddfb"><p class="cl-a3a7af6a"><span class="cl-a3a2d0d0">Rita C. Joseph, Kristin Richardson Jordan, Christopher Marte, Carmen N. De La Rosa, Carlina Rivera, Shekar Krishnan, Chi A. Ossé, Tiffany Cabán, Julie Won, Gale A. Brewer, Sandy Nurse, Crystal Hudson, Shaun Abreu, Amanda Farías, Alexa Avilés, Jennifer Gutiérrez, Adrienne E. Adams, Shahana K. Hanif, Lincoln Restler</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-a3a7ddfa"><p class="cl-a3a7af60"><span class="cl-a3a2d0d0">1</span></p></td><td class="cl-a3a7ddfb"><p class="cl-a3a7af6a"><span class="cl-a3a2d0d0">Julie Menin, Eric Dinowitz, Justin L. Brannan, Selvena N. Brooks-Powers, Althea V.  Stevens, James F. Gennaro, Oswald Feliz, Rafael Salamanca, Jr., Keith Powers, Kamillah Hanks, Ari Kagan, Charles Barron, Francisco P. Moya, Farah N. Louis, David M. Carr, Inna Vernikov, Joann Ariola, Joseph C. Borelli, Vickie Paladino, Kalman Yeger, Robert F. Holden</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-a3a7de04"><p class="cl-a3a7af60"><span class="cl-a3a2d0d0">2</span></p></td><td class="cl-a3a7de05"><p class="cl-a3a7af6a"><span class="cl-a3a2d0d0">Sandra Ung, Diana I. Ayala, Nantasha M. Williams, Mercedes Narcisse, Marjorie Velázquez, Lynn C. Schulman, Pierina Ana Sanchez, Linda Lee, Darlene Mealy, Erik D. Bottcher, Kevin C. Riley</span></p></td></tr></tbody></table></div>
+<div class="tabwid"><style>.cl-14591964{}.cl-144be672{font-family:'Arial';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-1450f554{margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-1450f55e{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-145124a2{width:0.565in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-145124ac{width:24.536in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-145124b6{width:0.565in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-145124b7{width:24.536in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-145124c0{width:0.565in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-145124c1{width:24.536in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style><table data-quarto-disable-processing="true" class="cl-14591964"><thead><tr style="overflow-wrap:break-word;"><th class="cl-145124a2"><p class="cl-1450f554"><span class="cl-144be672">louv</span></p></th><th class="cl-145124ac"><p class="cl-1450f55e"><span class="cl-144be672">proper_names</span></p></th></tr></thead><tbody><tr style="overflow-wrap:break-word;"><td class="cl-145124b6"><p class="cl-1450f554"><span class="cl-144be672">0</span></p></td><td class="cl-145124b7"><p class="cl-1450f55e"><span class="cl-144be672">Rita C. Joseph, Kristin Richardson Jordan, Christopher Marte, Carmen N. De La Rosa, Carlina Rivera, Shekar Krishnan, Chi A. Ossé, Tiffany Cabán, Julie Won, Gale A. Brewer, Sandy Nurse, Crystal Hudson, Shaun Abreu, Amanda Farías, Alexa Avilés, Jennifer Gutiérrez, Adrienne E. Adams, Shahana K. Hanif, Lincoln Restler</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-145124b6"><p class="cl-1450f554"><span class="cl-144be672">1</span></p></td><td class="cl-145124b7"><p class="cl-1450f55e"><span class="cl-144be672">Julie Menin, Eric Dinowitz, Justin L. Brannan, Selvena N. Brooks-Powers, Althea V.  Stevens, James F. Gennaro, Oswald Feliz, Rafael Salamanca, Jr., Keith Powers, Kamillah Hanks, Ari Kagan, Charles Barron, Francisco P. Moya, Farah N. Louis, David M. Carr, Inna Vernikov, Joann Ariola, Joseph C. Borelli, Vickie Paladino, Kalman Yeger, Robert F. Holden</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-145124c0"><p class="cl-1450f554"><span class="cl-144be672">2</span></p></td><td class="cl-145124c1"><p class="cl-1450f55e"><span class="cl-144be672">Sandra Ung, Diana I. Ayala, Nantasha M. Williams, Mercedes Narcisse, Marjorie Velázquez, Lynn C. Schulman, Pierina Ana Sanchez, Linda Lee, Darlene Mealy, Erik D. Bottcher, Kevin C. Riley</span></p></td></tr></tbody></table></div>
 </div>
 <p>Despite some variation in its specific makeup, both methods agree that there is a progressive bloc sponsoring together and voting in protest together. To try and make sense of these similar but slightly different clustering blocs, two different methods of meta-clustering the three types of clusters already done were employed. One was a repeat of the K-Means after again one-hot encoding the data. The other was K-Mode, which, as the name suggests, is a similar method of clustering that takes the mode rather than the mean to handle categorical data. While the two methods diverged on some members, they agreed exactly on the progressive group. Table 4 shows this group.</p>
 <div class="cell-output-display">
 
-<div id="vemtvktfix" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="dbfihpoxhr" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>html {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-#vemtvktfix .gt_table {
+#dbfihpoxhr .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -991,7 +991,7 @@ div.csl-indent {
   border-left-color: #D3D3D3;
 }
 
-#vemtvktfix .gt_heading {
+#dbfihpoxhr .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1003,7 +1003,7 @@ div.csl-indent {
   border-right-color: #D3D3D3;
 }
 
-#vemtvktfix .gt_title {
+#dbfihpoxhr .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1015,7 +1015,7 @@ div.csl-indent {
   border-bottom-width: 0;
 }
 
-#vemtvktfix .gt_subtitle {
+#dbfihpoxhr .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1027,13 +1027,13 @@ div.csl-indent {
   border-top-width: 0;
 }
 
-#vemtvktfix .gt_bottom_border {
+#dbfihpoxhr .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#vemtvktfix .gt_col_headings {
+#dbfihpoxhr .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1048,7 +1048,7 @@ div.csl-indent {
   border-right-color: #D3D3D3;
 }
 
-#vemtvktfix .gt_col_heading {
+#dbfihpoxhr .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1068,7 +1068,7 @@ div.csl-indent {
   overflow-x: hidden;
 }
 
-#vemtvktfix .gt_column_spanner_outer {
+#dbfihpoxhr .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1080,15 +1080,15 @@ div.csl-indent {
   padding-right: 4px;
 }
 
-#vemtvktfix .gt_column_spanner_outer:first-child {
+#dbfihpoxhr .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#vemtvktfix .gt_column_spanner_outer:last-child {
+#dbfihpoxhr .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#vemtvktfix .gt_column_spanner {
+#dbfihpoxhr .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1100,7 +1100,7 @@ div.csl-indent {
   width: 100%;
 }
 
-#vemtvktfix .gt_group_heading {
+#dbfihpoxhr .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1125,7 +1125,7 @@ div.csl-indent {
   vertical-align: middle;
 }
 
-#vemtvktfix .gt_empty_group_heading {
+#dbfihpoxhr .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1140,15 +1140,15 @@ div.csl-indent {
   vertical-align: middle;
 }
 
-#vemtvktfix .gt_from_md > :first-child {
+#dbfihpoxhr .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#vemtvktfix .gt_from_md > :last-child {
+#dbfihpoxhr .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#vemtvktfix .gt_row {
+#dbfihpoxhr .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1167,7 +1167,7 @@ div.csl-indent {
   overflow-x: hidden;
 }
 
-#vemtvktfix .gt_stub {
+#dbfihpoxhr .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1180,7 +1180,7 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#vemtvktfix .gt_stub_row_group {
+#dbfihpoxhr .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1194,11 +1194,11 @@ div.csl-indent {
   vertical-align: top;
 }
 
-#vemtvktfix .gt_row_group_first td {
+#dbfihpoxhr .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#vemtvktfix .gt_summary_row {
+#dbfihpoxhr .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1208,16 +1208,16 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#vemtvktfix .gt_first_summary_row {
+#dbfihpoxhr .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#vemtvktfix .gt_first_summary_row.thick {
+#dbfihpoxhr .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#vemtvktfix .gt_last_summary_row {
+#dbfihpoxhr .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1227,7 +1227,7 @@ div.csl-indent {
   border-bottom-color: #D3D3D3;
 }
 
-#vemtvktfix .gt_grand_summary_row {
+#dbfihpoxhr .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1237,7 +1237,7 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#vemtvktfix .gt_first_grand_summary_row {
+#dbfihpoxhr .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1247,11 +1247,11 @@ div.csl-indent {
   border-top-color: #D3D3D3;
 }
 
-#vemtvktfix .gt_striped {
+#dbfihpoxhr .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#vemtvktfix .gt_table_body {
+#dbfihpoxhr .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1260,7 +1260,7 @@ div.csl-indent {
   border-bottom-color: #D3D3D3;
 }
 
-#vemtvktfix .gt_footnotes {
+#dbfihpoxhr .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1274,7 +1274,7 @@ div.csl-indent {
   border-right-color: #D3D3D3;
 }
 
-#vemtvktfix .gt_footnote {
+#dbfihpoxhr .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-left: 4px;
@@ -1283,7 +1283,7 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#vemtvktfix .gt_sourcenotes {
+#dbfihpoxhr .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1297,7 +1297,7 @@ div.csl-indent {
   border-right-color: #D3D3D3;
 }
 
-#vemtvktfix .gt_sourcenote {
+#dbfihpoxhr .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1305,64 +1305,64 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#vemtvktfix .gt_left {
+#dbfihpoxhr .gt_left {
   text-align: left;
 }
 
-#vemtvktfix .gt_center {
+#dbfihpoxhr .gt_center {
   text-align: center;
 }
 
-#vemtvktfix .gt_right {
+#dbfihpoxhr .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#vemtvktfix .gt_font_normal {
+#dbfihpoxhr .gt_font_normal {
   font-weight: normal;
 }
 
-#vemtvktfix .gt_font_bold {
+#dbfihpoxhr .gt_font_bold {
   font-weight: bold;
 }
 
-#vemtvktfix .gt_font_italic {
+#dbfihpoxhr .gt_font_italic {
   font-style: italic;
 }
 
-#vemtvktfix .gt_super {
+#dbfihpoxhr .gt_super {
   font-size: 65%;
 }
 
-#vemtvktfix .gt_footnote_marks {
+#dbfihpoxhr .gt_footnote_marks {
   font-style: italic;
   font-weight: normal;
   font-size: 75%;
   vertical-align: 0.4em;
 }
 
-#vemtvktfix .gt_asterisk {
+#dbfihpoxhr .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#vemtvktfix .gt_indent_1 {
+#dbfihpoxhr .gt_indent_1 {
   text-indent: 5px;
 }
 
-#vemtvktfix .gt_indent_2 {
+#dbfihpoxhr .gt_indent_2 {
   text-indent: 10px;
 }
 
-#vemtvktfix .gt_indent_3 {
+#dbfihpoxhr .gt_indent_3 {
   text-indent: 15px;
 }
 
-#vemtvktfix .gt_indent_4 {
+#dbfihpoxhr .gt_indent_4 {
   text-indent: 20px;
 }
 
-#vemtvktfix .gt_indent_5 {
+#dbfihpoxhr .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -1389,12 +1389,12 @@ div.csl-indent {
 <p>The bills these progressives co-sponsor fall into two general categories, bills that attract a high-rate of fellow progressives and have a low chance of passing, and bills that are primarily sponsored by progressives but attract a wider level of support and therefore have a higher chance of passing. Both groups of bills track closely with the egalitarian urban order defined by Weaver and discussed in Chapter 1. Table 5 shows the bills which have the highest percentage of sponsors from the progressive cluster. They concern worker protections, oversight of the NYPD, tenant advocacy, environmental concerns, college counseling for low-income New Yorkers and protections for cyclists. Not a single bill with more than 60% of its sponsors from this cluster was enacted, so while these progressive-heavy bills may be pushing the rhetoric of the council left they have not, as of yet, translated into legislation.</p>
 <div class="cell-output-display">
 
-<div id="futmhrwvmf" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="sclzclfdjh" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>html {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-#futmhrwvmf .gt_table {
+#sclzclfdjh .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -1419,7 +1419,7 @@ div.csl-indent {
   border-left-color: #D3D3D3;
 }
 
-#futmhrwvmf .gt_heading {
+#sclzclfdjh .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1431,7 +1431,7 @@ div.csl-indent {
   border-right-color: #D3D3D3;
 }
 
-#futmhrwvmf .gt_title {
+#sclzclfdjh .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1443,7 +1443,7 @@ div.csl-indent {
   border-bottom-width: 0;
 }
 
-#futmhrwvmf .gt_subtitle {
+#sclzclfdjh .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1455,13 +1455,13 @@ div.csl-indent {
   border-top-width: 0;
 }
 
-#futmhrwvmf .gt_bottom_border {
+#sclzclfdjh .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#futmhrwvmf .gt_col_headings {
+#sclzclfdjh .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1476,7 +1476,7 @@ div.csl-indent {
   border-right-color: #D3D3D3;
 }
 
-#futmhrwvmf .gt_col_heading {
+#sclzclfdjh .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1496,7 +1496,7 @@ div.csl-indent {
   overflow-x: hidden;
 }
 
-#futmhrwvmf .gt_column_spanner_outer {
+#sclzclfdjh .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1508,15 +1508,15 @@ div.csl-indent {
   padding-right: 4px;
 }
 
-#futmhrwvmf .gt_column_spanner_outer:first-child {
+#sclzclfdjh .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#futmhrwvmf .gt_column_spanner_outer:last-child {
+#sclzclfdjh .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#futmhrwvmf .gt_column_spanner {
+#sclzclfdjh .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1528,7 +1528,7 @@ div.csl-indent {
   width: 100%;
 }
 
-#futmhrwvmf .gt_group_heading {
+#sclzclfdjh .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1553,7 +1553,7 @@ div.csl-indent {
   vertical-align: middle;
 }
 
-#futmhrwvmf .gt_empty_group_heading {
+#sclzclfdjh .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1568,15 +1568,15 @@ div.csl-indent {
   vertical-align: middle;
 }
 
-#futmhrwvmf .gt_from_md > :first-child {
+#sclzclfdjh .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#futmhrwvmf .gt_from_md > :last-child {
+#sclzclfdjh .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#futmhrwvmf .gt_row {
+#sclzclfdjh .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1595,7 +1595,7 @@ div.csl-indent {
   overflow-x: hidden;
 }
 
-#futmhrwvmf .gt_stub {
+#sclzclfdjh .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1608,7 +1608,7 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#futmhrwvmf .gt_stub_row_group {
+#sclzclfdjh .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1622,11 +1622,11 @@ div.csl-indent {
   vertical-align: top;
 }
 
-#futmhrwvmf .gt_row_group_first td {
+#sclzclfdjh .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#futmhrwvmf .gt_summary_row {
+#sclzclfdjh .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1636,16 +1636,16 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#futmhrwvmf .gt_first_summary_row {
+#sclzclfdjh .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#futmhrwvmf .gt_first_summary_row.thick {
+#sclzclfdjh .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#futmhrwvmf .gt_last_summary_row {
+#sclzclfdjh .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1655,7 +1655,7 @@ div.csl-indent {
   border-bottom-color: #D3D3D3;
 }
 
-#futmhrwvmf .gt_grand_summary_row {
+#sclzclfdjh .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1665,7 +1665,7 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#futmhrwvmf .gt_first_grand_summary_row {
+#sclzclfdjh .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1675,11 +1675,11 @@ div.csl-indent {
   border-top-color: #D3D3D3;
 }
 
-#futmhrwvmf .gt_striped {
+#sclzclfdjh .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#futmhrwvmf .gt_table_body {
+#sclzclfdjh .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1688,7 +1688,7 @@ div.csl-indent {
   border-bottom-color: #D3D3D3;
 }
 
-#futmhrwvmf .gt_footnotes {
+#sclzclfdjh .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1702,7 +1702,7 @@ div.csl-indent {
   border-right-color: #D3D3D3;
 }
 
-#futmhrwvmf .gt_footnote {
+#sclzclfdjh .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-left: 4px;
@@ -1711,7 +1711,7 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#futmhrwvmf .gt_sourcenotes {
+#sclzclfdjh .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1725,7 +1725,7 @@ div.csl-indent {
   border-right-color: #D3D3D3;
 }
 
-#futmhrwvmf .gt_sourcenote {
+#sclzclfdjh .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1733,64 +1733,64 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#futmhrwvmf .gt_left {
+#sclzclfdjh .gt_left {
   text-align: left;
 }
 
-#futmhrwvmf .gt_center {
+#sclzclfdjh .gt_center {
   text-align: center;
 }
 
-#futmhrwvmf .gt_right {
+#sclzclfdjh .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#futmhrwvmf .gt_font_normal {
+#sclzclfdjh .gt_font_normal {
   font-weight: normal;
 }
 
-#futmhrwvmf .gt_font_bold {
+#sclzclfdjh .gt_font_bold {
   font-weight: bold;
 }
 
-#futmhrwvmf .gt_font_italic {
+#sclzclfdjh .gt_font_italic {
   font-style: italic;
 }
 
-#futmhrwvmf .gt_super {
+#sclzclfdjh .gt_super {
   font-size: 65%;
 }
 
-#futmhrwvmf .gt_footnote_marks {
+#sclzclfdjh .gt_footnote_marks {
   font-style: italic;
   font-weight: normal;
   font-size: 75%;
   vertical-align: 0.4em;
 }
 
-#futmhrwvmf .gt_asterisk {
+#sclzclfdjh .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#futmhrwvmf .gt_indent_1 {
+#sclzclfdjh .gt_indent_1 {
   text-indent: 5px;
 }
 
-#futmhrwvmf .gt_indent_2 {
+#sclzclfdjh .gt_indent_2 {
   text-indent: 10px;
 }
 
-#futmhrwvmf .gt_indent_3 {
+#sclzclfdjh .gt_indent_3 {
   text-indent: 15px;
 }
 
-#futmhrwvmf .gt_indent_4 {
+#sclzclfdjh .gt_indent_4 {
   text-indent: 20px;
 }
 
-#futmhrwvmf .gt_indent_5 {
+#sclzclfdjh .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -1832,12 +1832,12 @@ div.csl-indent {
 <p>This does not mean, however, that the group is ineffective. Dozens of bills sponsored by members of this progressive cluster have been enacted on topics that are slightly different but similarly progressive. Table 6 below shows the enacted cluster 3 bills with the highest rate of co-sponsorship, a full list of bills they have sponsored and passed are available in the appendix. These bills have to do with worker protections, migrant rights, the distribution of free menstrual products, the protections of LGBTQ New Yorkers, the protection of reproduction rights, protections for the homeless, and a “Marshall Plan for Moms” to help support working mothers. These members have clearly set a progressive agenda both in practice and in rhetoric. To compare these bills to those sponsored by other clusters table 7 shows a Term Frequency – Inverse Document Frequency (TF-IDF) of the text descriptions of the bills sponsored by each group. What this in effect shows are the words that occur most frequently in each group’s legislation but less in others.</p>
 <div class="cell-output-display">
 
-<div id="olcsajehko" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="nehpndvyrp" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>html {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-#olcsajehko .gt_table {
+#nehpndvyrp .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -1862,7 +1862,7 @@ div.csl-indent {
   border-left-color: #D3D3D3;
 }
 
-#olcsajehko .gt_heading {
+#nehpndvyrp .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1874,7 +1874,7 @@ div.csl-indent {
   border-right-color: #D3D3D3;
 }
 
-#olcsajehko .gt_title {
+#nehpndvyrp .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1886,7 +1886,7 @@ div.csl-indent {
   border-bottom-width: 0;
 }
 
-#olcsajehko .gt_subtitle {
+#nehpndvyrp .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1898,13 +1898,13 @@ div.csl-indent {
   border-top-width: 0;
 }
 
-#olcsajehko .gt_bottom_border {
+#nehpndvyrp .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#olcsajehko .gt_col_headings {
+#nehpndvyrp .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1919,7 +1919,7 @@ div.csl-indent {
   border-right-color: #D3D3D3;
 }
 
-#olcsajehko .gt_col_heading {
+#nehpndvyrp .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1939,7 +1939,7 @@ div.csl-indent {
   overflow-x: hidden;
 }
 
-#olcsajehko .gt_column_spanner_outer {
+#nehpndvyrp .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1951,15 +1951,15 @@ div.csl-indent {
   padding-right: 4px;
 }
 
-#olcsajehko .gt_column_spanner_outer:first-child {
+#nehpndvyrp .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#olcsajehko .gt_column_spanner_outer:last-child {
+#nehpndvyrp .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#olcsajehko .gt_column_spanner {
+#nehpndvyrp .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1971,7 +1971,7 @@ div.csl-indent {
   width: 100%;
 }
 
-#olcsajehko .gt_group_heading {
+#nehpndvyrp .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1996,7 +1996,7 @@ div.csl-indent {
   vertical-align: middle;
 }
 
-#olcsajehko .gt_empty_group_heading {
+#nehpndvyrp .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -2011,15 +2011,15 @@ div.csl-indent {
   vertical-align: middle;
 }
 
-#olcsajehko .gt_from_md > :first-child {
+#nehpndvyrp .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#olcsajehko .gt_from_md > :last-child {
+#nehpndvyrp .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#olcsajehko .gt_row {
+#nehpndvyrp .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2038,7 +2038,7 @@ div.csl-indent {
   overflow-x: hidden;
 }
 
-#olcsajehko .gt_stub {
+#nehpndvyrp .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2051,7 +2051,7 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#olcsajehko .gt_stub_row_group {
+#nehpndvyrp .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2065,11 +2065,11 @@ div.csl-indent {
   vertical-align: top;
 }
 
-#olcsajehko .gt_row_group_first td {
+#nehpndvyrp .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#olcsajehko .gt_summary_row {
+#nehpndvyrp .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2079,16 +2079,16 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#olcsajehko .gt_first_summary_row {
+#nehpndvyrp .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#olcsajehko .gt_first_summary_row.thick {
+#nehpndvyrp .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#olcsajehko .gt_last_summary_row {
+#nehpndvyrp .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2098,7 +2098,7 @@ div.csl-indent {
   border-bottom-color: #D3D3D3;
 }
 
-#olcsajehko .gt_grand_summary_row {
+#nehpndvyrp .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2108,7 +2108,7 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#olcsajehko .gt_first_grand_summary_row {
+#nehpndvyrp .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2118,11 +2118,11 @@ div.csl-indent {
   border-top-color: #D3D3D3;
 }
 
-#olcsajehko .gt_striped {
+#nehpndvyrp .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#olcsajehko .gt_table_body {
+#nehpndvyrp .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2131,7 +2131,7 @@ div.csl-indent {
   border-bottom-color: #D3D3D3;
 }
 
-#olcsajehko .gt_footnotes {
+#nehpndvyrp .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2145,7 +2145,7 @@ div.csl-indent {
   border-right-color: #D3D3D3;
 }
 
-#olcsajehko .gt_footnote {
+#nehpndvyrp .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-left: 4px;
@@ -2154,7 +2154,7 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#olcsajehko .gt_sourcenotes {
+#nehpndvyrp .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2168,7 +2168,7 @@ div.csl-indent {
   border-right-color: #D3D3D3;
 }
 
-#olcsajehko .gt_sourcenote {
+#nehpndvyrp .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -2176,64 +2176,64 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#olcsajehko .gt_left {
+#nehpndvyrp .gt_left {
   text-align: left;
 }
 
-#olcsajehko .gt_center {
+#nehpndvyrp .gt_center {
   text-align: center;
 }
 
-#olcsajehko .gt_right {
+#nehpndvyrp .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#olcsajehko .gt_font_normal {
+#nehpndvyrp .gt_font_normal {
   font-weight: normal;
 }
 
-#olcsajehko .gt_font_bold {
+#nehpndvyrp .gt_font_bold {
   font-weight: bold;
 }
 
-#olcsajehko .gt_font_italic {
+#nehpndvyrp .gt_font_italic {
   font-style: italic;
 }
 
-#olcsajehko .gt_super {
+#nehpndvyrp .gt_super {
   font-size: 65%;
 }
 
-#olcsajehko .gt_footnote_marks {
+#nehpndvyrp .gt_footnote_marks {
   font-style: italic;
   font-weight: normal;
   font-size: 75%;
   vertical-align: 0.4em;
 }
 
-#olcsajehko .gt_asterisk {
+#nehpndvyrp .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#olcsajehko .gt_indent_1 {
+#nehpndvyrp .gt_indent_1 {
   text-indent: 5px;
 }
 
-#olcsajehko .gt_indent_2 {
+#nehpndvyrp .gt_indent_2 {
   text-indent: 10px;
 }
 
-#olcsajehko .gt_indent_3 {
+#nehpndvyrp .gt_indent_3 {
   text-indent: 15px;
 }
 
-#olcsajehko .gt_indent_4 {
+#nehpndvyrp .gt_indent_4 {
   text-indent: 20px;
 }
 
-#olcsajehko .gt_indent_5 {
+#nehpndvyrp .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -2275,7 +2275,7 @@ div.csl-indent {
 <p><br></p>
 <div class="cell-output-display">
 
-<div class="tabwid"><style>.cl-a417d880{}.cl-a40af4f8{font-family:'Arial';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-a40ff7e6{margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-a40ff7f0{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-a410236a{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-a410236b{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-a4102374{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-a4102375{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-a410237e{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-a410237f{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style><table data-quarto-disable-processing="true" class="cl-a417d880"><thead><tr style="overflow-wrap:break-word;"><th class="cl-a410236a"><p class="cl-a40ff7e6"><span class="cl-a40af4f8">Cluster</span></p></th><th class="cl-a410236b"><p class="cl-a40ff7f0"><span class="cl-a40af4f8">Word 1</span></p></th><th class="cl-a410236b"><p class="cl-a40ff7f0"><span class="cl-a40af4f8">Word 2</span></p></th><th class="cl-a410236b"><p class="cl-a40ff7f0"><span class="cl-a40af4f8">Word 3</span></p></th><th class="cl-a410236b"><p class="cl-a40ff7f0"><span class="cl-a40af4f8">Word 4</span></p></th><th class="cl-a410236b"><p class="cl-a40ff7f0"><span class="cl-a40af4f8">Word 5</span></p></th><th class="cl-a410236b"><p class="cl-a40ff7f0"><span class="cl-a40af4f8">Word 6</span></p></th><th class="cl-a410236b"><p class="cl-a40ff7f0"><span class="cl-a40af4f8">Word 7</span></p></th><th class="cl-a410236b"><p class="cl-a40ff7f0"><span class="cl-a40af4f8">Word 8</span></p></th><th class="cl-a410236b"><p class="cl-a40ff7f0"><span class="cl-a40af4f8">Word 9</span></p></th><th class="cl-a410236b"><p class="cl-a40ff7f0"><span class="cl-a40af4f8">Word 10</span></p></th><th class="cl-a410236b"><p class="cl-a40ff7f0"><span class="cl-a40af4f8">Word 11</span></p></th></tr></thead><tbody><tr style="overflow-wrap:break-word;"><td class="cl-a4102374"><p class="cl-a40ff7e6"><span class="cl-a40af4f8">0</span></p></td><td class="cl-a4102375"><p class="cl-a40ff7f0"><span class="cl-a40af4f8">housing</span></p></td><td class="cl-a4102375"><p class="cl-a40ff7f0"><span class="cl-a40af4f8">health</span></p></td><td class="cl-a4102375"><p class="cl-a40ff7f0"><span class="cl-a40af4f8">establishment</span></p></td><td class="cl-a4102375"><p class="cl-a40ff7f0"><span class="cl-a40af4f8">creating</span></p></td><td class="cl-a4102375"><p class="cl-a40ff7f0"><span class="cl-a40af4f8">education</span></p></td><td class="cl-a4102375"><p class="cl-a40ff7f0"><span class="cl-a40af4f8">provide</span></p></td><td class="cl-a4102375"><p class="cl-a40ff7f0"><span class="cl-a40af4f8">buildings</span></p></td><td class="cl-a4102375"><p class="cl-a40ff7f0"><span class="cl-a40af4f8">mental</span></p></td><td class="cl-a4102375"><p class="cl-a40ff7f0"><span class="cl-a40af4f8">campaign</span></p></td><td class="cl-a4102375"><p class="cl-a40ff7f0"><span class="cl-a40af4f8">correction</span></p></td><td class="cl-a4102375"><p class="cl-a40ff7f0"><span class="cl-a40af4f8">package</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-a4102374"><p class="cl-a40ff7e6"><span class="cl-a40af4f8">1</span></p></td><td class="cl-a4102375"><p class="cl-a40ff7f0"><span class="cl-a40af4f8">parking</span></p></td><td class="cl-a4102375"><p class="cl-a40ff7f0"><span class="cl-a40af4f8">service</span></p></td><td class="cl-a4102375"><p class="cl-a40ff7f0"><span class="cl-a40af4f8">vehicles</span></p></td><td class="cl-a4102375"><p class="cl-a40ff7f0"><span class="cl-a40af4f8">street</span></p></td><td class="cl-a4102375"><p class="cl-a40ff7f0"><span class="cl-a40af4f8">veteran</span></p></td><td class="cl-a4102375"><p class="cl-a40ff7f0"><span class="cl-a40af4f8">notification</span></p></td><td class="cl-a4102375"><p class="cl-a40ff7f0"><span class="cl-a40af4f8">electric</span></p></td><td class="cl-a4102375"><p class="cl-a40ff7f0"><span class="cl-a40af4f8">fire</span></p></td><td class="cl-a4102375"><p class="cl-a40ff7f0"><span class="cl-a40af4f8">requests</span></p></td><td class="cl-a4102375"><p class="cl-a40ff7f0"><span class="cl-a40af4f8">force</span></p></td><td class="cl-a4102375"><p class="cl-a40ff7f0"><span class="cl-a40af4f8">violations</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-a4102374"><p class="cl-a40ff7e6"><span class="cl-a40af4f8">2</span></p></td><td class="cl-a4102375"><p class="cl-a40ff7f0"><span class="cl-a40af4f8">health</span></p></td><td class="cl-a4102375"><p class="cl-a40ff7f0"><span class="cl-a40af4f8">mental</span></p></td><td class="cl-a4102375"><p class="cl-a40ff7f0"><span class="cl-a40af4f8">food</span></p></td><td class="cl-a4102375"><p class="cl-a40ff7f0"><span class="cl-a40af4f8">business</span></p></td><td class="cl-a4102375"><p class="cl-a40ff7f0"><span class="cl-a40af4f8">education</span></p></td><td class="cl-a4102375"><p class="cl-a40ff7f0"><span class="cl-a40af4f8">hygiene</span></p></td><td class="cl-a4102375"><p class="cl-a40ff7f0"><span class="cl-a40af4f8">children</span></p></td><td class="cl-a4102375"><p class="cl-a40ff7f0"><span class="cl-a40af4f8">service</span></p></td><td class="cl-a4102375"><p class="cl-a40ff7f0"><span class="cl-a40af4f8">provide</span></p></td><td class="cl-a4102375"><p class="cl-a40ff7f0"><span class="cl-a40af4f8">housing</span></p></td><td class="cl-a4102375"><p class="cl-a40ff7f0"><span class="cl-a40af4f8">improvement</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-a4102374"><p class="cl-a40ff7e6"><span class="cl-a40af4f8">3</span></p></td><td class="cl-a4102375"><p class="cl-a40ff7f0"><span class="cl-a40af4f8">housing</span></p></td><td class="cl-a4102375"><p class="cl-a40ff7f0"><span class="cl-a40af4f8">outreach</span></p></td><td class="cl-a4102375"><p class="cl-a40ff7f0"><span class="cl-a40af4f8">library</span></p></td><td class="cl-a4102375"><p class="cl-a40ff7f0"><span class="cl-a40af4f8">emergency</span></p></td><td class="cl-a4102375"><p class="cl-a40ff7f0"><span class="cl-a40af4f8">waste</span></p></td><td class="cl-a4102375"><p class="cl-a40ff7f0"><span class="cl-a40af4f8">residential</span></p></td><td class="cl-a4102375"><p class="cl-a40ff7f0"><span class="cl-a40af4f8">health</span></p></td><td class="cl-a4102375"><p class="cl-a40ff7f0"><span class="cl-a40af4f8">biometric</span></p></td><td class="cl-a4102375"><p class="cl-a40ff7f0"><span class="cl-a40af4f8">assistance</span></p></td><td class="cl-a4102375"><p class="cl-a40ff7f0"><span class="cl-a40af4f8">rental</span></p></td><td class="cl-a4102375"><p class="cl-a40ff7f0"><span class="cl-a40af4f8">provide</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-a410237e"><p class="cl-a40ff7e6"><span class="cl-a40af4f8">4</span></p></td><td class="cl-a410237f"><p class="cl-a40ff7f0"><span class="cl-a40af4f8">education</span></p></td><td class="cl-a410237f"><p class="cl-a40ff7f0"><span class="cl-a40af4f8">police</span></p></td><td class="cl-a410237f"><p class="cl-a40ff7f0"><span class="cl-a40af4f8">schools</span></p></td><td class="cl-a410237f"><p class="cl-a40ff7f0"><span class="cl-a40af4f8">health</span></p></td><td class="cl-a410237f"><p class="cl-a40ff7f0"><span class="cl-a40af4f8">inspections</span></p></td><td class="cl-a410237f"><p class="cl-a40ff7f0"><span class="cl-a40af4f8">buildings</span></p></td><td class="cl-a410237f"><p class="cl-a40ff7f0"><span class="cl-a40af4f8">indoor</span></p></td><td class="cl-a410237f"><p class="cl-a40ff7f0"><span class="cl-a40af4f8">mental</span></p></td><td class="cl-a410237f"><p class="cl-a40ff7f0"><span class="cl-a40af4f8">vehicles</span></p></td><td class="cl-a410237f"><p class="cl-a40ff7f0"><span class="cl-a40af4f8">housing</span></p></td><td class="cl-a410237f"><p class="cl-a40ff7f0"><span class="cl-a40af4f8">powered</span></p></td></tr></tbody></table></div>
+<div class="tabwid"><style>.cl-14c98a5a{}.cl-14bbecce{font-family:'Arial';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-14c13b66{margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-14c13b70{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-14c1656e{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-14c16578{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-14c16582{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-14c16583{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-14c1658c{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-14c1658d{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style><table data-quarto-disable-processing="true" class="cl-14c98a5a"><thead><tr style="overflow-wrap:break-word;"><th class="cl-14c1656e"><p class="cl-14c13b66"><span class="cl-14bbecce">Cluster</span></p></th><th class="cl-14c16578"><p class="cl-14c13b70"><span class="cl-14bbecce">Word 1</span></p></th><th class="cl-14c16578"><p class="cl-14c13b70"><span class="cl-14bbecce">Word 2</span></p></th><th class="cl-14c16578"><p class="cl-14c13b70"><span class="cl-14bbecce">Word 3</span></p></th><th class="cl-14c16578"><p class="cl-14c13b70"><span class="cl-14bbecce">Word 4</span></p></th><th class="cl-14c16578"><p class="cl-14c13b70"><span class="cl-14bbecce">Word 5</span></p></th><th class="cl-14c16578"><p class="cl-14c13b70"><span class="cl-14bbecce">Word 6</span></p></th><th class="cl-14c16578"><p class="cl-14c13b70"><span class="cl-14bbecce">Word 7</span></p></th><th class="cl-14c16578"><p class="cl-14c13b70"><span class="cl-14bbecce">Word 8</span></p></th><th class="cl-14c16578"><p class="cl-14c13b70"><span class="cl-14bbecce">Word 9</span></p></th><th class="cl-14c16578"><p class="cl-14c13b70"><span class="cl-14bbecce">Word 10</span></p></th><th class="cl-14c16578"><p class="cl-14c13b70"><span class="cl-14bbecce">Word 11</span></p></th></tr></thead><tbody><tr style="overflow-wrap:break-word;"><td class="cl-14c16582"><p class="cl-14c13b66"><span class="cl-14bbecce">0</span></p></td><td class="cl-14c16583"><p class="cl-14c13b70"><span class="cl-14bbecce">housing</span></p></td><td class="cl-14c16583"><p class="cl-14c13b70"><span class="cl-14bbecce">health</span></p></td><td class="cl-14c16583"><p class="cl-14c13b70"><span class="cl-14bbecce">establishment</span></p></td><td class="cl-14c16583"><p class="cl-14c13b70"><span class="cl-14bbecce">creating</span></p></td><td class="cl-14c16583"><p class="cl-14c13b70"><span class="cl-14bbecce">education</span></p></td><td class="cl-14c16583"><p class="cl-14c13b70"><span class="cl-14bbecce">provide</span></p></td><td class="cl-14c16583"><p class="cl-14c13b70"><span class="cl-14bbecce">buildings</span></p></td><td class="cl-14c16583"><p class="cl-14c13b70"><span class="cl-14bbecce">mental</span></p></td><td class="cl-14c16583"><p class="cl-14c13b70"><span class="cl-14bbecce">campaign</span></p></td><td class="cl-14c16583"><p class="cl-14c13b70"><span class="cl-14bbecce">correction</span></p></td><td class="cl-14c16583"><p class="cl-14c13b70"><span class="cl-14bbecce">package</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-14c16582"><p class="cl-14c13b66"><span class="cl-14bbecce">1</span></p></td><td class="cl-14c16583"><p class="cl-14c13b70"><span class="cl-14bbecce">parking</span></p></td><td class="cl-14c16583"><p class="cl-14c13b70"><span class="cl-14bbecce">service</span></p></td><td class="cl-14c16583"><p class="cl-14c13b70"><span class="cl-14bbecce">vehicles</span></p></td><td class="cl-14c16583"><p class="cl-14c13b70"><span class="cl-14bbecce">street</span></p></td><td class="cl-14c16583"><p class="cl-14c13b70"><span class="cl-14bbecce">veteran</span></p></td><td class="cl-14c16583"><p class="cl-14c13b70"><span class="cl-14bbecce">notification</span></p></td><td class="cl-14c16583"><p class="cl-14c13b70"><span class="cl-14bbecce">electric</span></p></td><td class="cl-14c16583"><p class="cl-14c13b70"><span class="cl-14bbecce">fire</span></p></td><td class="cl-14c16583"><p class="cl-14c13b70"><span class="cl-14bbecce">requests</span></p></td><td class="cl-14c16583"><p class="cl-14c13b70"><span class="cl-14bbecce">force</span></p></td><td class="cl-14c16583"><p class="cl-14c13b70"><span class="cl-14bbecce">violations</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-14c16582"><p class="cl-14c13b66"><span class="cl-14bbecce">2</span></p></td><td class="cl-14c16583"><p class="cl-14c13b70"><span class="cl-14bbecce">health</span></p></td><td class="cl-14c16583"><p class="cl-14c13b70"><span class="cl-14bbecce">mental</span></p></td><td class="cl-14c16583"><p class="cl-14c13b70"><span class="cl-14bbecce">food</span></p></td><td class="cl-14c16583"><p class="cl-14c13b70"><span class="cl-14bbecce">business</span></p></td><td class="cl-14c16583"><p class="cl-14c13b70"><span class="cl-14bbecce">education</span></p></td><td class="cl-14c16583"><p class="cl-14c13b70"><span class="cl-14bbecce">hygiene</span></p></td><td class="cl-14c16583"><p class="cl-14c13b70"><span class="cl-14bbecce">children</span></p></td><td class="cl-14c16583"><p class="cl-14c13b70"><span class="cl-14bbecce">service</span></p></td><td class="cl-14c16583"><p class="cl-14c13b70"><span class="cl-14bbecce">provide</span></p></td><td class="cl-14c16583"><p class="cl-14c13b70"><span class="cl-14bbecce">housing</span></p></td><td class="cl-14c16583"><p class="cl-14c13b70"><span class="cl-14bbecce">improvement</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-14c16582"><p class="cl-14c13b66"><span class="cl-14bbecce">3</span></p></td><td class="cl-14c16583"><p class="cl-14c13b70"><span class="cl-14bbecce">housing</span></p></td><td class="cl-14c16583"><p class="cl-14c13b70"><span class="cl-14bbecce">outreach</span></p></td><td class="cl-14c16583"><p class="cl-14c13b70"><span class="cl-14bbecce">library</span></p></td><td class="cl-14c16583"><p class="cl-14c13b70"><span class="cl-14bbecce">emergency</span></p></td><td class="cl-14c16583"><p class="cl-14c13b70"><span class="cl-14bbecce">waste</span></p></td><td class="cl-14c16583"><p class="cl-14c13b70"><span class="cl-14bbecce">residential</span></p></td><td class="cl-14c16583"><p class="cl-14c13b70"><span class="cl-14bbecce">health</span></p></td><td class="cl-14c16583"><p class="cl-14c13b70"><span class="cl-14bbecce">biometric</span></p></td><td class="cl-14c16583"><p class="cl-14c13b70"><span class="cl-14bbecce">assistance</span></p></td><td class="cl-14c16583"><p class="cl-14c13b70"><span class="cl-14bbecce">rental</span></p></td><td class="cl-14c16583"><p class="cl-14c13b70"><span class="cl-14bbecce">provide</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-14c1658c"><p class="cl-14c13b66"><span class="cl-14bbecce">4</span></p></td><td class="cl-14c1658d"><p class="cl-14c13b70"><span class="cl-14bbecce">education</span></p></td><td class="cl-14c1658d"><p class="cl-14c13b70"><span class="cl-14bbecce">police</span></p></td><td class="cl-14c1658d"><p class="cl-14c13b70"><span class="cl-14bbecce">schools</span></p></td><td class="cl-14c1658d"><p class="cl-14c13b70"><span class="cl-14bbecce">health</span></p></td><td class="cl-14c1658d"><p class="cl-14c13b70"><span class="cl-14bbecce">inspections</span></p></td><td class="cl-14c1658d"><p class="cl-14c13b70"><span class="cl-14bbecce">buildings</span></p></td><td class="cl-14c1658d"><p class="cl-14c13b70"><span class="cl-14bbecce">indoor</span></p></td><td class="cl-14c1658d"><p class="cl-14c13b70"><span class="cl-14bbecce">mental</span></p></td><td class="cl-14c1658d"><p class="cl-14c13b70"><span class="cl-14bbecce">vehicles</span></p></td><td class="cl-14c1658d"><p class="cl-14c13b70"><span class="cl-14bbecce">housing</span></p></td><td class="cl-14c1658d"><p class="cl-14c13b70"><span class="cl-14bbecce">powered</span></p></td></tr></tbody></table></div>
 </div>
 <p>While both the voting data and sponsorship is somewhat difficult to parse due to the rate of cooperation and lopsided voting, trends do emerge from each that complement the other. In the voting data, a group of progressive council members emerge as a group of protest voters, seeking to check or register objection to Mayor Adams’s more conservative impulses. This same group of protest votes sponsor bills together, and these sponsorships fall into two categories 1) bills with high rates of progressive co-sponsorship that often deal with progressive wish lists and 2) bills with progressive members as the prime sponsors that gain higher rates of other cluster sponsors and have a much higher rate of passing. All of this activity fits the model of a progressive core seeking to counter a conservative mayor’s agenda and establish a progressive regime. The next section will examine if these trends in voting and sponsorship are also mirrored in electoral patterns.</p>
 </section>
@@ -2284,12 +2284,12 @@ div.csl-indent {
 <p>This section will first look at what distinguishes the council districts won by the progressive cluster from other districts, then turn to look at their performance by electoral districts to see what, if any, demographic patterns predicted their success. Subsequent chapters will then examine how these demographic trends hold race by race. Table 8 offers some descriptive statistics on the council districts won by members of the progressive cluster, cluster 3. They are the second whitest cluster, with the highest rate of white transplants, non-Hispanic whites born outside of New York State. They have high education levels and low home ownership levels. Figure 1 maps all the clusters, including only districts that had a contested Democratic primary in 2021.</p>
 <div class="cell-output-display">
 
-<div id="ifzerarfud" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="gqktdyalhu" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>html {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-#ifzerarfud .gt_table {
+#gqktdyalhu .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -2314,7 +2314,7 @@ div.csl-indent {
   border-left-color: #D3D3D3;
 }
 
-#ifzerarfud .gt_heading {
+#gqktdyalhu .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -2326,7 +2326,7 @@ div.csl-indent {
   border-right-color: #D3D3D3;
 }
 
-#ifzerarfud .gt_title {
+#gqktdyalhu .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -2338,7 +2338,7 @@ div.csl-indent {
   border-bottom-width: 0;
 }
 
-#ifzerarfud .gt_subtitle {
+#gqktdyalhu .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -2350,13 +2350,13 @@ div.csl-indent {
   border-top-width: 0;
 }
 
-#ifzerarfud .gt_bottom_border {
+#gqktdyalhu .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#ifzerarfud .gt_col_headings {
+#gqktdyalhu .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2371,7 +2371,7 @@ div.csl-indent {
   border-right-color: #D3D3D3;
 }
 
-#ifzerarfud .gt_col_heading {
+#gqktdyalhu .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2391,7 +2391,7 @@ div.csl-indent {
   overflow-x: hidden;
 }
 
-#ifzerarfud .gt_column_spanner_outer {
+#gqktdyalhu .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2403,15 +2403,15 @@ div.csl-indent {
   padding-right: 4px;
 }
 
-#ifzerarfud .gt_column_spanner_outer:first-child {
+#gqktdyalhu .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#ifzerarfud .gt_column_spanner_outer:last-child {
+#gqktdyalhu .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#ifzerarfud .gt_column_spanner {
+#gqktdyalhu .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -2423,7 +2423,7 @@ div.csl-indent {
   width: 100%;
 }
 
-#ifzerarfud .gt_group_heading {
+#gqktdyalhu .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2448,7 +2448,7 @@ div.csl-indent {
   vertical-align: middle;
 }
 
-#ifzerarfud .gt_empty_group_heading {
+#gqktdyalhu .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -2463,15 +2463,15 @@ div.csl-indent {
   vertical-align: middle;
 }
 
-#ifzerarfud .gt_from_md > :first-child {
+#gqktdyalhu .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#ifzerarfud .gt_from_md > :last-child {
+#gqktdyalhu .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#ifzerarfud .gt_row {
+#gqktdyalhu .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2490,7 +2490,7 @@ div.csl-indent {
   overflow-x: hidden;
 }
 
-#ifzerarfud .gt_stub {
+#gqktdyalhu .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2503,7 +2503,7 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#ifzerarfud .gt_stub_row_group {
+#gqktdyalhu .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2517,11 +2517,11 @@ div.csl-indent {
   vertical-align: top;
 }
 
-#ifzerarfud .gt_row_group_first td {
+#gqktdyalhu .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#ifzerarfud .gt_summary_row {
+#gqktdyalhu .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2531,16 +2531,16 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#ifzerarfud .gt_first_summary_row {
+#gqktdyalhu .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#ifzerarfud .gt_first_summary_row.thick {
+#gqktdyalhu .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#ifzerarfud .gt_last_summary_row {
+#gqktdyalhu .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2550,7 +2550,7 @@ div.csl-indent {
   border-bottom-color: #D3D3D3;
 }
 
-#ifzerarfud .gt_grand_summary_row {
+#gqktdyalhu .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2560,7 +2560,7 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#ifzerarfud .gt_first_grand_summary_row {
+#gqktdyalhu .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2570,11 +2570,11 @@ div.csl-indent {
   border-top-color: #D3D3D3;
 }
 
-#ifzerarfud .gt_striped {
+#gqktdyalhu .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#ifzerarfud .gt_table_body {
+#gqktdyalhu .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2583,7 +2583,7 @@ div.csl-indent {
   border-bottom-color: #D3D3D3;
 }
 
-#ifzerarfud .gt_footnotes {
+#gqktdyalhu .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2597,7 +2597,7 @@ div.csl-indent {
   border-right-color: #D3D3D3;
 }
 
-#ifzerarfud .gt_footnote {
+#gqktdyalhu .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-left: 4px;
@@ -2606,7 +2606,7 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#ifzerarfud .gt_sourcenotes {
+#gqktdyalhu .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2620,7 +2620,7 @@ div.csl-indent {
   border-right-color: #D3D3D3;
 }
 
-#ifzerarfud .gt_sourcenote {
+#gqktdyalhu .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -2628,64 +2628,64 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#ifzerarfud .gt_left {
+#gqktdyalhu .gt_left {
   text-align: left;
 }
 
-#ifzerarfud .gt_center {
+#gqktdyalhu .gt_center {
   text-align: center;
 }
 
-#ifzerarfud .gt_right {
+#gqktdyalhu .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#ifzerarfud .gt_font_normal {
+#gqktdyalhu .gt_font_normal {
   font-weight: normal;
 }
 
-#ifzerarfud .gt_font_bold {
+#gqktdyalhu .gt_font_bold {
   font-weight: bold;
 }
 
-#ifzerarfud .gt_font_italic {
+#gqktdyalhu .gt_font_italic {
   font-style: italic;
 }
 
-#ifzerarfud .gt_super {
+#gqktdyalhu .gt_super {
   font-size: 65%;
 }
 
-#ifzerarfud .gt_footnote_marks {
+#gqktdyalhu .gt_footnote_marks {
   font-style: italic;
   font-weight: normal;
   font-size: 75%;
   vertical-align: 0.4em;
 }
 
-#ifzerarfud .gt_asterisk {
+#gqktdyalhu .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#ifzerarfud .gt_indent_1 {
+#gqktdyalhu .gt_indent_1 {
   text-indent: 5px;
 }
 
-#ifzerarfud .gt_indent_2 {
+#gqktdyalhu .gt_indent_2 {
   text-indent: 10px;
 }
 
-#ifzerarfud .gt_indent_3 {
+#gqktdyalhu .gt_indent_3 {
   text-indent: 15px;
 }
 
-#ifzerarfud .gt_indent_4 {
+#gqktdyalhu .gt_indent_4 {
   text-indent: 20px;
 }
 
-#ifzerarfud .gt_indent_5 {
+#gqktdyalhu .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -2752,12 +2752,12 @@ div.csl-indent {
 <p>To further investigate these demographic variables an OLS model was run on the 919 election districts in which a member of cluster 3 ran, using vote share for those candidates as its dependent variable. The independent variables come from two sources, the tract-level ACS 5-Year file and NYC Open Data, which allows access to datasets from various city agencies. The variables are the log of the median household income, the Black and Hispanic share of an ED, the share of non-Hispanic whites born outside New York State, the share possessing a BA or more, the share of homeowners, and two variables to register noise complaints. One noise variable is the average number of 311 noise complaints per month, the other is the combined number of noise complaints made during the summer of 2020 when there was a large spike in complaints in many areas of the city. The two variables are negatively correlated, implying perhaps summer complaint spikes happened in areas with low average numbers of complaints, so they were both included. Multicollinearity is a concern with these closely related demographic variables, but no variables are correlated at a level higher than .7 and no variable has a VIF higher than 3. The mean and median of all the IVs are listed below.</p>
 <div class="cell-output-display">
 
-<div id="uhkxekwuvw" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="fwhpjkimsw" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>html {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-#uhkxekwuvw .gt_table {
+#fwhpjkimsw .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -2782,7 +2782,7 @@ div.csl-indent {
   border-left-color: #D3D3D3;
 }
 
-#uhkxekwuvw .gt_heading {
+#fwhpjkimsw .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -2794,7 +2794,7 @@ div.csl-indent {
   border-right-color: #D3D3D3;
 }
 
-#uhkxekwuvw .gt_title {
+#fwhpjkimsw .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -2806,7 +2806,7 @@ div.csl-indent {
   border-bottom-width: 0;
 }
 
-#uhkxekwuvw .gt_subtitle {
+#fwhpjkimsw .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -2818,13 +2818,13 @@ div.csl-indent {
   border-top-width: 0;
 }
 
-#uhkxekwuvw .gt_bottom_border {
+#fwhpjkimsw .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#uhkxekwuvw .gt_col_headings {
+#fwhpjkimsw .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2839,7 +2839,7 @@ div.csl-indent {
   border-right-color: #D3D3D3;
 }
 
-#uhkxekwuvw .gt_col_heading {
+#fwhpjkimsw .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2859,7 +2859,7 @@ div.csl-indent {
   overflow-x: hidden;
 }
 
-#uhkxekwuvw .gt_column_spanner_outer {
+#fwhpjkimsw .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2871,15 +2871,15 @@ div.csl-indent {
   padding-right: 4px;
 }
 
-#uhkxekwuvw .gt_column_spanner_outer:first-child {
+#fwhpjkimsw .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#uhkxekwuvw .gt_column_spanner_outer:last-child {
+#fwhpjkimsw .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#uhkxekwuvw .gt_column_spanner {
+#fwhpjkimsw .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -2891,7 +2891,7 @@ div.csl-indent {
   width: 100%;
 }
 
-#uhkxekwuvw .gt_group_heading {
+#fwhpjkimsw .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2916,7 +2916,7 @@ div.csl-indent {
   vertical-align: middle;
 }
 
-#uhkxekwuvw .gt_empty_group_heading {
+#fwhpjkimsw .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -2931,15 +2931,15 @@ div.csl-indent {
   vertical-align: middle;
 }
 
-#uhkxekwuvw .gt_from_md > :first-child {
+#fwhpjkimsw .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#uhkxekwuvw .gt_from_md > :last-child {
+#fwhpjkimsw .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#uhkxekwuvw .gt_row {
+#fwhpjkimsw .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2958,7 +2958,7 @@ div.csl-indent {
   overflow-x: hidden;
 }
 
-#uhkxekwuvw .gt_stub {
+#fwhpjkimsw .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2971,7 +2971,7 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#uhkxekwuvw .gt_stub_row_group {
+#fwhpjkimsw .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2985,11 +2985,11 @@ div.csl-indent {
   vertical-align: top;
 }
 
-#uhkxekwuvw .gt_row_group_first td {
+#fwhpjkimsw .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#uhkxekwuvw .gt_summary_row {
+#fwhpjkimsw .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2999,16 +2999,16 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#uhkxekwuvw .gt_first_summary_row {
+#fwhpjkimsw .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#uhkxekwuvw .gt_first_summary_row.thick {
+#fwhpjkimsw .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#uhkxekwuvw .gt_last_summary_row {
+#fwhpjkimsw .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3018,7 +3018,7 @@ div.csl-indent {
   border-bottom-color: #D3D3D3;
 }
 
-#uhkxekwuvw .gt_grand_summary_row {
+#fwhpjkimsw .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -3028,7 +3028,7 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#uhkxekwuvw .gt_first_grand_summary_row {
+#fwhpjkimsw .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3038,11 +3038,11 @@ div.csl-indent {
   border-top-color: #D3D3D3;
 }
 
-#uhkxekwuvw .gt_striped {
+#fwhpjkimsw .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#uhkxekwuvw .gt_table_body {
+#fwhpjkimsw .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -3051,7 +3051,7 @@ div.csl-indent {
   border-bottom-color: #D3D3D3;
 }
 
-#uhkxekwuvw .gt_footnotes {
+#fwhpjkimsw .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -3065,7 +3065,7 @@ div.csl-indent {
   border-right-color: #D3D3D3;
 }
 
-#uhkxekwuvw .gt_footnote {
+#fwhpjkimsw .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-left: 4px;
@@ -3074,7 +3074,7 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#uhkxekwuvw .gt_sourcenotes {
+#fwhpjkimsw .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -3088,7 +3088,7 @@ div.csl-indent {
   border-right-color: #D3D3D3;
 }
 
-#uhkxekwuvw .gt_sourcenote {
+#fwhpjkimsw .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -3096,64 +3096,64 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#uhkxekwuvw .gt_left {
+#fwhpjkimsw .gt_left {
   text-align: left;
 }
 
-#uhkxekwuvw .gt_center {
+#fwhpjkimsw .gt_center {
   text-align: center;
 }
 
-#uhkxekwuvw .gt_right {
+#fwhpjkimsw .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#uhkxekwuvw .gt_font_normal {
+#fwhpjkimsw .gt_font_normal {
   font-weight: normal;
 }
 
-#uhkxekwuvw .gt_font_bold {
+#fwhpjkimsw .gt_font_bold {
   font-weight: bold;
 }
 
-#uhkxekwuvw .gt_font_italic {
+#fwhpjkimsw .gt_font_italic {
   font-style: italic;
 }
 
-#uhkxekwuvw .gt_super {
+#fwhpjkimsw .gt_super {
   font-size: 65%;
 }
 
-#uhkxekwuvw .gt_footnote_marks {
+#fwhpjkimsw .gt_footnote_marks {
   font-style: italic;
   font-weight: normal;
   font-size: 75%;
   vertical-align: 0.4em;
 }
 
-#uhkxekwuvw .gt_asterisk {
+#fwhpjkimsw .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#uhkxekwuvw .gt_indent_1 {
+#fwhpjkimsw .gt_indent_1 {
   text-indent: 5px;
 }
 
-#uhkxekwuvw .gt_indent_2 {
+#fwhpjkimsw .gt_indent_2 {
   text-indent: 10px;
 }
 
-#uhkxekwuvw .gt_indent_3 {
+#fwhpjkimsw .gt_indent_3 {
   text-indent: 15px;
 }
 
-#uhkxekwuvw .gt_indent_4 {
+#fwhpjkimsw .gt_indent_4 {
   text-indent: 20px;
 }
 
-#uhkxekwuvw .gt_indent_5 {
+#fwhpjkimsw .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -3833,8 +3833,8 @@ Adjusted R<sup>2</sup>
 
     <script>
 
-      function styleCell_i81wlski6ikug1cflwih(i, j, css_id) {
-          var table = document.getElementById("tinytable_i81wlski6ikug1cflwih");
+      function styleCell_h0rec4vmo5l9humlrqnw(i, j, css_id) {
+          var table = document.getElementById("tinytable_h0rec4vmo5l9humlrqnw");
           var cell = table.rows[i]?.cells[j];  // Safe navigation to avoid errors
           if (cell) {
               console.log(`Styling cell at (${i}, ${j}) with class ${css_id}`);
@@ -3844,7 +3844,7 @@ Adjusted R<sup>2</sup>
           }
       }
       function insertSpanRow(i, colspan, content) {
-        var table = document.getElementById('tinytable_i81wlski6ikug1cflwih');
+        var table = document.getElementById('tinytable_h0rec4vmo5l9humlrqnw');
         var newRow = table.insertRow(i);
         var newCell = newRow.insertCell(0);
         newCell.setAttribute("colspan", colspan);
@@ -3852,8 +3852,8 @@ Adjusted R<sup>2</sup>
         // this may be unsafe, but innerText does not interpret <br>
         newCell.innerHTML = content;
       }
-      function spanCell_i81wlski6ikug1cflwih(i, j, rowspan, colspan) {
-        var table = document.getElementById("tinytable_i81wlski6ikug1cflwih");
+      function spanCell_h0rec4vmo5l9humlrqnw(i, j, rowspan, colspan) {
+        var table = document.getElementById("tinytable_h0rec4vmo5l9humlrqnw");
         const targetRow = table.rows[i];
         const targetCell = targetRow.cells[j];
         for (let r = 0; r < rowspan; r++) {
@@ -3883,20 +3883,20 @@ Adjusted R<sup>2</sup>
       window.addEventListener('load', function () {
           var cellsToStyle = [
             // tinytable style arrays after
-          { positions: [ { i: 18, j: 0 },  ], css_id: 'tinytable_css_sa8jr0yu8bd13symbva7',}, 
-          { positions: [ { i: 1, j: 0 }, { i: 2, j: 0 }, { i: 3, j: 0 }, { i: 4, j: 0 }, { i: 5, j: 0 }, { i: 6, j: 0 }, { i: 7, j: 0 }, { i: 8, j: 0 }, { i: 9, j: 0 }, { i: 10, j: 0 }, { i: 11, j: 0 }, { i: 12, j: 0 }, { i: 13, j: 0 }, { i: 14, j: 0 }, { i: 15, j: 0 }, { i: 16, j: 0 }, { i: 17, j: 0 }, { i: 19, j: 0 }, { i: 20, j: 0 }, { i: 21, j: 0 },  ], css_id: 'tinytable_css_pbc03itkmofr8384qema',}, 
-          { positions: [ { i: 1, j: 1 }, { i: 5, j: 1 }, { i: 7, j: 1 }, { i: 4, j: 1 }, { i: 9, j: 1 }, { i: 2, j: 1 }, { i: 11, j: 1 }, { i: 8, j: 1 }, { i: 13, j: 1 }, { i: 14, j: 1 }, { i: 15, j: 1 }, { i: 3, j: 1 }, { i: 17, j: 1 }, { i: 12, j: 3 }, { i: 19, j: 1 }, { i: 20, j: 1 }, { i: 21, j: 1 }, { i: 16, j: 3 }, { i: 10, j: 1 }, { i: 1, j: 2 }, { i: 2, j: 2 }, { i: 3, j: 2 }, { i: 4, j: 2 }, { i: 5, j: 2 }, { i: 16, j: 1 }, { i: 7, j: 2 }, { i: 8, j: 2 }, { i: 9, j: 2 }, { i: 10, j: 2 }, { i: 11, j: 2 }, { i: 12, j: 2 }, { i: 13, j: 2 }, { i: 14, j: 2 }, { i: 15, j: 2 }, { i: 16, j: 2 }, { i: 17, j: 2 }, { i: 12, j: 4 }, { i: 19, j: 2 }, { i: 20, j: 2 }, { i: 21, j: 2 }, { i: 16, j: 4 }, { i: 6, j: 1 }, { i: 1, j: 3 }, { i: 2, j: 3 }, { i: 3, j: 3 }, { i: 4, j: 3 }, { i: 5, j: 3 }, { i: 12, j: 1 }, { i: 7, j: 3 }, { i: 8, j: 3 }, { i: 9, j: 3 }, { i: 10, j: 3 }, { i: 11, j: 3 }, { i: 6, j: 5 }, { i: 13, j: 3 }, { i: 14, j: 3 }, { i: 15, j: 3 }, { i: 10, j: 5 }, { i: 17, j: 3 }, { i: 12, j: 5 }, { i: 19, j: 3 }, { i: 20, j: 3 }, { i: 21, j: 3 }, { i: 16, j: 5 }, { i: 6, j: 2 }, { i: 1, j: 4 }, { i: 2, j: 4 }, { i: 3, j: 4 }, { i: 4, j: 4 }, { i: 5, j: 4 }, { i: 6, j: 4 }, { i: 7, j: 4 }, { i: 8, j: 4 }, { i: 9, j: 4 }, { i: 10, j: 4 }, { i: 11, j: 4 }, { i: 2, j: 5 }, { i: 13, j: 4 }, { i: 14, j: 4 }, { i: 15, j: 4 }, { i: 19, j: 5 }, { i: 17, j: 4 }, { i: 8, j: 5 }, { i: 19, j: 4 }, { i: 20, j: 4 }, { i: 21, j: 4 }, { i: 3, j: 5 }, { i: 6, j: 3 }, { i: 1, j: 5 }, { i: 15, j: 5 }, { i: 7, j: 5 }, { i: 4, j: 5 }, { i: 5, j: 5 }, { i: 14, j: 5 }, { i: 11, j: 5 }, { i: 21, j: 5 }, { i: 9, j: 5 }, { i: 20, j: 5 }, { i: 13, j: 5 }, { i: 17, j: 5 },  ], css_id: 'tinytable_css_ieom5sbo2luf6epzku0k',}, 
-          { positions: [ { i: 0, j: 0 },  ], css_id: 'tinytable_css_82xwoo6hgygv6g5ou0go',}, 
-          { positions: [ { i: 0, j: 1 }, { i: 0, j: 3 }, { i: 0, j: 4 }, { i: 0, j: 5 }, { i: 0, j: 2 },  ], css_id: 'tinytable_css_6vajeob8y6ckddw6kru0',}, 
-          { positions: [ { i: 22, j: 0 },  ], css_id: 'tinytable_css_41xwn1snnn67rqmbx9r8',}, 
-          { positions: [ { i: 18, j: 1 }, { i: 18, j: 3 }, { i: 18, j: 5 }, { i: 18, j: 2 }, { i: 18, j: 4 },  ], css_id: 'tinytable_css_2iu8cezyfh331opccy1f',}, 
-          { positions: [ { i: 22, j: 4 }, { i: 22, j: 1 }, { i: 22, j: 2 }, { i: 22, j: 3 }, { i: 22, j: 5 },  ], css_id: 'tinytable_css_0ufqd8n68ozu1wvw1jp4',}, 
+          { positions: [ { i: 1, j: 0 }, { i: 2, j: 0 }, { i: 3, j: 0 }, { i: 4, j: 0 }, { i: 5, j: 0 }, { i: 6, j: 0 }, { i: 7, j: 0 }, { i: 8, j: 0 }, { i: 9, j: 0 }, { i: 10, j: 0 }, { i: 11, j: 0 }, { i: 12, j: 0 }, { i: 13, j: 0 }, { i: 14, j: 0 }, { i: 15, j: 0 }, { i: 16, j: 0 }, { i: 17, j: 0 }, { i: 19, j: 0 }, { i: 20, j: 0 }, { i: 21, j: 0 },  ], css_id: 'tinytable_css_rjp1egfs5e8c9m1bry5q',}, 
+          { positions: [ { i: 0, j: 1 }, { i: 0, j: 3 }, { i: 0, j: 4 }, { i: 0, j: 5 }, { i: 0, j: 2 },  ], css_id: 'tinytable_css_jzyhnyhql13eb0x13sjb',}, 
+          { positions: [ { i: 1, j: 1 }, { i: 5, j: 1 }, { i: 7, j: 1 }, { i: 4, j: 1 }, { i: 9, j: 1 }, { i: 2, j: 1 }, { i: 11, j: 1 }, { i: 8, j: 1 }, { i: 13, j: 1 }, { i: 14, j: 1 }, { i: 15, j: 1 }, { i: 3, j: 1 }, { i: 17, j: 1 }, { i: 12, j: 3 }, { i: 19, j: 1 }, { i: 20, j: 1 }, { i: 21, j: 1 }, { i: 16, j: 3 }, { i: 10, j: 1 }, { i: 1, j: 2 }, { i: 2, j: 2 }, { i: 3, j: 2 }, { i: 4, j: 2 }, { i: 5, j: 2 }, { i: 16, j: 1 }, { i: 7, j: 2 }, { i: 8, j: 2 }, { i: 9, j: 2 }, { i: 10, j: 2 }, { i: 11, j: 2 }, { i: 12, j: 2 }, { i: 13, j: 2 }, { i: 14, j: 2 }, { i: 15, j: 2 }, { i: 16, j: 2 }, { i: 17, j: 2 }, { i: 12, j: 4 }, { i: 19, j: 2 }, { i: 20, j: 2 }, { i: 21, j: 2 }, { i: 16, j: 4 }, { i: 6, j: 1 }, { i: 1, j: 3 }, { i: 2, j: 3 }, { i: 3, j: 3 }, { i: 4, j: 3 }, { i: 5, j: 3 }, { i: 12, j: 1 }, { i: 7, j: 3 }, { i: 8, j: 3 }, { i: 9, j: 3 }, { i: 10, j: 3 }, { i: 11, j: 3 }, { i: 6, j: 5 }, { i: 13, j: 3 }, { i: 14, j: 3 }, { i: 15, j: 3 }, { i: 10, j: 5 }, { i: 17, j: 3 }, { i: 12, j: 5 }, { i: 19, j: 3 }, { i: 20, j: 3 }, { i: 21, j: 3 }, { i: 16, j: 5 }, { i: 6, j: 2 }, { i: 1, j: 4 }, { i: 2, j: 4 }, { i: 3, j: 4 }, { i: 4, j: 4 }, { i: 5, j: 4 }, { i: 6, j: 4 }, { i: 7, j: 4 }, { i: 8, j: 4 }, { i: 9, j: 4 }, { i: 10, j: 4 }, { i: 11, j: 4 }, { i: 2, j: 5 }, { i: 13, j: 4 }, { i: 14, j: 4 }, { i: 15, j: 4 }, { i: 19, j: 5 }, { i: 17, j: 4 }, { i: 8, j: 5 }, { i: 19, j: 4 }, { i: 20, j: 4 }, { i: 21, j: 4 }, { i: 3, j: 5 }, { i: 6, j: 3 }, { i: 1, j: 5 }, { i: 15, j: 5 }, { i: 7, j: 5 }, { i: 4, j: 5 }, { i: 5, j: 5 }, { i: 14, j: 5 }, { i: 11, j: 5 }, { i: 21, j: 5 }, { i: 9, j: 5 }, { i: 20, j: 5 }, { i: 13, j: 5 }, { i: 17, j: 5 },  ], css_id: 'tinytable_css_ev8vu8bzhk2p2rtfvk0x',}, 
+          { positions: [ { i: 0, j: 0 },  ], css_id: 'tinytable_css_ejenvz4b5g23e8uq548y',}, 
+          { positions: [ { i: 22, j: 0 },  ], css_id: 'tinytable_css_cykg2iflomlmqbvlseuu',}, 
+          { positions: [ { i: 22, j: 4 }, { i: 22, j: 1 }, { i: 22, j: 2 }, { i: 22, j: 3 }, { i: 22, j: 5 },  ], css_id: 'tinytable_css_bv2ur1lzfpuelgl25piv',}, 
+          { positions: [ { i: 18, j: 0 },  ], css_id: 'tinytable_css_avljkfnhmpuw05j1va4d',}, 
+          { positions: [ { i: 18, j: 1 }, { i: 18, j: 3 }, { i: 18, j: 5 }, { i: 18, j: 2 }, { i: 18, j: 4 },  ], css_id: 'tinytable_css_8rykfbxkb19l3asf3czb',}, 
           ];
 
           // Loop over the arrays to style the cells
           cellsToStyle.forEach(function (group) {
               group.positions.forEach(function (cell) {
-                  styleCell_i81wlski6ikug1cflwih(cell.i, cell.j, group.css_id);
+                  styleCell_h0rec4vmo5l9humlrqnw(cell.i, cell.j, group.css_id);
               });
           });
       });
@@ -3904,17 +3904,17 @@ Adjusted R<sup>2</sup>
 
     <style>
       /* tinytable css entries after */
-      .table td.tinytable_css_sa8jr0yu8bd13symbva7, .table th.tinytable_css_sa8jr0yu8bd13symbva7 { text-align: left; border-bottom: solid black 0.05em; }
-      .table td.tinytable_css_pbc03itkmofr8384qema, .table th.tinytable_css_pbc03itkmofr8384qema { text-align: left; }
-      .table td.tinytable_css_ieom5sbo2luf6epzku0k, .table th.tinytable_css_ieom5sbo2luf6epzku0k { text-align: center; }
-      .table td.tinytable_css_82xwoo6hgygv6g5ou0go, .table th.tinytable_css_82xwoo6hgygv6g5ou0go { text-align: left; border-top: solid #d3d8dc 0.1em; border-bottom: solid #d3d8dc 0.05em; }
-      .table td.tinytable_css_6vajeob8y6ckddw6kru0, .table th.tinytable_css_6vajeob8y6ckddw6kru0 { text-align: center; border-top: solid #d3d8dc 0.1em; border-bottom: solid #d3d8dc 0.05em; }
-      .table td.tinytable_css_41xwn1snnn67rqmbx9r8, .table th.tinytable_css_41xwn1snnn67rqmbx9r8 { text-align: left; border-bottom: solid #d3d8dc 0.1em; }
-      .table td.tinytable_css_2iu8cezyfh331opccy1f, .table th.tinytable_css_2iu8cezyfh331opccy1f { text-align: center; border-bottom: solid black 0.05em; }
-      .table td.tinytable_css_0ufqd8n68ozu1wvw1jp4, .table th.tinytable_css_0ufqd8n68ozu1wvw1jp4 { text-align: center; border-bottom: solid #d3d8dc 0.1em; }
+      .table td.tinytable_css_rjp1egfs5e8c9m1bry5q, .table th.tinytable_css_rjp1egfs5e8c9m1bry5q { text-align: left; }
+      .table td.tinytable_css_jzyhnyhql13eb0x13sjb, .table th.tinytable_css_jzyhnyhql13eb0x13sjb { text-align: center; border-top: solid #d3d8dc 0.1em; border-bottom: solid #d3d8dc 0.05em; }
+      .table td.tinytable_css_ev8vu8bzhk2p2rtfvk0x, .table th.tinytable_css_ev8vu8bzhk2p2rtfvk0x { text-align: center; }
+      .table td.tinytable_css_ejenvz4b5g23e8uq548y, .table th.tinytable_css_ejenvz4b5g23e8uq548y { text-align: left; border-top: solid #d3d8dc 0.1em; border-bottom: solid #d3d8dc 0.05em; }
+      .table td.tinytable_css_cykg2iflomlmqbvlseuu, .table th.tinytable_css_cykg2iflomlmqbvlseuu { text-align: left; border-bottom: solid #d3d8dc 0.1em; }
+      .table td.tinytable_css_bv2ur1lzfpuelgl25piv, .table th.tinytable_css_bv2ur1lzfpuelgl25piv { text-align: center; border-bottom: solid #d3d8dc 0.1em; }
+      .table td.tinytable_css_avljkfnhmpuw05j1va4d, .table th.tinytable_css_avljkfnhmpuw05j1va4d { text-align: left; border-bottom: solid black 0.05em; }
+      .table td.tinytable_css_8rykfbxkb19l3asf3czb, .table th.tinytable_css_8rykfbxkb19l3asf3czb { text-align: center; border-bottom: solid black 0.05em; }
     </style>
     <div class="container">
-      <table class="table table-borderless" id="tinytable_i81wlski6ikug1cflwih" style="width: auto; margin-left: auto; margin-right: auto;" data-quarto-disable-processing="true">
+      <table class="table table-borderless" id="tinytable_h0rec4vmo5l9humlrqnw" style="width: auto; margin-left: auto; margin-right: auto;" data-quarto-disable-processing="true">
         <thead>
         
               <tr>
@@ -4116,12 +4116,12 @@ Adjusted R<sup>2</sup>
 <p><br></p>
 <div class="cell-output-display">
 
-<div id="tognuzqpjk" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="aymhwjanuu" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>html {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-#tognuzqpjk .gt_table {
+#aymhwjanuu .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -4146,7 +4146,7 @@ Adjusted R<sup>2</sup>
   border-left-color: #D3D3D3;
 }
 
-#tognuzqpjk .gt_heading {
+#aymhwjanuu .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -4158,7 +4158,7 @@ Adjusted R<sup>2</sup>
   border-right-color: #D3D3D3;
 }
 
-#tognuzqpjk .gt_title {
+#aymhwjanuu .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -4170,7 +4170,7 @@ Adjusted R<sup>2</sup>
   border-bottom-width: 0;
 }
 
-#tognuzqpjk .gt_subtitle {
+#aymhwjanuu .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -4182,13 +4182,13 @@ Adjusted R<sup>2</sup>
   border-top-width: 0;
 }
 
-#tognuzqpjk .gt_bottom_border {
+#aymhwjanuu .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#tognuzqpjk .gt_col_headings {
+#aymhwjanuu .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -4203,7 +4203,7 @@ Adjusted R<sup>2</sup>
   border-right-color: #D3D3D3;
 }
 
-#tognuzqpjk .gt_col_heading {
+#aymhwjanuu .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4223,7 +4223,7 @@ Adjusted R<sup>2</sup>
   overflow-x: hidden;
 }
 
-#tognuzqpjk .gt_column_spanner_outer {
+#aymhwjanuu .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4235,15 +4235,15 @@ Adjusted R<sup>2</sup>
   padding-right: 4px;
 }
 
-#tognuzqpjk .gt_column_spanner_outer:first-child {
+#aymhwjanuu .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#tognuzqpjk .gt_column_spanner_outer:last-child {
+#aymhwjanuu .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#tognuzqpjk .gt_column_spanner {
+#aymhwjanuu .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -4255,7 +4255,7 @@ Adjusted R<sup>2</sup>
   width: 100%;
 }
 
-#tognuzqpjk .gt_group_heading {
+#aymhwjanuu .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4280,7 +4280,7 @@ Adjusted R<sup>2</sup>
   vertical-align: middle;
 }
 
-#tognuzqpjk .gt_empty_group_heading {
+#aymhwjanuu .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -4295,15 +4295,15 @@ Adjusted R<sup>2</sup>
   vertical-align: middle;
 }
 
-#tognuzqpjk .gt_from_md > :first-child {
+#aymhwjanuu .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#tognuzqpjk .gt_from_md > :last-child {
+#aymhwjanuu .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#tognuzqpjk .gt_row {
+#aymhwjanuu .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4322,7 +4322,7 @@ Adjusted R<sup>2</sup>
   overflow-x: hidden;
 }
 
-#tognuzqpjk .gt_stub {
+#aymhwjanuu .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4335,7 +4335,7 @@ Adjusted R<sup>2</sup>
   padding-right: 5px;
 }
 
-#tognuzqpjk .gt_stub_row_group {
+#aymhwjanuu .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4349,11 +4349,11 @@ Adjusted R<sup>2</sup>
   vertical-align: top;
 }
 
-#tognuzqpjk .gt_row_group_first td {
+#aymhwjanuu .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#tognuzqpjk .gt_summary_row {
+#aymhwjanuu .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -4363,16 +4363,16 @@ Adjusted R<sup>2</sup>
   padding-right: 5px;
 }
 
-#tognuzqpjk .gt_first_summary_row {
+#aymhwjanuu .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#tognuzqpjk .gt_first_summary_row.thick {
+#aymhwjanuu .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#tognuzqpjk .gt_last_summary_row {
+#aymhwjanuu .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4382,7 +4382,7 @@ Adjusted R<sup>2</sup>
   border-bottom-color: #D3D3D3;
 }
 
-#tognuzqpjk .gt_grand_summary_row {
+#aymhwjanuu .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -4392,7 +4392,7 @@ Adjusted R<sup>2</sup>
   padding-right: 5px;
 }
 
-#tognuzqpjk .gt_first_grand_summary_row {
+#aymhwjanuu .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4402,11 +4402,11 @@ Adjusted R<sup>2</sup>
   border-top-color: #D3D3D3;
 }
 
-#tognuzqpjk .gt_striped {
+#aymhwjanuu .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#tognuzqpjk .gt_table_body {
+#aymhwjanuu .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -4415,7 +4415,7 @@ Adjusted R<sup>2</sup>
   border-bottom-color: #D3D3D3;
 }
 
-#tognuzqpjk .gt_footnotes {
+#aymhwjanuu .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -4429,7 +4429,7 @@ Adjusted R<sup>2</sup>
   border-right-color: #D3D3D3;
 }
 
-#tognuzqpjk .gt_footnote {
+#aymhwjanuu .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-left: 4px;
@@ -4438,7 +4438,7 @@ Adjusted R<sup>2</sup>
   padding-right: 5px;
 }
 
-#tognuzqpjk .gt_sourcenotes {
+#aymhwjanuu .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -4452,7 +4452,7 @@ Adjusted R<sup>2</sup>
   border-right-color: #D3D3D3;
 }
 
-#tognuzqpjk .gt_sourcenote {
+#aymhwjanuu .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -4460,64 +4460,64 @@ Adjusted R<sup>2</sup>
   padding-right: 5px;
 }
 
-#tognuzqpjk .gt_left {
+#aymhwjanuu .gt_left {
   text-align: left;
 }
 
-#tognuzqpjk .gt_center {
+#aymhwjanuu .gt_center {
   text-align: center;
 }
 
-#tognuzqpjk .gt_right {
+#aymhwjanuu .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#tognuzqpjk .gt_font_normal {
+#aymhwjanuu .gt_font_normal {
   font-weight: normal;
 }
 
-#tognuzqpjk .gt_font_bold {
+#aymhwjanuu .gt_font_bold {
   font-weight: bold;
 }
 
-#tognuzqpjk .gt_font_italic {
+#aymhwjanuu .gt_font_italic {
   font-style: italic;
 }
 
-#tognuzqpjk .gt_super {
+#aymhwjanuu .gt_super {
   font-size: 65%;
 }
 
-#tognuzqpjk .gt_footnote_marks {
+#aymhwjanuu .gt_footnote_marks {
   font-style: italic;
   font-weight: normal;
   font-size: 75%;
   vertical-align: 0.4em;
 }
 
-#tognuzqpjk .gt_asterisk {
+#aymhwjanuu .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#tognuzqpjk .gt_indent_1 {
+#aymhwjanuu .gt_indent_1 {
   text-indent: 5px;
 }
 
-#tognuzqpjk .gt_indent_2 {
+#aymhwjanuu .gt_indent_2 {
   text-indent: 10px;
 }
 
-#tognuzqpjk .gt_indent_3 {
+#aymhwjanuu .gt_indent_3 {
   text-indent: 15px;
 }
 
-#tognuzqpjk .gt_indent_4 {
+#aymhwjanuu .gt_indent_4 {
   text-indent: 20px;
 }
 
-#tognuzqpjk .gt_indent_5 {
+#aymhwjanuu .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -4555,12 +4555,12 @@ Adjusted R<sup>2</sup>
 <p><br></p>
 <div class="cell-output-display">
 
-<div id="apiwroxpkp" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="ijcexgyjew" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>html {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-#apiwroxpkp .gt_table {
+#ijcexgyjew .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -4585,7 +4585,7 @@ Adjusted R<sup>2</sup>
   border-left-color: #D3D3D3;
 }
 
-#apiwroxpkp .gt_heading {
+#ijcexgyjew .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -4597,7 +4597,7 @@ Adjusted R<sup>2</sup>
   border-right-color: #D3D3D3;
 }
 
-#apiwroxpkp .gt_title {
+#ijcexgyjew .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -4609,7 +4609,7 @@ Adjusted R<sup>2</sup>
   border-bottom-width: 0;
 }
 
-#apiwroxpkp .gt_subtitle {
+#ijcexgyjew .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -4621,13 +4621,13 @@ Adjusted R<sup>2</sup>
   border-top-width: 0;
 }
 
-#apiwroxpkp .gt_bottom_border {
+#ijcexgyjew .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#apiwroxpkp .gt_col_headings {
+#ijcexgyjew .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -4642,7 +4642,7 @@ Adjusted R<sup>2</sup>
   border-right-color: #D3D3D3;
 }
 
-#apiwroxpkp .gt_col_heading {
+#ijcexgyjew .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4662,7 +4662,7 @@ Adjusted R<sup>2</sup>
   overflow-x: hidden;
 }
 
-#apiwroxpkp .gt_column_spanner_outer {
+#ijcexgyjew .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4674,15 +4674,15 @@ Adjusted R<sup>2</sup>
   padding-right: 4px;
 }
 
-#apiwroxpkp .gt_column_spanner_outer:first-child {
+#ijcexgyjew .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#apiwroxpkp .gt_column_spanner_outer:last-child {
+#ijcexgyjew .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#apiwroxpkp .gt_column_spanner {
+#ijcexgyjew .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -4694,7 +4694,7 @@ Adjusted R<sup>2</sup>
   width: 100%;
 }
 
-#apiwroxpkp .gt_group_heading {
+#ijcexgyjew .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4719,7 +4719,7 @@ Adjusted R<sup>2</sup>
   vertical-align: middle;
 }
 
-#apiwroxpkp .gt_empty_group_heading {
+#ijcexgyjew .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -4734,15 +4734,15 @@ Adjusted R<sup>2</sup>
   vertical-align: middle;
 }
 
-#apiwroxpkp .gt_from_md > :first-child {
+#ijcexgyjew .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#apiwroxpkp .gt_from_md > :last-child {
+#ijcexgyjew .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#apiwroxpkp .gt_row {
+#ijcexgyjew .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4761,7 +4761,7 @@ Adjusted R<sup>2</sup>
   overflow-x: hidden;
 }
 
-#apiwroxpkp .gt_stub {
+#ijcexgyjew .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4774,7 +4774,7 @@ Adjusted R<sup>2</sup>
   padding-right: 5px;
 }
 
-#apiwroxpkp .gt_stub_row_group {
+#ijcexgyjew .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4788,11 +4788,11 @@ Adjusted R<sup>2</sup>
   vertical-align: top;
 }
 
-#apiwroxpkp .gt_row_group_first td {
+#ijcexgyjew .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#apiwroxpkp .gt_summary_row {
+#ijcexgyjew .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -4802,16 +4802,16 @@ Adjusted R<sup>2</sup>
   padding-right: 5px;
 }
 
-#apiwroxpkp .gt_first_summary_row {
+#ijcexgyjew .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#apiwroxpkp .gt_first_summary_row.thick {
+#ijcexgyjew .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#apiwroxpkp .gt_last_summary_row {
+#ijcexgyjew .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4821,7 +4821,7 @@ Adjusted R<sup>2</sup>
   border-bottom-color: #D3D3D3;
 }
 
-#apiwroxpkp .gt_grand_summary_row {
+#ijcexgyjew .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -4831,7 +4831,7 @@ Adjusted R<sup>2</sup>
   padding-right: 5px;
 }
 
-#apiwroxpkp .gt_first_grand_summary_row {
+#ijcexgyjew .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4841,11 +4841,11 @@ Adjusted R<sup>2</sup>
   border-top-color: #D3D3D3;
 }
 
-#apiwroxpkp .gt_striped {
+#ijcexgyjew .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#apiwroxpkp .gt_table_body {
+#ijcexgyjew .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -4854,7 +4854,7 @@ Adjusted R<sup>2</sup>
   border-bottom-color: #D3D3D3;
 }
 
-#apiwroxpkp .gt_footnotes {
+#ijcexgyjew .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -4868,7 +4868,7 @@ Adjusted R<sup>2</sup>
   border-right-color: #D3D3D3;
 }
 
-#apiwroxpkp .gt_footnote {
+#ijcexgyjew .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-left: 4px;
@@ -4877,7 +4877,7 @@ Adjusted R<sup>2</sup>
   padding-right: 5px;
 }
 
-#apiwroxpkp .gt_sourcenotes {
+#ijcexgyjew .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -4891,7 +4891,7 @@ Adjusted R<sup>2</sup>
   border-right-color: #D3D3D3;
 }
 
-#apiwroxpkp .gt_sourcenote {
+#ijcexgyjew .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -4899,64 +4899,64 @@ Adjusted R<sup>2</sup>
   padding-right: 5px;
 }
 
-#apiwroxpkp .gt_left {
+#ijcexgyjew .gt_left {
   text-align: left;
 }
 
-#apiwroxpkp .gt_center {
+#ijcexgyjew .gt_center {
   text-align: center;
 }
 
-#apiwroxpkp .gt_right {
+#ijcexgyjew .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#apiwroxpkp .gt_font_normal {
+#ijcexgyjew .gt_font_normal {
   font-weight: normal;
 }
 
-#apiwroxpkp .gt_font_bold {
+#ijcexgyjew .gt_font_bold {
   font-weight: bold;
 }
 
-#apiwroxpkp .gt_font_italic {
+#ijcexgyjew .gt_font_italic {
   font-style: italic;
 }
 
-#apiwroxpkp .gt_super {
+#ijcexgyjew .gt_super {
   font-size: 65%;
 }
 
-#apiwroxpkp .gt_footnote_marks {
+#ijcexgyjew .gt_footnote_marks {
   font-style: italic;
   font-weight: normal;
   font-size: 75%;
   vertical-align: 0.4em;
 }
 
-#apiwroxpkp .gt_asterisk {
+#ijcexgyjew .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#apiwroxpkp .gt_indent_1 {
+#ijcexgyjew .gt_indent_1 {
   text-indent: 5px;
 }
 
-#apiwroxpkp .gt_indent_2 {
+#ijcexgyjew .gt_indent_2 {
   text-indent: 10px;
 }
 
-#apiwroxpkp .gt_indent_3 {
+#ijcexgyjew .gt_indent_3 {
   text-indent: 15px;
 }
 
-#apiwroxpkp .gt_indent_4 {
+#ijcexgyjew .gt_indent_4 {
   text-indent: 20px;
 }
 
-#apiwroxpkp .gt_indent_5 {
+#ijcexgyjew .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -5606,7 +5606,7 @@ Adjusted R<sup>2</sup>
 </section>
 <section id="conclusion" class="level2">
 <h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
-<p>This chapter has explored clustering the NYC City Council by the way they vote, the way the co-sponsor legislation, and the areas of the city that elect them. Voting and co-sponsorship pointed to clearly defined group of members that vote in protest against mayoral budgets and mayoral appointments and frequently co-sponsor bills that protect workers, migrants, women, children, and LGBTQ New Yorkers. This legislative activity fits well with the idea of an egalitarian urban order defined by Weaver and discussed in Chapter 1. This legislative activity does not map well onto electoral demographics. The members won in four of the five types of districts clustered by their demographic makeup, they have found a winning formula in a variety of electoral circumstances. The coming chapters will look in more detail at the way these races were won, as well as a couple of narrow DSA loses in Central Brooklyn and Western Queens.</p>
+<p>This chapter has explored clustering the NYC City Council by the way they vote, the way they co-sponsor legislation, and the areas of the city that elect them. Voting and co-sponsorship pointed to a clearly defined group of members that vote in protest against mayoral budgets and mayoral appointments and frequently co-sponsor bills that protect workers, migrants, women, children, and LGBTQ New Yorkers. This legislative activity fits well with the idea of an egalitarian urban order defined by Weaver and discussed in Chapter 1. This legislative activity does not map well onto electoral demographics. The members won in four of the five types of districts clustered by their demographic makeup, they have found a winning formula in a variety of electoral circumstances. The coming chapters will look in more detail at the way these races were won, as well as a couple of narrow DSA losses in Central Brooklyn and Western Queens.</p>
 
 </section>
 
@@ -5620,6 +5620,9 @@ Lloyd, S. 1982. <span>“Least Squares Quantization in PCM.”</span> <em>IEEE T
 </div>
 <div id="ref-meyer2021" class="csl-entry" role="doc-biblioentry">
 Meyer, Cosima, and Dennis Hammerschmidt. 2021. <span>“A Pledged Community? Using Community Detection to Analyze Autocratic Cooperation in UN Co-Sponsorship Networks.”</span> In, edited by Rosa M. Benito, Chantal Cherifi, Hocine Cherifi, Esteban Moro, Luis Mateus Rocha, and Marta Sales-Pardo, 177–88. Cham: Springer International Publishing. <a href="https://doi.org/10.1007/978-3-030-65347-7_15">https://doi.org/10.1007/978-3-030-65347-7_15</a>.
+</div>
+<div id="ref-restler2024a" class="csl-entry" role="doc-biblioentry">
+Restler, Lincoln. 2024. <span>“Interview with CM Restler,”</span> November.
 </div>
 <div id="ref-steinley2006a" class="csl-entry" role="doc-biblioentry">
 Steinley, Douglas. 2006. <span>“K-Means Clustering: A Half-Century Synthesis.”</span> <em>British Journal of Mathematical and Statistical Psychology</em> 59 (1): 1–34. <a href="https://doi.org/10.1348/000711005X48266">https://doi.org/10.1348/000711005X48266</a>.
