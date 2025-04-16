@@ -18,16 +18,23 @@ library(fixest)
 ```
 
 ```{r data, echo=FALSE,warning=FALSE, message=FALSE}
-meta_clusters <- read_csv('../data/meta_clusters_with_formatted_name.csv')
-bsr <- read_csv('../../cc_legislation/data/bills_with_cluster_count.csv')
+meta_clusters <- read_csv('../../member_chapters/data/meta_cluster_March17.csv')
+bsr <- read_csv('../../cc_legislation/data/bills_with_cluster_count_MARCH24.csv')
 tf_idf<- read_csv("../data/top_words_by_cluster.csv")
 cc_sf <- read_sf('../../neighborhoods_ccdistricts/data/shapefiles/city_council')
 c3_results <- read_csv("../../cc_election_cleaning/election_results_with_vote_sponsor_cluster_DEC04.csv")
+new_clusters <- read_csv("../data/electoral_results_with_new_cluster.csv")
 demo_clusters <- read_csv("../../cc_election_cleaning/district_level_demo_clusters.csv")
 cluster_influence <- read_csv("../../cc_election_cleaning/top_variables_with_scores_per_cluster.csv")
 
 cluster_three <- c3_results %>%
   filter(kmode_cluster == 3)
+
+cluster_map<-winners%>%
+  select(district,new_cluster)%>%
+  distinct()
+demo_clusters <- left_join(demo_clusters,cluster_map,by="district")
+
 ```
 
 ```{r flex_function, include=FALSE}
@@ -48,11 +55,11 @@ return(ft_out)
 }
 ```
 
-The New York City Council, at least since 2021, has been a body with a high rate of cooperation, its members often broadly support other member's bills even across partisan and ideological boundaries. Additionally, there is a high rate of agenda control; bills that will not pass a floor vote die in committee before they make it to the floor. These aspects of the legislative process combine to make the ideological clusters of members murky, so much cooperation masks important ideological fault lines. This murkiness does not, however, mean those fault lines are nonexistent. When these two types of clustering, voting and sponsorship, are done in unison, the same clusters emerge from both, revealing a group of progressive legislators who manage to push through the relative unanimity of the body to define a distinctly progressive legislative agenda. This chapter will work through the clustering process, showing the methodological considerations and the outcomes of both the voting and sponsoring clustering process. It will then look to see how the emergent progressive cluster is also reflected in the electoral demographic data.
+This chapter will explore empirically the theoretical schema laid out in the previous chapter. Specifically, it will break the New York City Council into ideological factions that can then be analyzed as discrete political units. To do so it will use council members’ voting records, bill sponsorship, campaign finance, endorsements, expert analysis, and caucus membership. The task is complicated by the fact that most council votes are lopsided and by the high rate of co-sponsorship, every member has co-sponsored with another at least once. Nonetheless, clear factions do emerge. First and most clearly a conservative faction, then a far-left DSA centered faction, then more moderate left factions. Finally, demographic support for these factions is discussed in the context of the discussion of social-democratic party families in Chapter 1. This analysis supports specific racial and occupational support for the DSA specifically and more mixed support for the that support for the progressive cluster more broadly.
 
 ## Voting
 
-Council floor votes are heavily lopsided, most pass with only a few dissenting conservative voices. This makes isolating the Council's conservatives quite easy but makes breaking the rest of the body into clusters more difficult. To attempt to do this K-Means clustering, a clustering methodology with wide application which seeks to partition a set of observations into a pre-defined number of clusters around centroids that minimize within cluster variance, was employed [@lloyd1982a; @steinley2006a]. The data used to cluster were all floor votes from 2022 and 2023, reduced to the 100 closest votes with at least 30 members voting, measured by the ratio of anti-votes and abstentions to pro votes. The votes were then one-hot coded, which makes dummy variables for each option for each bill (e.g. a dummy for pro bill 1, a dummy for anti bill 1, etc.). Once organized, K-Means clustering was run on this dataset. When running K-Means, the number of clusters is defined in advance. Several common tests were used to predetermine the number of clusters, as well as experimenting with the results, landing on best results with three clusters. No matter how many clusters were defined, the method pulls out the conservatives, who vote no or abstain as a bloc on much legislation. If more than three clusters are defined, it also pulls out a group of progressive council members including both DSA members as well as other progressive stalwarts such as Chi Ossé, Jennifer Guttierez, Sandy Nurse, and Shahana Hanif. Table 1 below shows both the Conservative and Progressive caucus.
+Council floor votes are heavily lopsided, most pass with only a few dissenting conservative voices. This makes isolating the Council's conservatives quite easy but makes breaking the rest of the body into clusters more difficult. To do this K-Means clustering, a clustering methodology with wide application which seeks to partition a set of observations into a pre-defined number of clusters around centroids that minimize within cluster variance, was employed [@lloyd1982a; @steinley2006a]. K‑Means starts by choosing a fixed number of “group centers” (or centroids) and then assigns each council member to whichever center is closest to their overall voting record. It next recalculates each center as the average voting profile of its assigned members, and then re‑assigns members to the nearest updated center—repeating these two steps until the groups stabilize. By one‑hot coding every “yes,” “no,” or “abstain” vote, each vote is turned into a separate binary feature so that the algorithm can measure similarity across all bills. Finally, simple diagnostics (for example, looking for the “elbow” in a plot of within‑group variance or checking silhouette scores) are employed to pick three clusters that balance clarity and cohesion. The data used to cluster were all floor votes from 2022 and 2023, reduced to the 100 closest votes with at least 30 members voting, measured by the ratio of anti-votes and abstentions to pro votes. No matter how many clusters were defined, the method pulls out the conservatives, who vote no or abstain as a bloc on much legislation. If more than three clusters are defined, it also pulls out a group of progressive council members including both DSA members as well as other progressive stalwarts such as Chi Ossé, Jennifer Guttierez, Sandy Nurse, and Shahana Hanif, several of which were mentioned in interviews with DSA members as close to the party. Table 1 below shows both the Conservative and Progressive bloc.
 
 ```{r,table 1,echo=FALSE,warning=FALSE , results='asis'}
 meta_clusters %>%
@@ -63,15 +70,15 @@ meta_clusters %>%
   cols_label(vote_cluster = 'Cluster',proper_names = 'Council Members')
 ```
 
-K-Means clustering performed with the Python library Sickit-Learn allows for examination of how each item on which the clustering was performed (here, votes on bills) affected the overall cluster placement.[^1] The bills that most influenced the placement of these progressive members into a cluster are no votes on budget bills and mayoral appointments (all of which nonetheless passed). No matter how many more clusters are specified no new group cluster forms; individuals from the massive non-progressive or conservative cluster start to peel off one by one. There are therefore three voting clusters in the Council: a large majority that vote yes on most bills for which they are present, and two dissenting minorities, a conservative one who votes no quite frequently and a progressive one who votes no on key pieces of legislation, especially in cases in which to do so is antagonistic to the mayor. It is the latter that is of the most interest to this project as it is a demonstration of the vying for regime control described in Chapter 1. This portion of the council, loud and active in its opposition to Mayor Adams's conservative policy agenda, has helped push the entire body more firmly into its role of Mayoral oversight, culminating in overridden vetoes and the Speaker referring to the body as a "co-equal" branch of government [@adams].
+K-Means clustering performed with the Python library Sickit-Learn allows for examination of how each item on which the clustering was performed (here, votes on bills) affected the overall cluster placement.[^1] The bills that most influenced the placement of these progressive members into a cluster are no votes on budget bills and mayoral appointments (all of which nonetheless passed). This aligns with DSA's members insistence on the primacy of budget and the importance of voting against what they condier to be austerity budgets. No matter how many more clusters are specified no new group cluster forms; individuals from the massive non-progressive or conservative cluster start to peel off one by one. There are therefore three voting clusters in the Council: a large majority that vote yes on most bills for which they are present, and two dissenting minorities, a conservative one who votes no quite frequently and a progressive one who votes no on key pieces of legislation, especially in cases in which to do so is antagonistic to the mayor. It is the latter that is of the most interest to this project as it is a demonstration of the vying for regime control described in Chapter 1. This portion of the council, loud and active in its opposition to Mayor Adams's conservative policy agenda, has helped push the entire body more firmly into its role of Mayoral oversight, culminating in overridden vetoes and the Speaker referring to the body as a "co-equal" branch of government [@adams].
 
 [^1]: "Scikit-learn: Machine Learning in Python," Pedregosa et al., JMLR 12, pp. 2825-2830, 2011.
 
 ## Co-Sponsorship
 
-Examining the patterns in which members sponsor bills faces similar challenges, though it also reveals similar groups of conservative and progressive legislators. Many bills, especially those that pass, have high numbers of sponsors. The mean number of sponsors for a bill in the dataset was 13, with the mean number for a bill that passed at 23. Additionally, there is a lot of co-sponsorship across ideological lines; every member has co-sponsored with every other member at least once, often many more times than once. This is perhaps not surprising, as Lincoln Restler highlighted, voters prize pragmatism in their council votes and members are aware of this, so there is motivation to work across boundaries to get things done [@restler2024a]. This high rate of cooperation means that using traditional methods to visualize networks leads to a large bird's nest of co-sponsorship, a version of this tangled graph is included in the appendix. Nonetheless, members do of course co-sponsor with some members much more frequently than others, so despite the significant noise caused by cooperation patterns do emerge.
+Examining the patterns in which members sponsor bills also faces challenges, though it also reveals similar groups of conservative and progressive legislators. Many bills, especially those that pass, have high numbers of sponsors. The mean number of sponsors for a bill in the dataset was 13, with the mean number for a bill that passed at 23. Additionally, there is a lot of co-sponsorship across ideological lines; every member has co-sponsored with every other member at least once, often many more times than once. This is perhaps not surprising, as Lincoln Restler highlighted, voters prize pragmatism in their council votes and members are aware of this, so there is motivation to work across boundaries to get things done [@restler2024a]. This high rate of cooperation means that using traditional methods to visualize networks leads to a large bird's nest of co-sponsorship, a version of this tangled graph is included in the appendix. Nonetheless, members do co-sponsor with some members much more frequently than others, so despite the significant noise caused by cooperation patterns do emerge.
 
-To identify these patterns, K-Means clustering was once again employed. To prepare the data, a matrix that described how often each member co-sponsored with another on a scale of 0-1 was formed. Bills that had 40 or more co-sponsors were removed to reduce noise and isolate more meaningful co-sponsorships. The K-Means was then run on this matrix. The results of this are recorded in Table 2 below. The results mirror those found in the voting patterns above, cluster 1 again features both DSA members as well as other (though not all) members from the voting clusters above. This cluster remained as long as there were more than two clusters defined.
+To identify these patterns, K-Means clustering was once again employed. To prepare the data, a matrix that described how often each member co-sponsored with another on a scale of 0-1 was formed, with 1 representing co-sponsorship on every single bill. Bills that had 40 or more co-sponsors were removed to reduce noise and isolate more meaningful co-sponsorships. The K-Means was then run on this matrix. The results of this are recorded in Table 2 below. The results mirror those found in the voting patterns above, cluster 1 again features both DSA members as well as other (though not all) members from the voting clusters above. This cluster remained stable as long as there were more than two clusters defined.
 
 ```{r,table 2,echo=FALSE,warning=FALSE , results='asis'}
 
@@ -84,7 +91,7 @@ meta_clusters %>%
 
 ```
 
-The Louvain method of community detection was used to check the robustness of the K-Means results. This algorithm takes data that has already been structured for network mapping (a different form than the matrix used for the K-Means) and detects communities based on the weights of the edges (connections) in this network. Here clusters are not predefined, the algorithm arrives at a number on its own. This method of community detection has seen increasing application in Political Science research, including a similar task of detecting small and nuanced communities in co-sponsorship of bills in the UN General Assembly [@meyer2021]. The results are displayed in Table 3 below, where the the Louvain method picks up a similar group of progressives, though with additions to the group formed by the K-Means.
+The Louvain method of community detection was used to check the robustness of the K-Means results. This algorithm takes data that has already been structured for network mapping (a different form than the matrix used for the K-Means) and detects communities based on the weights of the edges (connections) in this network. Here clusters are not predefined, the algorithm arrives at a number on its own. This method of community detection has seen increasing application in Political Science research, including a similar task of detecting small and nuanced communities in co-sponsorship of bills in the UN General Assembly [@meyer2021]. The results are displayed in Table 3 below, where the the Louvain method picks up a similar group of progressives, though with additions, to the group formed by the K-Means.
 
 ```{r,table 3,echo=FALSE,warning=FALSE , results='asis'}
 ft <- meta_clusters %>%
@@ -97,74 +104,72 @@ ft <- meta_clusters %>%
 ft
 ```
 
-Despite some variation in its specific makeup, both methods agree that there is a progressive bloc sponsoring together and voting in protest together. To try and make sense of these similar but slightly different clustering blocs, two different methods of meta-clustering the three types of clusters already done were employed. One was a repeat of the K-Means after again one-hot encoding the data. The other was K-Mode, which, as the name suggests, is a similar method of clustering that takes the mode rather than the mean to handle categorical data. While the two methods diverged on some members, they agreed exactly on the progressive group. Table 4 shows this group.
-
-```{r, table 4,echo=FALSE,warning=FALSE , results='asis'}
-meta_clusters %>%
-  select(proper_name, kmode_cluster) %>%
-  filter(kmode_cluster == 3)%>%
-  group_by(kmode_cluster) %>%
-  summarize(proper_names = paste(proper_name, collapse = ", "))%>%
-  gt()%>%
-  cols_label(kmode_cluster = 'Cluster',proper_names = 'Council Members')
-```
-
 ## Sponsored Bills
 
 The bills these progressives co-sponsor fall into two general categories, bills that attract a high-rate of fellow progressives and have a low chance of passing, and bills that are primarily sponsored by progressives but attract a wider level of support and therefore have a higher chance of passing. Both groups of bills track closely with the egalitarian urban order defined by Weaver and discussed in Chapter 1. Table 5 shows the bills which have the highest percentage of sponsors from the progressive cluster. They concern worker protections, oversight of the NYPD, tenant advocacy, environmental concerns, college counseling for low-income New Yorkers and protections for cyclists. Not a single bill with more than 60% of its sponsors from this cluster was enacted, so while these progressive-heavy bills may be pushing the rhetoric of the council left they have not, as of yet, translated into legislation.
 
-```{r, table 5,echo=FALSE,warning=FALSE , results='asis'}
-bsr %>%
-  select(EventItemMatterName, percent_cluster_3) %>%
-  arrange(desc(percent_cluster_3)) %>%
-  slice(1:10)%>%
-  gt()%>%
-  cols_label(EventItemMatterName = 'Bill Summary',percent_cluster_3 = '% of Sponsors from Cluster 3')
+```{r, table 5,echo=FALSE,warning=FALSE , results='asis'} 
+bsr %>%   select(EventItemMatterName, percent_cluster_4) %>%   arrange(desc(percent_cluster_4)) %>%   slice(1:10)%>%   gt()%>%   cols_label(EventItemMatterName = 'Bill Summary',percent_cluster_4 = '% of Sponsors from Progressive Cluster')
 ```
 
 This does not mean, however, that the group is ineffective. Dozens of bills sponsored by members of this progressive cluster have been enacted on topics that are slightly different but similarly progressive. Table 6 below shows the enacted cluster 3 bills with the highest rate of co-sponsorship, a full list of bills they have sponsored and passed are available in the appendix. These bills have to do with worker protections, migrant rights, the distribution of free menstrual products, the protections of LGBTQ New Yorkers, the protection of reproduction rights, protections for the homeless, and a "Marshall Plan for Moms" to help support working mothers. These members have clearly set a progressive agenda both in practice and in rhetoric. To compare these bills to those sponsored by other clusters table 7 shows a Term Frequency -- Inverse Document Frequency (TF-IDF) of the text descriptions of the bills sponsored by each group. What this in effect shows are the words that occur most frequently in each group's legislation but less in others.
 
-```{r, table 6,echo=FALSE,warning=FALSE , results='asis'}
-bsr %>%
-  filter(primary_sponsor_cluster == 3 & EventItemMatterStatus == 'Enacted')%>%
-  select(EventItemMatterName, percent_cluster_3) %>%
-  arrange(desc(percent_cluster_3)) %>%
-  slice(1:10)%>%
-  gt()%>%
-cols_label(EventItemMatterName = 'Bill Summary',percent_cluster_3 = '% of Sponsors from Cluster 3')
+```{r, table 6,echo=FALSE,warning=FALSE , results='asis'} 
+bsr %>%   
+filter(primary_sponsor_cluster == 3 & EventItemMatterStatus == 'Enacted')%>%   select(EventItemMatterName, percent_cluster_3) %>%   arrange(desc(percent_cluster_3)) %>%   slice(1:10)%>%   gt()%>% cols_label(EventItemMatterName = 'Bill Summary',percent_cluster_3 = '% of Sponsors from Cluster 3')
 ```
 
 </br>
 
-```{r, table 7,echo=FALSE,warning=FALSE , results='asis'}
-ft<- tf_idf%>%
-  flextable()
-
+```{r, table 7,echo=FALSE,warning=FALSE , results='asis'} 
+ft<- tf_idf%>%  
+  flextable()  
 ft
 ```
 
 While both the voting data and sponsorship is somewhat difficult to parse due to the rate of cooperation and lopsided voting, trends do emerge from each that complement the other. In the voting data, a group of progressive council members emerge as a group of protest voters, seeking to check or register objection to Mayor Adams's more conservative impulses. This same group of protest votes sponsor bills together, and these sponsorships fall into two categories 1) bills with high rates of progressive co-sponsorship that often deal with progressive wish lists and 2) bills with progressive members as the prime sponsors that gain higher rates of other cluster sponsors and have a much higher rate of passing. All of this activity fits the model of a progressive core seeking to counter a conservative mayor's agenda and establish a progressive regime. The next section will examine if these trends in voting and sponsorship are also mirrored in electoral patterns.
+
+## Meta Clustering
+
+Despite some variation in its specific makeup, both methods agree that there is a progressive bloc sponsoring together and voting in protest together. To try and make sense of these similar but slightly different clustering blocs, other important variables are introduced and a process of meta-clustering was performed. The variables used in addition to the voting and sponsorship clusters are: 1) a catagorical variable that records whether members remained in the progressive caucus after a max exodus over defunding the NYPD, left the caucus, or were never members, 2) how the members were categorized by NYC political journalist Michael Lange, who offers a detailed categorization of ideal type NYC politicians[^2], 3) whether the members were endorsed by the Working Families Party, and 4) a clustering of how their campaign was financed, which looked at the number and amount of individual contributions as well as what percentage of the contributions originated from inside the district[^3].
+
+[^2]: Lange explores these categorizations in a viral substack post [@lange2022], he expanded on this and offered a categorization of every member of the body in an interview conducted for this dissertation [@lange2025].
+
+[^3]: The process of clustering was identical to the one performed on voting and sponsorship. A table is available in the appendix.
+
+This dataset features all categorical data in which, for most variables, the specific number had no meaning. In order to cluster based on these individual categories K-Mode clustering was employed.  K‑Mode works much like K‑Means but swaps out “averages” for “most common categories." First a fixed number of prototype category‑patterns (modes) is selected. Then each observation is assigned to the mode it matches most closely; that is, the one with which it has the fewest category‐mismatches. Next, each mode is recalculated by taking, for each variable, the single category that appears most often among its assigned observations. These two steps—assigning to the nearest mode and then updating the modes—repeat until the groups stop changing. Finally, again like K-Means, simple diagnostics (for example, looking for a sharp drop in total mismatches as k increases) to confirm that the chosen number of clusters best balances simplicity and explanatory power. Table 4 shows the group that emerges from this process.
+
+```{r, table 4,echo=FALSE,warning=FALSE , results='asis'}
+meta_clusters %>%
+  select(proper_name, new_cluster) %>%
+  #filter(new_cluster == 4)%>%
+  group_by(new_cluster) %>%
+  summarize(proper_names = paste(proper_name, collapse = ", "))%>%
+  gt()%>%
+  cols_label(new_cluster = 'Cluster',proper_names = 'Council Members')
+```
 
 ## Electoral Patterns
 
 This section will first look at what distinguishes the council districts won by the progressive cluster from other districts, then turn to look at their performance by electoral districts to see what, if any, demographic patterns predicted their success. Subsequent chapters will then examine how these demographic trends hold race by race. Table 8 offers some descriptive statistics on the council districts won by members of the progressive cluster, cluster 3. They are the second whitest cluster, with the highest rate of white transplants, non-Hispanic whites born outside of New York State. They have high education levels and low home ownership levels. Figure 1 maps all the clusters, including only districts that had a contested Democratic primary in 2021.
 
 ```{r, table 8,echo=FALSE,warning=FALSE , results='asis',message=FALSE}
-winners <- c3_results%>%
+winners <- new_clusters%>%
   filter(winner == TRUE)
 
 winners %>%
-  drop_na(district_cluster)%>%
-  group_by(district_cluster)%>%
+  drop_na(new_cluster,white_transplant_ratio,nhw21p,nhb21p,cvap21bapp,hh21op)%>%
+  group_by(new_cluster)%>%
   summarize(
     perc_white = mean(nhw21p),
     perc_black = mean(nhb21p),
     degree = mean(cvap21bapp),
     homeowners = mean(hh21op),
     wh_tr = mean(white_transplant_ratio),
+    income = mean(mhhi21)
   )%>%
   gt()%>%
-  cols_label(district_cluster = 'Cluster', perc_white = 'NH White Share',
+  cols_label(new_cluster = 'Cluster', perc_white = 'NH White Share',
               perc_black = 'NH Black Share', degree = '% BA or Higher',
               homeowners = '% Homeowners', wh_tr = '% White Transplants')
 
@@ -176,10 +181,10 @@ winners %>%
 
 
 
-district_clusters <- c3_results%>%
-  drop_na(district_cluster)%>%
-  group_by(district,district_cluster)%>%
-  summarise(cluster = mean(district_cluster))
+district_clusters <- new_clusters%>%
+  drop_na(new_cluster)%>%
+  group_by(district,new_cluster)%>%
+  summarise(cluster = mean(new_cluster))
 district_clusters$CounDist <- district_clusters$district
 cluster_map <- left_join(cc_sf,district_clusters, by = 'CounDist')
 
@@ -191,14 +196,17 @@ ggplot(data = cluster_map) +
        fill = "Cluster")
 ```
 
-Cluster 3's homebase is central Brooklyn, with other districts in Harlem and in northern Queens. A DSA member narrowly lost a race in Brooklyn's 35th district, which would have added to this progressive weight in central Brooklyn. This location, combined with the demographic descriptives included above, suggests that the truism of progressive politics appealing to white, well-educated, economically downwardly mobile, newcomers may be true, though of course this data is not granular enough to conclude this. It at least suggests a geographic base of progressive politics in a diverse and rapidly changing corner of the city and a broad idea of its demographic characteristics. To dig further, this section will now turn to the ED level results for the districts in cluster 3, looking only at the first choice of the Ranked Choice Voting.
+Cluster 3's homebase is thecorridor from Sunset Park North through Park Slope, passing through a large chunk of North Brooklyn and then into Long Island City and Astoria. A DSA member narrowly lost a race in Brooklyn's 35th district, which would have added to this progressive weight in central Brooklyn. This location, combined with the demographic descriptives included above, suggests that the truism of progressive politics appealing to white, well-educated, economically downwardly mobile, newcomers may be true, though of course this data is not granular enough to conclude this. It at least suggests a geographic base of progressive politics in a diverse and rapidly changing corner of the city and a broad idea of its demographic characteristics. To dig further, this section will now turn to the ED level results for the districts in cluster 3, looking only at the first choice of the Ranked Choice Voting.
 
 To further investigate these demographic variables an OLS model was run on the 919 election districts in which a member of cluster 3 ran, using vote share for those candidates as its dependent variable. The independent variables come from two sources, the tract-level ACS 5-Year file and NYC Open Data, which allows access to datasets from various city agencies. The variables are the log of the median household income, the Black and Hispanic share of an ED, the share of non-Hispanic whites born outside New York State, the share possessing a BA or more, the share of homeowners, and two variables to register noise complaints. One noise variable is the average number of 311 noise complaints per month, the other is the combined number of noise complaints made during the summer of 2020 when there was a large spike in complaints in many areas of the city. The two variables are negatively correlated, implying perhaps summer complaint spikes happened in areas with low average numbers of complaints, so they were both included. Multicollinearity is a concern with these closely related demographic variables, but no variables are correlated at a level higher than .7 and no variable has a VIF higher than 3. The mean and median of all the IVs are listed below.
 
 ```{r, table 9,echo=FALSE,warning=FALSE , results='asis'}
 
-cluster_three$log_income <- log(cluster_three$mhhi21)
-cluster_three%>%
+prog_cluster <- new_clusters%>%
+  filter(new_cluster == 4)
+prog_cluster <- prog_cluster %>%
+  mutate(log_income = ifelse(mhhi21 > 0, log(mhhi21), NA))
+prog_cluster%>%
   summarise(mean_log = mean(log_income),
             med_log = median(log_income),
             mean_black = mean(nhb21p),
@@ -222,23 +230,24 @@ cluster_three%>%
 
 ```
 
-All variables in the models below have been scaled and standardized to easily compare their effects. While there are some large and significant coefficients, the first item of note is that the R squared is quite low. Additionally, while several of the coefficients point to an electorate of white, educated, culturally employed, liberal, newcomers, others, such as education and retail employment do not. Those could be genuine, the white transplant voting pool could be less educated than imagined or the EDs these candidates did well in could just be heterogenous (though the racial variables dispute this), but this nonetheless poses a puzzle.
+All variables in the models below have been scaled and standardized to easily compare their effects. While there are some large and significant coefficients, the first item of note is that the R squared is quite low, meaning that not much of the variance has been explained. Additionally, while several of the coefficients point to an electorate of white, educated, culturally employed, liberal, newcomers, others, such as education and retail employment do not. Those could be genuine, the white transplant voting pool could be less educated than imagined or the EDs these candidates did well in could just be heterogenous (though the racial variables dispute this), but this nonetheless poses a puzzle.
 
 ```{r, table 10,echo=FALSE,warning=FALSE , results='asis'}
-lm1 <- lm(vote_share ~ log(mhhi21) + nhb21p, data = cluster_three)
-lm2 <- lm(vote_share ~ log(mhhi21) + nhb21p + h21p  , data = cluster_three)
-lm3 <- lm(vote_share ~ log(mhhi21) + nhb21p + h21p + white_transplant_ratio, data = cluster_three)
-lm4 <- lm(vote_share ~ log(mhhi21) + nhb21p + h21p + white_transplant_ratio + cvap21bapp, data = cluster_three)
-lm4 <- lm(vote_share ~ log(mhhi21) + nhb21p + h21p + white_transplant_ratio + cvap21bapp + hh21op  + summer_noise_complaints + mean_noise , data = cluster_three)
-lm5 <- lm(vote_share ~ log(mhhi21) + nhb21p + h21p + white_transplant_ratio + cvap21bapp + hh21op + summer_noise_complaints + mean_noise  + perc_retail , data = cluster_three)
+lm1 <- lm(vote_share ~ log_income + nhb21p, data = prog_cluster, na.action = na.omit)
+lm2 <- lm(vote_share ~ log_income + nhb21p + h21p, data = prog_cluster, na.action = na.omit)
+lm3 <- lm(vote_share ~ log_income + nhb21p + h21p + white_transplant_ratio, data = prog_cluster, na.action = na.omit)
+lm4 <- lm(vote_share ~ log_income + nhb21p + h21p + white_transplant_ratio + cvap21bapp + hh21op + summer_noise_complaints + mean_noise, data = prog_cluster, na.action = na.omit)
+lm5 <- lm(vote_share ~ log_income + nhb21p + h21p + white_transplant_ratio + cvap21bapp + hh21op + summer_noise_complaints + mean_noise + perc_retail, data = prog_cluster, na.action = na.omit)
+
+
 stargazer(lm1,lm2,lm3,lm4,lm5, type = 'html', covariate.labels=c('Log MHHI', 'NH Black Share','Hispanic Share','White Transplant Share',
 '% BA or more','Homeowner Share','Summer 2020 Noise','Avg. Noise',
 '% Retail Employees'),omit.stat=c("LL","ser","f"))
 ```
 
-A better explanation might be that one explanation won't fit every district, or put differently that there are large and unmeasured district level effects.. To test this a fixed effects model was run using council districts. R's 'fixest' package was used, which includes robust standard errors and estimates the effects of district indirectly to avoid multicollinearity.[^2] The results are reported in Table 11 below. Now only income reaches significance at the 95% confidence level and home ownership at 90%. Additionally, the within R2 is very low, only rounding up to 1, while the overall R2 has risen to 56, suggesting 55% of variance is attributable to variance between districts that these models don't explain. It appears that these elections resist a one size fits all explanation of electoral success.
+A better explanation might be that one explanation won't fit every district, or put differently that there are large and unmeasured district level effects. To test this a fixed effects model was run using council districts. R's 'fixest' package was used, which includes robust standard errors and estimates the effects of district indirectly to avoid multicollinearity.[^4] The results are reported in Table 11 below. Now only income reaches significance at the 95% confidence level and home ownership at 90%. Additionally, the within R2 is very low, only rounding up to 1, while the overall R2 has risen to 56, suggesting 55% of variance is attributable to variance between districts that these models don't explain. It appears that these elections resist a one size fits all explanation of electoral success.
 
-[^2]: Bergé L (2018). "Efficient estimation of maximum likelihood models with multiple fixed-effects: the R package FENmlm." CREA Discussion Papers.
+[^4]: Bergé L (2018). "Efficient estimation of maximum likelihood models with multiple fixed-effects: the R package FENmlm." CREA Discussion Papers.
 
 ```{r, table 11,echo=FALSE,warning=FALSE , results='asis'}
 models <- list(
@@ -277,11 +286,11 @@ Another approach to understanding the electoral dynamics of this progressive gro
 ```{r, table 12,echo=FALSE,warning=FALSE , results='asis'}
 
 demo_clusters%>%
-  filter(district_cluster == 3)%>%
-  select(matched_name,demo_cluster)%>%
+  filter(new_cluster == 4)%>%
+  select(candidate,demo_cluster)%>%
   arrange(desc(demo_cluster))%>%
   gt()%>%
-  cols_label(matched_name = 'Council Member', demo_cluster = 'Cluster')
+  cols_label(candidate = 'Council Member', demo_cluster = 'Cluster')
 ```
 
 </br>
@@ -317,19 +326,16 @@ scaled_cluster_three <- cluster_three %>%
   mutate(across(c(log_income, nhb21p, h21p, white_transplant_ratio, cvap21bapp, hh21op, summer_noise_complaints, mean_noise, perc_retail), scale))
 
 scaled_cluster_three_demo <- left_join(scaled_cluster_three,demo_clusters, by='district')
-sctd1 <- scaled_cluster_three_demo%>%
-  filter(demo_cluster == 1)
+sctd0 <- scaled_cluster_three_demo%>%
+  filter(demo_cluster == 0)
 sctd2 <- scaled_cluster_three_demo%>%
   filter(demo_cluster == 2)
-sctd3 <- scaled_cluster_three_demo%>%
-  filter(demo_cluster == 3)
 sctd4 <- scaled_cluster_three_demo%>%
   filter(demo_cluster == 4)
-lm1 <- lm(vote_share ~ log_income + nhb21p + h21p + white_transplant_ratio + cvap21bapp + hh21op + summer_noise_complaints + mean_noise  + perc_retail , data = sctd1)
+lm1 <- lm(vote_share ~ log_income + nhb21p + h21p + white_transplant_ratio + cvap21bapp + hh21op + summer_noise_complaints + mean_noise  + perc_retail , data = sctd0)
 lm2 <- lm(vote_share ~ log_income + nhb21p + h21p + white_transplant_ratio + cvap21bapp + hh21op + summer_noise_complaints + mean_noise  + perc_retail , data = sctd2)
-lm3 <- lm(vote_share ~ log_income + nhb21p + h21p + white_transplant_ratio + cvap21bapp + hh21op + summer_noise_complaints + mean_noise  + perc_retail , data = sctd3)
-lm4 <- lm(vote_share ~ log_income + nhb21p + h21p + white_transplant_ratio + cvap21bapp + hh21op + summer_noise_complaints + mean_noise  + perc_retail , data = sctd4)
-stargazer(lm1,lm2,lm3,lm4, type = 'html', out = 'models.html',covariate.labels=c('Log MHHI', 'NH Black Share','Hispanic Share','White Transplant Share',
+lm3 <- lm(vote_share ~ log_income + nhb21p + h21p + white_transplant_ratio + cvap21bapp + hh21op + summer_noise_complaints + mean_noise  + perc_retail , data = sctd4)
+stargazer(lm1,lm2,lm3, type = 'html', out = 'models.html',covariate.labels=c('Log MHHI', 'NH Black Share','Hispanic Share','White Transplant Share',
 '% BA or more','Homeowner Share','Summer 2020 Noise','Avg. Noise',
 '% Retail Employees'),omit.stat=c("LL","ser","f"))
 ```
