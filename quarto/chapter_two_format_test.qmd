@@ -1,9 +1,22 @@
 ---
 title: "Chapter Two: Clustering the Council"
-format: html
-editor: visual
+format:
+  pdf:
+    df-print: kable
+    tbl-colwidths: [75,25]
+    code-fold: true
+    mainfont: "Georgia"
+header-includes:
+  - \usepackage{graphicx}
+  - \usepackage{adjustbox}
+  - \usepackage{afterpage}
+  - \usepackage{biblatex}
+  - \newcommand{\bibsection}{\clearpage\printbibliography}
+execute:
+  echo: false
 bibliography: references.bib
 ---
+
 
 ```{r libraries, echo=FALSE,warning=FALSE, message=FALSE}
 suppressPackageStartupMessages(library(tidyverse))
@@ -57,8 +70,7 @@ return(ft_out)
 
 This chapter will explore empirically the theoretical schema laid out in the previous chapter. Specifically, it will break the New York City Council into ideological factions that can then be analyzed as discrete political units. To do so it will use council members’ voting records, bill sponsorship, campaign finance, endorsements, expert analysis, and caucus membership. The task is complicated by the fact that most council votes are lopsided and by the high rate of co-sponsorship, every member has co-sponsored with another at least once. Nonetheless, clear factions do emerge. First and most clearly a conservative faction, then a far-left DSA centered faction, then more moderate left factions. Finally, demographic support for these factions is discussed in the context of the discussion of social-democratic party families in Chapter 1. It finds specific demographic patterns of support for these progressive candidates, specifically the number of non-Hispanic whites born outside of New York State and the share of residents employed as journalists, artists, and educators. This effect is particularly pronounced for DSA candidates. It then further divides the progressives by the demographic characteristics of their district. Of the six demographic categories in the city, the progressives succeed in three of them. It will explore what demographic patterns of support emerge inside those three categories. It will conclude that these three categories offer a blueprint for progressive coalition formation, pointing towards the next chapters in which induvial races will be explored in more detail.
 
-Throughout this chapter K-Means and K-Mode clustering will be used to break both council members and council districts into smaller like units. The mechanics of these two methods are explained in more detail below, but in general they sort a larger group into a pre-determined number of smaller groups by how similar they are on a set of categories, e.g. voting record, co-sponsorship, etc. They are different from other methods of dimensionality reduction often used in the social-sciences, such as factor analysis and principal component analysis, in that they are simply arranging datapoints into clusters rather than attempting to detect a latent explanatory variable. 
-
+Throughout this chapter K-Means and K-Mode clustering will be used to break both council members and council districts into smaller like units. The mechanics of these two methods are explained in more detail below, but in general they sort a larger group into a pre-determined number of smaller groups by how similar they are on a set of categories, e.g. voting record, co-sponsorship, etc. They are different from other methods of dimensionality reduction often used in the social-sciences, such as factor analysis and principal component analysis, in that they are simply arranging datapoints into clusters rather than attempting to detect a latent explanatory variable.
 
 ## Voting
 
@@ -111,20 +123,20 @@ ft
 
 The bills these progressives co-sponsor fall into two general categories, bills that attract a high-rate of fellow progressives and have a low chance of passing, and bills that are primarily sponsored by progressives but attract a wider level of support and therefore have a higher chance of passing. Both groups of bills track closely with the egalitarian urban order defined by Weaver and discussed in Chapter 1. Table 5 shows the bills which have the highest percentage of sponsors from the progressive cluster. They concern worker protections, oversight of the NYPD, tenant advocacy, environmental concerns, college counseling for low-income New Yorkers and protections for cyclists. Not a single bill with more than 60% of its sponsors from this cluster was enacted, so while these progressive-heavy bills may be pushing the rhetoric of the council left they have not, as of yet, translated into legislation.
 
-```{r, table 5,echo=FALSE,warning=FALSE , results='asis'} 
+```{r, table 5,echo=FALSE,warning=FALSE , results='asis'}
 bsr %>%   select(EventItemMatterName, percent_cluster_4) %>%   arrange(desc(percent_cluster_4)) %>%   slice(1:10)%>%   gt()%>%   cols_label(EventItemMatterName = 'Bill Summary',percent_cluster_4 = '% of Sponsors from Progressive Cluster')
 ```
 
 This does not mean, however, that the group is ineffective. Dozens of bills sponsored by members of this progressive cluster have been enacted on topics that are slightly different but similarly progressive. Table 6 below shows the enacted cluster 3 bills with the highest rate of co-sponsorship, a full list of bills they have sponsored and passed are available in the appendix. These bills have to do with worker protections, migrant rights, the distribution of free menstrual products, the protections of LGBTQ New Yorkers, the protection of reproduction rights, protections for the homeless, and a "Marshall Plan for Moms" to help support working mothers. These members have clearly set a progressive agenda both in practice and in rhetoric. To compare these bills to those sponsored by other clusters table 7 shows a Term Frequency -- Inverse Document Frequency (TF-IDF) of the text descriptions of the bills sponsored by each group. What this in effect shows are the words that occur most frequently in each group's legislation but less in others.
 
-```{r, table 6,echo=FALSE,warning=FALSE , results='asis'} 
+```{r, table 6,echo=FALSE,warning=FALSE , results='asis'}
 bsr %>%   
 filter(primary_sponsor_cluster == 3 & EventItemMatterStatus == 'Enacted')%>%   select(EventItemMatterName, percent_cluster_3) %>%   arrange(desc(percent_cluster_3)) %>%   slice(1:10)%>%   gt()%>% cols_label(EventItemMatterName = 'Bill Summary',percent_cluster_3 = '% of Sponsors from Cluster 3')
 ```
 
 </br>
 
-```{r, table 7,echo=FALSE,warning=FALSE , results='asis'} 
+```{r, table 7,echo=FALSE,warning=FALSE , results='asis'}
 ft<- tf_idf%>%  
   flextable()  
 ft
@@ -134,13 +146,13 @@ While both the voting data and sponsorship is somewhat difficult to parse due to
 
 ## Meta Clustering
 
-Despite some variation in its specific makeup, both methods agree that there is a progressive bloc sponsoring together and voting in protest together. To try and make sense of these similar but slightly different clustering blocs, other important variables are introduced and a process of meta-clustering was performed. The variables used in addition to the voting and sponsorship clusters are: 1) a catagorical variable that records whether members remained in the progressive caucus after a max exodus over defunding the NYPD, left the caucus, or were never members, 2) how the members were categorized by NYC political journalist Michael Lange, who offers a detailed categorization of ideal type NYC politicians[^2], 3) whether the members were endorsed by the Working Families Party, and 4) a clustering of how their campaign was financed, which looked at the number and amount of individual contributions as well as what percentage of the contributions originated from inside the district[^3]. The finance variable is included despite not being directly tied to governance because of a theorized relationship between how campaigns are financed and the political valence of the candidate. In NYC further left candidates have tended to receive higher rates of low-dollar donations from all over the city, with significant contributions coming from out of state, with a high percentage of their overall campaign contributions coming from individual donors. 
+Despite some variation in its specific makeup, both methods agree that there is a progressive bloc sponsoring together and voting in protest together. To try and make sense of these similar but slightly different clustering blocs, other important variables are introduced and a process of meta-clustering was performed. The variables used in addition to the voting and sponsorship clusters are: 1) a catagorical variable that records whether members remained in the progressive caucus after a max exodus over defunding the NYPD, left the caucus, or were never members, 2) how the members were categorized by NYC political journalist Michael Lange, who offers a detailed categorization of ideal type NYC politicians[^2], 3) whether the members were endorsed by the Working Families Party, and 4) a clustering of how their campaign was financed, which looked at the number and amount of individual contributions as well as what percentage of the contributions originated from inside the district[^3]. The finance variable is included despite not being directly tied to governance because of a theorized relationship between how campaigns are financed and the political valence of the candidate. In NYC further left candidates have tended to receive higher rates of low-dollar donations from all over the city, with significant contributions coming from out of state, with a high percentage of their overall campaign contributions coming from individual donors.
 
 [^2]: Lange explores these categorizations in a viral substack post [@lange2022], he expanded on this and offered a categorization of every member of the body in an interview conducted for this dissertation [@lange2025].
 
 [^3]: The process of clustering was identical to the one performed on voting and sponsorship. A table is available in the appendix.
 
-This dataset features all categorical data in which, for most variables, the specific number had no meaning. In order to cluster based on these individual categories K-Mode clustering was employed.  K‑Mode works much like K‑Means but swaps out averages for most common categories. First a fixed number of prototype category‑patterns (modes) is selected. Then each observation is assigned to the mode it matches most closely; that is, the one with which it has the fewest category‐mismatches. Next, each mode is recalculated by taking, for each variable, the single category that appears most often among its assigned observations. These two steps—assigning to the nearest mode and then updating the modes—repeat until the groups stop changing. Finally, again like K-Means, simple diagnostics (for example, looking for a sharp drop in total mismatches as k increases) to confirm that the chosen number of clusters best balances simplicity and explanatory power. Table 4 shows the group that emerges from this process.
+This dataset features all categorical data in which, for most variables, the specific number had no meaning. In order to cluster based on these individual categories K-Mode clustering was employed. K‑Mode works much like K‑Means but swaps out averages for most common categories. First a fixed number of prototype category‑patterns (modes) is selected. Then each observation is assigned to the mode it matches most closely; that is, the one with which it has the fewest category‐mismatches. Next, each mode is recalculated by taking, for each variable, the single category that appears most often among its assigned observations. These two steps—assigning to the nearest mode and then updating the modes—repeat until the groups stop changing. Finally, again like K-Means, simple diagnostics (for example, looking for a sharp drop in total mismatches as k increases) to confirm that the chosen number of clusters best balances simplicity and explanatory power. Table 4 shows the group that emerges from this process.
 
 ```{r, table 4,echo=FALSE,warning=FALSE , results='asis'}
 meta_clusters %>%
@@ -152,7 +164,7 @@ meta_clusters %>%
   cols_label(new_cluster = 'Cluster',proper_names = 'Council Members')
 ```
 
-Cluster four contains the progressives and passes several common sense tests of accuracy. It includes both DSA endorsed candidates as well as self-proclaimed socialists Shahana Hanif and Chi Osse. Every member in cluster four remained in the progressive caucus after the split over NYPD funding. They all fall primarily into the furthest left categories of Lange’s categorization, the DSA, the alphabet left, and the hybrid progressives. The exception to this latter points is Amanda Farias, who Lange categorized as Center Left Establishment. Lange hesitated on her assignment however, and speaker Adams recently touted making her majority leader as a sign of her progressive bona fides. 
+Cluster four contains the progressives and passes several common sense tests of accuracy. It includes both DSA endorsed candidates as well as self-proclaimed socialists Shahana Hanif and Chi Osse. Every member in cluster four remained in the progressive caucus after the split over NYPD funding. They all fall primarily into the furthest left categories of Lange’s categorization, the DSA, the alphabet left, and the hybrid progressives. The exception to this latter points is Amanda Farias, who Lange categorized as Center Left Establishment. Lange hesitated on her assignment however, and speaker Adams recently touted making her majority leader as a sign of her progressive bona fides.
 
 ## Electoral Patterns
 
@@ -235,7 +247,7 @@ prog_cluster%>%
 
 ```
 
-The geographic unit in these models is the election precinct, coefficients are measuring the effect of the independent variables on the vote share of the progressive candidates in each of these precincts. The largest significant positive coefficients are for the ratio of white transplants and the share of residents working as journalists and artists, and the largest significant negative coefficient is for income. These results suggest progressive success in neighborhoods with lower incomes, high rates of white transplants, and high rates of those in intellectual, cultural professions. Also of note is the relatively low R squared, only the final model manages to explain more than one quarter of the variance in vote share. One reason for this low explanatory power is the high amount of variation between districts. This model includes districts from four out of five boroughs with a wide range of demographic characteristics. The next section will analyze with more detail the particulars of electoral coalitions in demographically distinct areas of the city. 
+The geographic unit in these models is the election precinct, coefficients are measuring the effect of the independent variables on the vote share of the progressive candidates in each of these precincts. The largest significant positive coefficients are for the ratio of white transplants and the share of residents working as journalists and artists, and the largest significant negative coefficient is for income. These results suggest progressive success in neighborhoods with lower incomes, high rates of white transplants, and high rates of those in intellectual, cultural professions. Also of note is the relatively low R squared, only the final model manages to explain more than one quarter of the variance in vote share. One reason for this low explanatory power is the high amount of variation between districts. This model includes districts from four out of five boroughs with a wide range of demographic characteristics. The next section will analyze with more detail the particulars of electoral coalitions in demographically distinct areas of the city.
 
 ```{r, table 10,echo=FALSE,warning=FALSE , results='asis'}
 prog_cluster<-prog_cluster%>%
@@ -353,8 +365,7 @@ stargazer(lm1,lm2,lm3, type = 'html', out = 'models.html',covariate.labels=c('Lo
 '% Retail Employees'),omit.stat=c("LL","ser","f"))
 ```
 
-Table X below shows the results from a mixed-level model run on all the districts in which cluster 4 candidates were running. This model allows several of the variables to have their own slopes. This succinctly shows how a variable affect the candidates different across clusters holding other variables constant. 
-
+Table X below shows the results from a mixed-level model run on all the districts in which cluster 4 candidates were running. This model allows several of the variables to have their own slopes. This succinctly shows how a variable affect the candidates different across clusters holding other variables constant.
 
 ## Conclusion
 

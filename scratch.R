@@ -3,7 +3,7 @@ install.packages('gt')
 install.packages("flextable")
 library(RColorBrewer)
 library(gt)
-
+library(lme4)
 cc_sf <- read_sf('C:/Users/samtg/github/neighborhoods_ccdistricts/data/shapefiles/city_council')
 
 meta_clusters <- read_csv('data/meta_clusters_with_formatted_name.csv')
@@ -185,3 +185,7 @@ stargazer(tc_mod, aa_mod, sh_mod, co_mod,
           covariate.labels = c('Log MHHI', 'NH White Share', 'BA', 'Artists Journalists', 'Computers'),
           omit.stat = c("LL", "ser", "f"),
           out = 'race_specific.html')
+
+prog_cluster%>%
+  select(vote_share,ed_name,winner,candidate,cvap21bapp,white_transplant_ratio,dpp20bs,log_income,w2admp)%>%
+  head()
