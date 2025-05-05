@@ -158,7 +158,7 @@ label_data <- df4 %>%
   ungroup()
 
 ggplot(df4,
-       aes(x     = cvap21bapp,
+       aes(x     = white_transplant_ratio,
            y     = vote_share,
            color = candidate)
 ) +
@@ -179,7 +179,7 @@ ggplot(df4,
   ) +
   scale_color_manual(values = pal) +
   labs(
-    x     = "Log Meidan Household Income",
+    x     = "white_transplant_ratio",
     y     = "Vote Share",
     color = "Candidate"
   ) +
@@ -209,7 +209,7 @@ stargazer(lm1,lm2,lm3, type = 'html',covariate.labels=c('Log MHHI', 'NH Black Sh
 
 ggplot(prog_demo,aes(x =  log_income, y = vote_share, color = as.factor(demo_cluster)))+
   geom_smooth(method = "lm",se=FALSE) 
-
+prog_demo$bus_ratio
 m_hier <- lmer(
   vote_share ~ 
     cvap21bapp +
@@ -217,6 +217,8 @@ m_hier <- lmer(
     nhb21p +
     h21p +
     dpp20bs +
+    garcia213p +
+    bus_ratio +
     log_income +
     w2admp +
     hh21op +
@@ -226,8 +228,37 @@ m_hier <- lmer(
   data = prog_demo,
   REML = TRUE
 )
-summary(m_hier)
 
+
+# plot the fixed effects
+fixed_effects <- tidy(m_hier, effects = "fixed", conf.int = TRUE)
+
+fixed_effects <- fixed_effects %>%
+  filter(term != "(Intercept)") %>% 
+  mutate(term = recode(term,
+                       "cvap21bapp" = "BA+",
+                       "white_transplant_ratio" = "White Transplant Ratio",
+                       "nhb21p" = "Non-Hispanic Black %",
+                       "h21p" = "Hispanic %",
+                       "dpp20bs" = "Bernie 2020 Primary Share",
+                       "log_income" = "Log Median Income",
+                       "w2admp" = "Designers and Journalists",
+                       "hh21op" = "Homeowner",
+                       "w2edup" = "Educators",
+                       "w2oadp" = "Office and Admin. Support"
+  ))
+
+ggplot(fixed_effects, aes(x = estimate, y = reorder(term, estimate))) +
+  geom_point() +
+  geom_errorbarh(aes(xmin = conf.low, xmax = conf.high), height = 0.2) +
+  geom_vline(xintercept = 0, linetype = "dashed") +
+  labs(
+    x = "Estimated Effect on Vote Share",
+    y = NULL,
+    title = "Fixed Effects with 95% Confidence Intervals"
+  ) +
+  theme_minimal(base_size = 13)
+# plot the random effects
 re <- ranef(m_hier, condVar = TRUE)
 
 # Extract candidate-level effects
@@ -247,6 +278,9 @@ ranef_df <- as_tibble(re_candidate, rownames = "candidate") %>%
     se_slope_wtr = se_candidate[, 'white_transplant_ratio']
   )
 
+
+## plot random intercepts 
+
 ggplot(ranef_df, aes(x = reorder(candidate, slope_admin), y = slope_admin)) +
   geom_point() +
   geom_errorbar(aes(ymin = slope_admin - 1.96 * se_slope_admin,
@@ -259,6 +293,8 @@ ggplot(ranef_df, aes(x = reorder(candidate, slope_admin), y = slope_admin)) +
     title = "Variation in Candidate Responsiveness to BA+"
   ) +
   theme_minimal(base_size = 13)
+
+# same with color
 
 ggplot(ranef_df, aes(x = reorder(candidate, slope_admin), y = slope_admin)) +
   geom_errorbar(
@@ -287,3 +323,5 @@ ggplot(ranef_df, aes(x = reorder(candidate, slope_admin), y = slope_admin)) +
     axis.title.x = element_text(size = 12),
     panel.grid.minor = element_blank()
   )
+  
+getAnywhere(select)

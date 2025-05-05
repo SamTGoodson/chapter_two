@@ -189,3 +189,5 @@ stargazer(tc_mod, aa_mod, sh_mod, co_mod,
 prog_cluster%>%
   select(vote_share,ed_name,winner,candidate,cvap21bapp,white_transplant_ratio,dpp20bs,log_income,w2admp)%>%
   head()
+
+head(meta_clusters)
