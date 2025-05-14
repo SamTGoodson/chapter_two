@@ -71,17 +71,17 @@ return(ft_out)
 }
 ```
 
-This chapter will explore empirically the theoretical schema laid out in the previous chapter. Specifically, it will break the New York City Council into ideological factions that can then be analyzed as discrete political units. To do so it will use council members' voting records, bill sponsorship, campaign finance, endorsements, expert analysis, and caucus membership. The task is complicated by the fact that most council votes are lopsided and by the high rate of co-sponsorship, every member has co-sponsored with another at least once. Nonetheless, clear factions do emerge. First and most clearly a conservative faction, then a far-left DSA centered faction, then more moderate left factions. Finally, demographic support for these factions is discussed in the context of the discussion of social-democratic party families in Chapter 1. It finds specific demographic patterns of support for these progressive candidates, specifically the number of non-Hispanic whites born outside of New York State and the share of residents employed as journalists, artists, and educators. This effect is particularly pronounced for DSA candidates. It then further divides the progressives by the demographic characteristics of their district. Of the six demographic categories in the city, the progressives succeed in three of them. It will explore what demographic patterns of support emerge inside those three categories. It will conclude that these three categories offer a blueprint for progressive coalition formation, pointing towards the next chapters in which individual races will be explored in more detail.
+This chapter will explore empirically the theoretical schema laid out in the previous chapter. Specifically, it will break the New York City Council into ideological factions that can then be analyzed as discrete political units. To do so it will use council members' voting records, bill sponsorship, campaign finance, endorsements, expert analysis, and caucus membership. The task is complicated by the fact that most council votes are lopsided and by the high rate of bill co-sponsorship. Nonetheless, clear factions do emerge. First and most clearly a conservative faction, then a further-left DSA centered faction, then more moderate left factions. Finally, demographic support for these factions is discussed in the context of the discussion of social-democratic party families in Chapter 1. It finds specific demographic patterns of support for these progressive candidates, specifically the number of non-Hispanic whites born outside of New York State and the share of residents employed as journalists, designers, and educators. This effect is particularly pronounced for DSA candidates. It then further divides the progressives by the demographic characteristics of their district. Of the six demographic categories in the city, the progressives succeed in three of them. It then explores what demographic patterns of support emerge inside those three categories. It concludes that these three categories offer a blueprint for progressive coalition formation, pointing towards the next chapters in which individual races will be explored in more detail.
 
-In Weaver's terms, this chapter finds evidence to support a robust egalitarian tradition making large inroads against conservative and neoliberal traditions. The progressive cluster sponsors and passes legislation that looks towards overseeing the police, protecting vulnerable New Yorkers from the worst excesses of the market, and in fostering equality between gender, class, and race. They also vote together in defiance of a conservative mayoralty, seeking to protest the mayor's budget, oppose his nominations, and override his vetoes. It therefore finds evidence that the work of constructing an egalitarian regime began in the De Blasio years, while seemingly contradicted by the election of Mayor Adams, is in fact continuing in the City Council. Further, the progressive cluster was elected by a diverse coalition, by a stereotypical group of highly educated white-newcomers in Central Brooklyn, but also by working-class Bangladeshis in Windsor Terrace, Colombians and Mexicans in Western Queens, and a broad coalition of Black and Latino voters across The Bronx.
+In the terms of Urban Political Development, as defined by Weaver, this chapter finds evidence to support a robust egalitarian tradition maintaining, even gaining ground in the City Council despite the abrupt political shift in the mayoralty from De Blasio to Adams. The progressive cluster of Council members sponsors and passes legislation that aims to oversee and regulate the NYPD, protect vulnerable New Yorkers from the worst excesses of the market, particularly the housing and labor market, and foster institutional equality in terms of gender, class, and race. They also vote together in defiance of a conservative mayoralty, seeking to protest the mayor's budget, oppose his nominations, and override his vetoes. Further, the progressive cluster was elected by a diverse coalition. Several members were indeed elected by what has become the stereotypical DSA voter: highly educated, middle-income, white, professional, newcomers in Central Brooklyn, but several others by working-class Bangladeshis in Windsor Terrace, Colombians and Mexicans in Western Queens, and by a truly diverse coalition of voters across The Bronx.
 
-Throughout this chapter K-Means and K-Mode clustering will be used to break both council members and council districts into smaller like units. The mechanics of these two methods are explained in more detail below, but in general they sort a larger group into a pre-determined number of smaller groups by how similar they are on a set of categories, e.g. voting record, co-sponsorship, etc. They are different from other methods of dimensionality reduction often used in the social-sciences, such as factor analysis and principal component analysis, in that they are arranging datapoints into like clusters rather than attempting to detect a latent explanatory variable. [^1] These clustering algorithms have seen broad use in political research, including in designing voting advice applications [@gemenis2024], cluster voters by legislative priorities [@winston], detecting voter fraud[@yamin2022], understanding the nationalization of American elections [@tang], and clustering varieties of partisanship[@kuriwaki2020].
+Throughout this chapter K-Means and K-Mode clustering will be used to break both council members and council districts into smaller like units. The mechanics of these two methods are explained in more detail below, but in general they sort a larger group into a pre-determined number of smaller groups by how similar they are on a set of categories, e.g. voting record, co-sponsorship, etc. They differ from latent‑variable techniques commonly used in the social sciences---such as factor analysis and principal component analysis---in that clustering methods partition observations into discrete, homogeneous groups rather than extracting continuous latent dimensions that explain covariance among variables. [^1] These clustering algorithms have seen broad use in political research, including in designing voting advice applications [@gemenis2024], clustering voters by legislative priorities [@winston], detecting voter fraud [@yamin2022], understanding the nationalization of American elections [@tang], and clustering varieties of partisanship [@kuriwaki2020].
 
 [^1]: To explore the process of K-Means clustering with interactive NYC based mapping see two dashboards created with data from this project, one on election districts: https://samgoodson.shinyapps.io/district_clustering/ and one on City Council districts: https://samgoodson.shinyapps.io/shiny_meta_council_clustering/
 
 ## Voting
 
-Council floor votes are heavily lopsided, most pass with only a few dissenting conservative voices. This makes isolating the Council's conservatives quite easy but makes breaking the rest of the body into clusters more difficult. To do this K-Means clustering, a clustering methodology with wide application which seeks to partition a set of observations into a pre-defined number of clusters around centroids that minimize within cluster variance, was employed [@lloyd1982a; @steinley2006a]. K‑Means starts by choosing a fixed number of "group centers" (or centroids) and then assigns each council member to whichever center is closest to their overall voting record. It next recalculates each center as the average voting profile of its assigned members, and then re‑assigns members to the nearest updated center---repeating these two steps until the groups stabilize. By one‑hot coding every "yes," "no," or "abstain" vote, each vote is turned into a separate binary feature so that the algorithm can measure similarity across all bills. Finally, simple diagnostics (for example, looking for the "elbow" in a plot of within‑group variance or checking silhouette scores) are employed to pick three clusters that balance clarity and cohesion. The data used to cluster were all floor votes from 2022 and 2023, reduced to the 100 closest votes with at least 30 members voting, measured by the ratio of anti-votes and abstentions to pro votes. No matter how many clusters were defined, the method pulls out the conservatives, who vote no or abstain as a bloc on much legislation. If more than three clusters are defined, it also pulls out a group of progressive council members including both DSA members as well as other progressive stalwarts such as Chi Ossé, Jennifer Guttierez, Sandy Nurse, and Shahana Hanif, several of which were mentioned in interviews with DSA members as close to the party. Table 1 below shows both the Conservative and Progressive bloc.
+Council floor votes are heavily lopsided, most pass with only a few dissenting conservative voices. This makes isolating the Council's conservatives quite easy but makes breaking the rest of the body into clusters more difficult. To do this K-Means clustering was employed [@lloyd1982a; @steinley2006a]. K‑Means starts by choosing a fixed number of "group centers" (or centroids) and then assigns each council member to whichever center is closest to their overall voting record. It next recalculates each center as the average voting profile of its assigned members, and then re‑assigns members to the nearest updated center---repeating these two steps until the groups stabilize. By one‑hot coding every "yes," "no," or "abstain" vote, each vote is turned into a separate binary feature so that the algorithm can measure similarity across all bills. Finally, simple diagnostics (for example, looking for the "elbow" in a plot of within‑group variance or checking silhouette scores) are employed to pick three clusters that balance clarity and cohesion. The data used to cluster were all floor votes from 2022 and 2023, reduced to the 100 closest votes with at least 30 members voting, measured by the ratio of anti-votes and abstentions to pro votes. No matter how many clusters were defined, the method pulls out the conservatives, who vote no or abstain as a bloc on much legislation. If more than three clusters are defined, it also pulls out a group of progressive council members including both DSA members as well as other progressive stalwarts such as Chi Ossé, Jennifer Guttierez, Sandy Nurse, and Shahana Hanif, several of which were mentioned in interviews with DSA members as close to the party. Table 1 below shows both the Conservative and Progressive bloc.
 
 ```{r,table 1,echo=FALSE,warning=FALSE , results='asis'}
 v_clust<-meta_clusters %>%
@@ -114,13 +114,13 @@ v_clust %>%
   )
 ```
 
-K-Means clustering performed with the Python library Sickit-Learn allows for examination of how each item on which the clustering was performed (here, votes on bills) affected the overall cluster placement.[^2] The bills that most influenced the placement of these progressive members into a cluster are no votes on budget bills and mayoral appointments (all of which nonetheless passed). This aligns with DSA's members insistence on the primacy of budget and the importance of voting against what they consiier to be austerity budgets. No matter how many more clusters are specified no new group cluster forms; individuals from the massive non-progressive or conservative cluster start to peel off one by one. There are therefore three voting clusters in the Council: a large majority that vote yes on most bills for which they are present, and two dissenting minorities, a conservative one who votes no quite frequently and a progressive one who votes no on key pieces of legislation, especially in cases in which to do so is antagonistic to the mayor. It is the latter that is of the most interest to this project as it is a demonstration of the vying for regime control described in Chapter 1. This portion of the council, loud and active in its opposition to Mayor Adams's conservative policy agenda, has helped push the entire body more firmly into its role of Mayoral oversight, culminating in overridden vetoes and the Speaker referring to the body as a "co-equal" branch of government [@adams].
+K-Means clustering performed with the Python library Sickit-Learn allows for examination of how each item on which the clustering was performed (here, votes on bills) affected the overall cluster placement.[^2] The bills that most influenced the placement of the progressive members into a cluster are no votes on budget bills and mayoral appointments (all of which nonetheless passed). This aligns with DSA members' insistence on the primacy of budget and the importance of voting against what they consider to be austerity budgets. No matter how many more clusters are specified no new group cluster forms; individuals from the massive non-progressive or conservative cluster start to peel off one by one. There are therefore three voting clusters in the Council: a large majority that vote yes on most bills for which they are present, and two dissenting minorities, a conservative one who votes no quite frequently and a progressive one who votes no on key pieces of legislation, especially in cases in which to do so is antagonistic to the mayor. It is the latter that is of the most interest to this project as it is a demonstration of the vying for regime control described in Chapter 1. This portion of the council, loud and active in its opposition to Mayor Adams' conservative policy agenda, has helped push the entire body more firmly into its role of Mayoral oversight, culminating in overridden vetoes and the Speaker referring to the body as a "co-equal" branch of government [@adams].
 
 [^2]: "Scikit-learn: Machine Learning in Python," Pedregosa et al., JMLR 12, pp. 2825-2830, 2011.
 
 ## Co-Sponsorship
 
-Examining the patterns in which members sponsor bills also faces challenges, though it also reveals similar groups of conservative and progressive legislators. Many bills, especially those that pass, have high numbers of sponsors. The mean number of sponsors for a bill in the dataset was 13, with the mean number for a bill that passed at 23. Additionally, there is a lot of co-sponsorship across ideological lines; every member has co-sponsored with every other member at least once, often many more times than once. This is perhaps not surprising, as Lincoln Restler highlighted, voters prize pragmatism in their council votes and members are aware of this, so there is motivation to work across boundaries to get things done [@restler2024a]. This high rate of cooperation means that using traditional methods to visualize networks leads to a large bird's nest of co-sponsorship, a version of this tangled graph is included in the appendix. Nonetheless, members do co-sponsor with some members much more frequently than others, so despite the significant noise caused by cooperation patterns do emerge.
+Examining the patterns in which members sponsor bills also reveals similar groups of conservative and progressive legislators, though this process also faces some methodological obstacles. Many bills, especially those that pass, have high numbers of sponsors. The mean number of sponsors for a bill in the dataset was 13, with the mean number for a bill that passed at 23. Additionally, there is a lot of co-sponsorship across ideological lines; every member has co-sponsored with every other member at least once, often many more times than once. This is perhaps not surprising; as Lincoln Restler highlighted, voters prize pragmatism in their council votes and members are aware of this, so there is motivation to work across boundaries to get things done [@restler2024a]. This high rate of cooperation means that using traditional methods to visualize networks leads to a large bird's nest of co-sponsorship, a version of this tangled graph is included in the appendix. Nonetheless, members do co-sponsor with some members much more frequently than others, so despite the significant noise caused by cooperation patterns do emerge.
 
 To identify these patterns, K-Means clustering was once again employed. To prepare the data, a matrix that described how often each member co-sponsored with another on a scale of 0-1 was formed, with 1 representing co-sponsorship on every single bill. Bills that had 40 or more co-sponsors were removed to reduce noise and isolate more meaningful co-sponsorships. The K-Means was then run on this matrix. The results of this are recorded in Table 2 below. The results mirror those found in the voting patterns above, cluster 1 again features both DSA members as well as other (though not all) members from the voting clusters above. This cluster remained stable as long as there were more than two clusters defined.
 
@@ -201,7 +201,7 @@ bill_tab %>%
   column_spec(2, width = "3cm")
 ```
 
-This does not mean, however, that the group is ineffective. Dozens of bills sponsored by members of this progressive cluster have been enacted on topics that are slightly different but similarly progressive. Table 6 below shows the enacted cluster 3 bills with the highest rate of co-sponsorship, a full list of bills they have sponsored and passed are available in the appendix. These bills have to do with worker protections, migrant rights, the distribution of free menstrual products, the protections of LGBTQ New Yorkers, the protection of reproduction rights, protections for the homeless, and a "Marshall Plan for Moms" to help support working mothers. These members have clearly set a progressive, egalitarian agenda both in practice and in rhetoric.
+This does not mean, however, that the group is ineffective. Dozens of bills sponsored by members of this progressive cluster have been enacted on topics that are similarly progressive and on which more sponsors could be recruited. Table 6 below shows the enacted cluster 3 bills with the highest rate of co-sponsorship, a full list of bills they have sponsored and passed are available in the appendix. These bills have to do with worker protections, migrant rights, the distribution of free menstrual products, the protections of LGBTQ New Yorkers, the protection of reproduction rights, protections for the homeless, and a "Marshall Plan for Moms" to help support working mothers. These members have clearly set a progressive, egalitarian agenda both in practice and in rhetoric.
 
 ```{r, table 6,echo=FALSE,warning=FALSE , results='asis'}
 bill_tab2 <- bsr %>%   
@@ -229,7 +229,7 @@ bill_tab2 %>%
 
 ```
 
-While both the voting data and sponsorship is somewhat difficult to parse due to the rate of cooperation and lopsided voting, trends do emerge from each that complement the other. In the voting data, a group of progressive council members emerge as a group of protest voters, seeking to check or register objection to Mayor Adams's more conservative impulses. This same group of protest votes sponsor bills together, and these sponsorships fall into two categories 1) bills with high rates of progressive co-sponsorship that often deal with progressive wish lists and 2) bills with progressive members as the prime sponsors that gain higher rates of other cluster sponsors and have a much higher rate of passing. All of this activity fits the model of a progressive core seeking to counter a conservative mayor's agenda and establish a progressive regime. The next section will examine if these trends in voting and sponsorship are also mirrored in electoral patterns.
+While both the voting data and sponsorship is somewhat difficult to parse due to the rate of cooperation and lopsided voting, trends do emerge from each that complement the other. In the voting data, a group of progressive council members emerge as a group of protest voters, seeking to check or register objection to Mayor Adams' more conservative impulses. This same group of protest votes sponsor bills together, and these sponsorships fall into two categories: 1) bills with high rates of progressive co-sponsorship that often deal with progressive wish lists, and 2) bills with progressive members as the prime sponsors that gain higher rates of other cluster sponsors and have a much higher rate of passing. All of this activity fits the model of a progressive core seeking to counter a conservative mayor's agenda and establish a progressive regime. The next section will take the clustering done on sponsorship and voting and combine it with other important categorizations of members and perform another clustering operation on that dataset.
 
 ## Meta Clustering
 
@@ -273,11 +273,13 @@ table_test %>%
   )
 ```
 
-Cluster four is the progressive cluster. It passes several common-sense tests of accuracy. First, it contains both DSA members, Tiffany Caban and Alexa Aviles. Second, it contains Chi Osse and Shahana Hanif, who are both self-described socialists, though not DSA endorsed. Zack Hendrickson, chairman of the DSA's Electeds in Office committee, cited both members as reliable legislative allies of the DSA members on the body [@hendrickson2025]. It also contains two progressives from The Bronx, Amanda Farias and Pierena Sanchez. Neither are DSA members, and Sanchez defeated a DSA endorsed opponent, but both ran grassroots activists campaigns and are reliably progressive on policy, especially regarding Sanchez on housing on Farias on transit. Every member in the cluster is in one of Lange's furthest left categories: the DSA, the alphabet left, and the hybrid progressives. The exception to this is Farias, who Lange places in the Center Left Establishment. He hesitated when making this assignment, however, and based on her challenge to the Diaz Bronx establishment and her progressive legislation it is fair to move her to one of the further left categories.
+Cluster four is the progressive cluster. It passes several common-sense tests of accuracy. First, it contains both DSA members, Tiffany Cabán and Alexa Avilés. Second, it contains Chi Ossé and Shahana Hanif, who are both self-described socialists, though not DSA endorsed. Zack Hendrickson, chairman of the DSA's Electeds in Office committee, cited both members as reliable legislative allies of the DSA members on the body [@hendrickson2025]. It also contains two progressives from The Bronx, Amanda Farias and Pierina Sanchez. Neither are DSA members, and Sanchez defeated a DSA endorsed opponent, but both ran grassroots activist campaigns and are reliably progressive on policy, and both received media attention for moving the Bronx county party to the left [@aponte2021]. Every member in the cluster is in one of Lange's furthest left categories: the DSA, the alphabet left, and the hybrid progressives. The exception to this is Farias, who Lange places in the Center Left Establishment, though he noted when making this assignment that she was more progressive than others in the group. Based on this, her challenge to the Diaz Bronx establishment, and her progressive legislation it is fair to move her to one of the further left categories.
 
 ## Electoral Patterns
 
-This section will first look at what distinguishes the council districts won by the progressive cluster from other districts, then turn to look at their performance by electoral districts to see what, if any, demographic patterns predicted their success. Subsequent chapters will then examine how these demographic trends hold race by race. Table 8 offers some descriptive statistics on the council districts won by members of the progressive cluster, cluster 3. They are the second whitest cluster, with the highest rate of white transplants, non-Hispanic whites born outside of New York State. They have high education levels and low home ownership levels. Figure 1 maps all the clusters, including only districts that had a contested Democratic primary in 2021.
+Now that a progressive cluster has been established, this section will turn to the demographics of their electoral support. It first looks at what distinguishes the progressive districts city-wide, then focusing in on what patterns of support emerge in each district. It will conclude with another clustering operation. Subsequent chapters will then examine how these demographic trends hold race by race.
+
+Table 8 offers some descriptive statistics on the council districts won by members of the progressive cluster. They are in the middle in share of white population as a whole, but with the second highest rate of white transplants, defined as non-Hispanic whites born outside of New York State. They have high education levels and the lowest home ownership rate. Figure 1 maps all the clusters, including only districts that had a contested Democratic primary in 2021.
 
 ```{r table 9, echo=FALSE, warning=FALSE, message=FALSE, results='asis'}
 
@@ -333,11 +335,11 @@ ggplot(data = cluster_map) +
        fill = "Cluster")
 ```
 
-Cluster 4's homebase is the corridor from Sunset Park North through Park Slope, passing through a large chunk of North Brooklyn and then into Long Island City and Astoria and across pockets of the South Brong. A DSA member narrowly lost a race in Brooklyn's 35th district, which would have added to this progressive weight in central Brooklyn. This location, combined with the demographic descriptives included above, suggests that the truism of progressive politics appealing to white, well-educated, middle-income, newcomers may be true, though of course this data is not granular enough to conclude this. It at least suggests a geographic base of progressive politics in a diverse and rapidly changing corner of the city and a broad idea of its demographic characteristics. To dig further, this section will now turn to the ED level results for the districts in cluster 3, looking only at the first choice of the Ranked Choice Voting.
+Of particular note in Figure 1 is cluster 4's geographic continuity. It runs in an uninterrupted corridor from Sunset Park North through Park Slope, passing through a large chunk of North Brooklyn and then into Long Island City and Astoria, then has two pockets in the Eastern and Western extreme of The Bronx. A DSA member narrowly lost a race in Brooklyn's 35th district, which would have added to this progressive weight in central Brooklyn. Also of note is the absence of cluster 4 districts in Manhattan. Progressives have found success among the rapidly changing neighborhoods of Central Brooklyn and Western Queens, but also in the long gentrified Park Slope, as well as in working-class Asian and Latino communities in Sunset Park and Elmhurst. This, in combination with the descriptive data in table x, suggests a progressive coalition that does rely on educated white newcomers but one that has also managed to build coalition beyond that. To dig further, this section will now turn to the ED level results for the districts in cluster 4, looking only at the first choice of the Ranked Choice Voting.
 
-To further investigate these demographic variables an OLS model was run on the 919 election districts in which a member of cluster 4 ran, using vote share for those candidates as its dependent variable. The independent variables come from two sources, the tract-level ACS 5-Year file and NYC Open Data, which allows access to datasets from various city agencies. The variables are the log of the median household income, the Black and Hispanic share of an ED, the share of non-Hispanic whites born outside New York State, the share possessing a BA or more, the share of homeowners, and the share of several professions, journalists, designers, office clerical workers, teachers, and the service industry. Multicollinearity is a concern with these closely related demographic variables, but no variables are correlated at a level higher than .7 and no variable has a VIF higher than 3.
+To further investigate these demographic variables an OLS model was run on the 1,091 election districts in which a member of cluster 4 ran, using vote share for those candidates as its dependent variable. The independent variables come from two sources, the tract-level ACS 5-Year file and NYC Open Data, which allows access to datasets from various city agencies. The variables are the log of the median household income, the Black and Hispanic share of an ED, the share of non-Hispanic whites born outside New York State, the share possessing a BA or more, the share of homeowners, and the share of several professions, journalists, designers, office clerical workers, teachers, and the service industry. Multicollinearity is a concern with these closely related demographic variables, but no variables are correlated at a level higher than .7 and no variable has a VIF higher than 3.
 
-The geographic unit in these models is the election precinct, coefficients are measuring the effect of the independent variables on the vote share of the progressive candidates in each of these precincts. The largest significant positive coefficients are for the ratio of white transplants and the share of residents working as journalists and artists, and the largest significant negative coefficient is for income. These results suggest progressive success in neighborhoods with lower incomes, high rates of white transplants, and high rates of those in intellectual, cultural professions. This pattern, again, fits with conceptions of progressive success with highly educated, middle-income, white newcomers moving into outer borough neighborhoods. Also of note is the relatively low R squared, only the final model manages to explain more than one quarter of the variance in vote share. One reason for this low explanatory power is the high amount of variation between districts. This model includes districts from four out of five boroughs with a wide range of demographic characteristics. The next section will analyze with more detail the particulars of electoral coalitions in demographically distinct areas of the city.
+The geographic unit in these models is the election precinct, coefficients are measuring the effect of the independent variables on the vote share of the progressive candidates in each of these precincts. Results are displayed in Table 7 on the next page. The largest significant positive coefficients are for the ratio of white transplants and the share of residents working as journalists and artists, and the largest significant negative coefficient is for income. These results suggest progressive success in neighborhoods with lower incomes, high rates of white transplants, and high rates of those in intellectual, cultural professions. This pattern, again, fits with conceptions of progressive success with highly educated, middle-income, white newcomers moving into outer borough neighborhoods. Also of note is the relatively low R squared, only the final model manages to explain more than one quarter of the variance in vote share. One reason for this low explanatory power is the high amount of variation between districts. This model includes districts from three boroughs with a wide range of demographic characteristics. The next section will analyze with more detail the particulars of electoral coalitions in demographically distinct areas of the city.
 
 ```{r, table 11,echo=FALSE,warning=FALSE , results='asis'}
 
@@ -371,9 +373,56 @@ stargazer(lm1,lm2,lm3,lm4,lm5, covariate.labels=c('Log MHHI', 'NH Black Share','
 '% Retail Employees'),omit.stat=c("LL","ser","f"),type='latex',header=FALSE)
 ```
 
-To understand electoral dynamic in demographically distinct areas of the city K-Means clustering was once again employed. In the same method detailed above, the city council districts were clustered on race, ethnicity, income, education level, modes of transportation, and types of employment. Of these six demographic clusters, the progressives won in three of them. A breakdown of who won in which demographic cluster is in table X below.
+To understand electoral dynamics in demographically distinct areas of the city K-Means clustering was once again employed. In the same method detailed above, the city council districts were clustered on race, ethnicity, income, education level, modes of transportation, and types of employment. Of these six demographic clusters, the progressives won in three of them. A breakdown of the demographic characteristics of each cluster as well as which cluster progressives won in is featured in the tables below.
 
 ```{r, table 12,echo=FALSE,warning=FALSE , results='asis'}
+
+demo_data <- left_join(demo_clusters,winners,by='district')
+demo_data$ElectDist <- demo_data$ElectDist_x
+  demo_clustar_summary<-left_join(demo_data,occupation,by = 'ElectDist')%>%
+  drop_na( white_transplant_ratio, nhw21p, nhb21p, cvap21bapp, hh21op) %>%
+  group_by(demo_cluster) %>%
+  summarise(
+    perc_white   = round(mean(nhw21p),2),
+    perc_black   = round(mean(nhb21p),2),
+    perc_hispanic = round(mean(h21p),2),
+    degree       = round(mean(cvap21bapp),2),
+    homeowners   = round(mean(hh21op),2),
+    wh_tr        = round(mean(white_transplant_ratio),2),
+    income       = round(mean(mhhi21),2),
+    journo       = round(mean(w2admp),2),
+    clerical     = round(mean(w2oadp),2),
+    man          = round(mean(w2mgtp),2)
+  )
+
+demo_clustar_summary %>%
+  gt() %>%
+  cols_label(
+    demo_cluster = 'Cluster',
+    perc_white = 'NH White',
+    perc_black = 'NH Black',
+    perc_hispanic = "Hispanic",
+    degree = 'BA+',
+    homeowners = 'Share Homeowners',
+    wh_tr = 'White Transplants',
+    income = 'MHHI',
+    journo = 'Designers and Journalists',
+    clerical = 'Office Clerical Workers',
+    man = 'Managers'
+  )%>%
+  tab_options(
+    table.width     = pct(90),
+    table.font.size = px(9),
+    table.align     = "center"
+  )%>%
+  tab_options(
+    table.width     = pct(90),
+    table.font.size = px(9),
+    table.align     = "center"
+  )
+```
+
+```{r, table 13,echo=FALSE,warning=FALSE , results='asis'}
 
 demo_clusters%>%
   filter(new_cluster == 4)%>%
@@ -385,7 +434,7 @@ demo_clusters%>%
 
 Now the same models run above on all progressive districts can be run individually on each cluster. Table x shows the results. The R squared in every model is greatly increased; looking at each cluster specifically doubles the amount of variation the model is capable of explaining. Also of note is the difference in direction of the variables, white transplant ratio, for example, is significant in all three models but it changes direction in the cluster x model. These progressives win in different ways in different areas.
 
-```{r, table 13,echo=FALSE,warning=FALSE , results='asis'}
+```{r, table 14,echo=FALSE,warning=FALSE , results='asis'}
 prog_demo<- left_join(prog_cluster,demo_clusters, by='district')
 sctd0 <- prog_demo%>%
   filter(demo_cluster == 0)
@@ -401,58 +450,10 @@ stargazer(lm1,lm2,lm3, type = 'latex',header=FALSE,covariate.labels=c('Log MHHI'
           omit.stat=c("LL","ser","f"))
 ```
 
-Figure 2 demonstrates that the uncertainty in White Transplant Ratio has to do with both cluster X candidates, but particularly with Lincoln Restler, in which the relationship is strikingly negative. Both of these cases will be explored in more detail in chapters about these two districts.
 
-```{r,figure 2, echo=FALSE, fig.height = 6,fig.width= 8,dpi= 300 }
+This can also be modeled with a mixed-level model, that allows the different clusters to have different intercepts and different slopes, effectively allowing certain key variables to effect the outcome differently in different clusters. While this adds some complexity in interpretation, it allows a more accurate view of how the variable functions globally as well as a more accurate view of how much the variable varies across cluster. The two tables below show the outcome of these models, the first shows the variables across all three districts, the second shows how White Transplant Ratio changes slope across the three districts. 95% confidence intervals are shown on both. Across all districts, being an educator, office admin worker, Garcia voter, and Hispanic had a significant and positive effect on vote for the progressive cluster, and being a homeowner, Black, and having a high rate of college education was negative. The second table shows the effect of the White transplant ratio, which is significant in all three clusters but only positive in two. The same is true of being a designer and journalist, it is positive and significant in the same clusters. 
 
-df4 <- prog_cluster %>%
-  mutate(candidate = as.factor(candidate))
-
-df4<-df4%>%
-mutate(highlight = candidate %in% prog_cluster$candidate)
-
-n_cand <- n_distinct(df4$candidate)  
-pal    <- brewer.pal(min(n_cand, 12), "Paired")  
-
-label_data <- df4 %>%
-  filter(highlight) %>%
-  group_by(candidate) %>%
-  slice_min(order_by = cvap21bapp, n = 1, with_ties = FALSE) %>%
-  ungroup()
-
-ggplot(df4,
-       aes(x     = white_transplant_ratio,
-           y     = vote_share,
-           color = candidate)
-) +
-  geom_smooth(method = 'lm',
-              se = FALSE,
-              aes(size = highlight), alpha = 0.8) +
-  geom_label_repel(
-    data        = label_data,
-    aes(label   = candidate),
-    direction   = "y",
-    size        = 3,
-    seed        = 1234,
-    show.legend = FALSE
-  ) +
-  scale_size_manual(
-    values = c(`FALSE` = 0.1, `TRUE` = 1),
-    guide  = "none"
-  ) +
-  scale_color_manual(values = pal) +
-  labs(
-    x     = "white_transplant_ratio",
-    y     = "Vote Share",
-    color = "Candidate"
-  ) +
-theme_minimal()+
-  theme(legend.position = "none")
-```
-
-This can also be modeled with a mixed-level model, that allows the different clusters to have different intercepts and different slopes, effectively allowing certain key variables to effect the outcome differently in different clusters. While this adds some complexity in interpretation, it allows a more accurate view of how the variable function globally as well as a more accurate view of how much the variable varies across cluster. Table X shows the different slopes for White Transplant Ratio across the three clusters with 95% confidence intervals. The effect is again significant in all three models and again changes direction in cluster x.
-
-```{r,table 14, echo=FALSE,warning=FALSE, message=FALSE}
+```{r,table 15, echo=FALSE,warning=FALSE, message=FALSE}
 m_hier <- lmer(
   vote_share ~ 
     cvap21bapp +
@@ -523,4 +524,4 @@ ggplot(ranef_df, aes(x = reorder(candidate, slope_admin), y = slope_admin)) +
 
 ## Conclusion
 
-This chapter has explored clustering the NYC City Council by the way they vote, the way they co-sponsor legislation, and the areas of the city that elect them. Voting and co-sponsorship pointed to a clearly defined group of members that vote in protest against mayoral budgets and mayoral appointments and frequently co-sponsor bills that protect workers, migrants, women, children, and LGBTQ New Yorkers. This legislative activity fits well with the idea of an egalitarian urban order defined by Weaver and discussed in Chapter 1. This legislative activity does not map well onto electoral demographics. The members won in four of the five types of districts clustered by their demographic makeup, they have found a winning formula in a variety of electoral circumstances. The coming chapters will look in more detail at the way these races were won, as well as a couple of narrow DSA losses in Central Brooklyn and Western Queens.
+This chapter has explored clustering the NYC City Council by the way members vote, the way they co-sponsor legislation, and the areas of the city that elect them. Voting and co-sponsorship pointed to a clearly defined group of members that vote in protest against mayoral budgets and mayoral appointments and frequently co-sponsor bills that protect workers, migrants, women, children, and LGBTQ New Yorkers. This legislative activity fits well with the idea of an egalitarian urban order defined by Weaver and discussed in Chapter 1. This legislative activity does not map well onto electoral demographics. The members won in four of the five types of districts clustered by their demographic makeup, they have found a winning formula in a variety of electoral circumstances. The coming chapters will look in more detail at the way these races were won, as well as a couple of narrow DSA losses in Central Brooklyn and Western Queens.
